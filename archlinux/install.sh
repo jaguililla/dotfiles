@@ -13,7 +13,7 @@
 ####################################################################################################
 
 # V A R I A B L E S ################################################################################
-WEB_FILES='https://raw.github.com/jamming/dotfiles/master/archlinux/'
+WEB_FILES='https://raw.github.com/jamming/dotfiles/master/archlinux'
 
 KB_LAYOUT='es'
 
@@ -384,7 +384,7 @@ EOD
 }
 
 fetchFile () {
-    wget ${WEB_FILES}/$1
+    wget "${WEB_FILES}/$1"
     mv "~/.$1" "~/.$1~"
     mv "$1" "~/.$1"
 }
