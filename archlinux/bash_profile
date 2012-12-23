@@ -1,0 +1,2 @@
+. $HOME/.bashrc
+stty -ctlecho

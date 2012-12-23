@@ -1,0 +1,139 @@
+
+# Check for an interactive session
+[ -z "$PS1" ] && return
+
+set -o vi
+
+txtblk='\e[0;30m' # Black - Regular
+txtred='\e[0;31m' # Red
+txtgrn='\e[0;32m' # Green
+txtylw='\e[0;33m' # Yellow
+txtblu='\e[0;34m' # Blue
+txtpur='\e[0;35m' # Purple
+txtcyn='\e[0;36m' # Cyan
+txtwht='\e[0;37m' # White
+bldblk='\e[1;30m' # Black - Bold
+bldred='\e[1;31m' # Red
+bldgrn='\e[1;32m' # Green
+bldylw='\e[1;33m' # Yellow
+bldblu='\e[1;34m' # Blue
+bldpur='\e[1;35m' # Purple
+bldcyn='\e[1;36m' # Cyan
+bldwht='\e[1;37m' # White
+unkblk='\e[4;30m' # Black - Underline
+undred='\e[4;31m' # Red
+undgrn='\e[4;32m' # Green
+undylw='\e[4;33m' # Yellow
+undblu='\e[4;34m' # Blue
+undpur='\e[4;35m' # Purple
+undcyn='\e[4;36m' # Cyan
+undwht='\e[4;37m' # White
+bakblk='\e[40m'   # Black - Background
+bakred='\e[41m'   # Red
+badgrn='\e[42m'   # Green
+bakylw='\e[43m'   # Yellow
+bakblu='\e[44m'   # Blue
+bakpur='\e[45m'   # Purple
+bakcyn='\e[46m'   # Cyan
+bakwht='\e[47m'   # White
+txtrst='\e[0m'    # Text Reset
+
+PS1="$txtcyn\u@\h $txtwht\w$txtrst\n\$ "
+
+eval $(dircolors -b)
+
+export EDITOR=vim
+export GREP_COLOR="1;33"
+export HISTCONTROL=ignoredups
+
+# Aliases
+alias diff='colordiff'              # requires colordiff package
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# modified commands
+alias more='less'
+alias df='df -h'
+alias du='du -c -h'
+alias mkdir='mkdir -p -v'
+alias ping='ping -c 5'
+alias sudo='sudo -E'
+
+# new commands
+alias da='date "+%A, %B %d, %Y [%T]"'
+alias du1='du --max-depth=1'
+alias hist='history | grep $1'      # requires an argument
+alias openports='netstat --all --numeric --programs --inet'
+alias pg='ps -Af | grep $1'         # requires an argument
+
+# privileged access
+if [ $UID -ne 0 ]; then
+    alias sudo='sudo '
+    alias scat='sudo cat'
+    alias svim='sudo vim'
+    alias root='sudo su'
+    alias reboot='sudo reboot'
+    alias halt='sudo halt'
+fi
+
+# cd
+alias back='cd $OLDPWD'
+alias ..='cd ..'
+
+# ls
+alias ls='ls -hFX --color=auto --group-directories-first'
+alias lr='ls -R'                    # recursive ls
+alias ll='ls -l'
+alias la='ll -A'
+alias lx='ll -BX'                   # sort by extension
+alias lz='ll -rS'                   # sort by size
+alias lt='ll -rt'                   # sort by date
+alias lm='la | more'
+alias l='ls -ACF'
+
+# safety features
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+alias f='find .'
+alias fn='find . -name'
+
+alias ..='cd ..'
+
+# Pacman
+alias pac='pacman'
+alias spac='sudo pac'
+
+alias ssha='eval `keychain --eval --agents ssh id_rsa`'
+
+#alias pac-update='spac -Syu'
+#alias pac-clean='spac -Sc'
+#alias pac-install='spac -S'
+#alias pac-remove='spac -R'
+#alias pac-search='pac -Ss'
+#alias pac-query='pac -Q'
+
+# Pacman alias examples
+alias pacupg='spac -Syu'  # Synchronize with repositories before upgrading packages that are out of date on the local system.
+alias pacin='spac -S'     # Install specific package(s) from the repositories
+alias pacins='spac -Up'   # Install specific package not from the repositories but from a file 
+alias pacre='spac -R'     # Remove the specified package(s), retaining its configuration(s) and required dependencies
+alias pacrem='spac -Rns'  # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias pacrep='pac -Si'    # Display information about a given package in the repositories
+alias pacreps='pac -Ss'   # Search for package(s) in the repositories
+alias pacloc='pac -Qi'    # Display information about a given package in the local database
+alias paclocs='pac -Qs'   # Search for package(s) in the local database
+alias paclocl='pac -Ql'   # Display the file list of a given package in the local database
+
+#export ANDROID_HOME=/opt/android
+#export SBT_HOME=/opt/typesafe-stack/bin
+#export TYPESAFE_HOME=/opt/typesafe-stack
+#export PATH=$PATH:$TYPESAFE_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/.gem/jruby/1.8/bin:/usr/share/java/apache-ant/bin:/opt/jruby/bin
+#export JAVAHOME=$JAVA_HOME
+#export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel' # lcd, gasp... (see Wiki)

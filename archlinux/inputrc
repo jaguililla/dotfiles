@@ -1,0 +1,9 @@
+"\e[A":history-search-backward
+"\e[B":history-search-forward
+
+set completion-ignore-case on
+set show-all-if-ambiguous on
+set echo-control-characters off
+
+# For Ctrl+L clear screen
+C-L: clear-screen

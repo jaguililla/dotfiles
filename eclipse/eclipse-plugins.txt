@@ -1,0 +1,11 @@
+  EclEmma Java Code Coverage	2.1.3.201207121924	com.mountainminds.eclemma.feature.feature.group	Mountainminds GmbH & Co. KG
+  Eclipse Color Theme	0.12.0.201207240713	com.github.eclipsecolortheme.feature.feature.group	GitHub
+  Eclipse EGit Mylyn GitHub Feature	1.3.0.201202151440-r	org.eclipse.mylyn.github.feature.feature.group	Eclipse EGit
+  Eclipse IDE for Java Developers	1.4.2.20120213-0813	epp.package.java	null
+  Eclipse Web Developer Tools	3.3.2.v201111030500-7O7IFj6EMjB7yO1Xs_G1kMtQeOye6HTXFWve95_R	org.eclipse.wst.web_ui.feature.feature.group	Eclipse Web Tools Platform
+  JavaScript Development Tools	1.3.2.v201201112313-7G78FZvFC7sRekSz-g-nAlz	org.eclipse.wst.jsdt.feature.feature.group	Eclipse Web Tools Platform
+  Target Management Terminal	3.2.1.R33x_v201106281309-7N7B1BbVJv-SaPEOkhsVVd_C3752	org.eclipse.tm.terminal.sdk.feature.group	Eclipse TM Project
+  Vrapper	0.22.0	net.sourceforge.vrapper.feature.group	Vrapper Team
+  Vrapper - JDT Extensions (Optional)	0.22.0	net.sourceforge.vrapper.eclipse.jdt.feature.feature.group	Vrapper Team
+  Xtend M2E extensions	2.3.0.v201206120633	org.eclipse.xtend.m2e.feature.group	Eclipse Xtend
+  Xtend SDK	2.3.0.v201206120633	org.eclipse.xtend.sdk.feature.group	Eclipse Xtend 
