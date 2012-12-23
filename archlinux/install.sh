@@ -13,7 +13,7 @@
 ####################################################################################################
 
 # V A R I A B L E S ################################################################################
-WEB_FILES='https://raw.github.com/jamming/dotfiles/archlinux/'
+WEB_FILES='https://raw.github.com/jamming/dotfiles/master/archlinux/'
 
 KB_LAYOUT='es'
 
