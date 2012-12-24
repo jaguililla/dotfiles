@@ -364,12 +364,12 @@ installTools () {
 }
 
 installDevel () {
+    spacins python python2 ruby graphviz git nodejs subversion doxygen
+}
+
+installJava () {
     yaourt jdk jdk-docs
-
-    spacins python python2 ruby scala groovy groovy-docs gradle apache-ant maven \
-        intellij-idea-community-edition graphviz git nodejs subversion doxygen
-
-    yaourt komodoedit
+    spacins scala groovy groovy-docs gradle apache-ant maven intellij-idea-community-edition
 }
 
 installAur () {
@@ -384,9 +384,16 @@ EOD
 }
 
 fetchFile () {
-    wget "${WEB_FILES}/$1"
     mv "~/.$1" "~/.$1~"
-    mv "$1" "~/.$1"
+    curl "${WEB_FILES}/$1" >"~/.$1"
+}
+
+setupShell () {
+    fetchFile 'bash_profile'
+    fetchFile 'bashrc'
+    fetchFile 'inputrc'
+    fetchFile 'gvimrc'
+    fetchFile 'vimrc'
 }
 
 performUserConfig () {
@@ -397,13 +404,9 @@ performUserConfig () {
     installAur
     installKde
     installTools
-    #installDevel
-
-    fetchFile 'bash_profile'
-    fetchFile 'bashrc'
-    fetchFile 'inputrc'
-    fetchFile 'gvimrc'
-    fetchFile 'vimrc'
+    installDevel
+    #installJava
+    setupShell
 
     systemctl reboot
 }
