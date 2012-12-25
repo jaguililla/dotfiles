@@ -310,6 +310,7 @@ vboxguest
 vboxsf
 vboxvideo
 EOD
+    sudo modprobe vboxguest vboxsf vboxvideo
 }
 
 installX () {
@@ -398,6 +399,8 @@ setupShell () {
 }
 
 performUserConfig () {
+    [ $VBOX == true ] && setupVbox
+
     setupSound
     installX
     installAur
@@ -407,7 +410,6 @@ performUserConfig () {
     #installJava
     #setupShell
 
-    [ $VBOX == true ] && setupVbox
     sudo reboot
 }
 
