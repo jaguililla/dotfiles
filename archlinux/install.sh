@@ -405,8 +405,8 @@ performUserConfig () {
     installX
     installAur
     installKde
-    #installTools
-    #installDevel
+    installTools
+    installDevel
     #installJava
     #setupShell
 
