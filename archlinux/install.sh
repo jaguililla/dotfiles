@@ -282,7 +282,7 @@ performConfig () {
     updateMirrors
     createUser
 
-    wget ${WEB_FILES}/iptables.sh
+    curl -O ${WEB_FILES}/iptables.sh
     chmod +x ./iptables.sh
     sudo ./iptables.sh 
     rm -f ./iptables.sh
@@ -353,6 +353,7 @@ installKde () {
     # put 'StartServer=false' in '~/.config/akonadi/akonadiserverrc'
     # TODO Use Webkit in Konqueror
 
+    pause 'Press any key to install KDM service'
     sudo systemctl enable kdm.service
 }
 
@@ -397,18 +398,17 @@ setupShell () {
 }
 
 performUserConfig () {
-    [ $VBOX == true ] && setupVbox
-
     setupSound
     installX
     installAur
     installKde
-    installTools
-    installDevel
+    #installTools
+    #installDevel
     #installJava
-    setupShell
+    #setupShell
 
-    systemctl reboot
+    [ $VBOX == true ] && setupVbox
+    sudo reboot
 }
 
 # I N S T A L L ####################################################################################
