@@ -48,7 +48,8 @@ SYSTEM_HOST="${SYSTEM_USER}host"
 
 NETWORK_IFACE='eth0'
 
-XDRIVER='nvidia'                        # 'nvidia'
+XDRIVER='nvidia'                        # X Driver package
+XDRIVER_MODULE='nvidia'                 # X Driver module
 
 # A L I A S E S ####################################################################################
 alias pac='pacman --noconfirm'
@@ -219,8 +220,6 @@ setupBootloader () {
     grub-install --target=i386-pc --recheck $BOOT_DISK
     cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
     grub-mkconfig -o /boot/grub/grub.cfg
-    # Add vga=0x305 to linux entries
-    # TODO Check gfxpayload and quiet
 }
 
 performChroot () {
@@ -278,6 +277,8 @@ performConfig () {
     echo microcode >/etc/modules-load.d/microcode.conf
 
     # TODO Add linux-lts entry in grub
+    #sudo grub-mkconfig -o /boot/grub/grub.cfg
+    # TODO Adjust default option
  
     updateMirrors
     createUser
@@ -317,6 +318,8 @@ installX () {
     # Install X
     spacins xorg-server xorg-xinit xorg-server-utils xorg-twm xorg-xclock xterm $XDRIVER
 
+    sudo modprobe $XDRIVER_MODULE
+
     # Fix the keyboard layout (write 10-keyboard.conf)
     sudo bash -c 'cat >>/etc/X11/xorg.conf.d/10-keyboard.conf' <<EOD
 Section "InputClass"
@@ -340,19 +343,15 @@ EOD
 
 installKde () {
     spacins kde-meta-kdeadmin kde-meta-kdeartwork kde-meta-kdebase kde-meta-kdegraphics \
-        kde-meta-kdemultimedia kde-meta-kdeplasma-addons kde-meta-kdeutils k3b phonon-vlc 
-
-    # Select VLC Phonon backend (2)
+        kde-meta-kdemultimedia kde-meta-kdeplasma-addons kde-meta-kdeutils k3b phonon-vlc \
+        ktorrent smplayer kwebkitpart
 
     # Create desktop directories
     mkdir -p \
         ~/Desktop ~/.kde4/Autostart ~/Documents ~/Downloads ~/Videos ~/Pictures ~/Music 2>/dev/null
 
-    # Add dbus service to rc.conf
-
-    # Disable akonadi (see wiki)
-    # put 'StartServer=false' in '~/.config/akonadi/akonadiserverrc'
-    # TODO Use Webkit in Konqueror
+    # Disable akonadi
+    subs 'StartServer=true' 'StartServer=false' '~/.config/akonadi/akonadiserverrc'
 
     pause 'Press any key to install KDM service'
     sudo systemctl enable kdm.service
@@ -370,8 +369,9 @@ installDevel () {
 }
 
 installJava () {
-    yaourt jdk jdk-docs
-    spacins scala groovy groovy-docs gradle apache-ant maven intellij-idea-community-edition
+    yaourt -S jdk jdk-docs
+    spacins scala groovy groovy-docs apache-ant maven intellij-idea-community-edition
+    yaourt -S gradle
 }
 
 installAur () {
@@ -386,8 +386,8 @@ EOD
 }
 
 fetchFile () {
-    mv "~/.$1" "~/.$1~"
-    curl "${WEB_FILES}/$1" >"~/.$1"
+    mv ~/.$1 ~/.$1~
+    curl "${WEB_FILES}/$1" >~/.$1
 }
 
 setupShell () {
@@ -407,8 +407,8 @@ performUserConfig () {
     installKde
     installTools
     installDevel
-    #installJava
-    #setupShell
+    installJava
+    setupShell
 
     sudo reboot
 }
@@ -427,6 +427,12 @@ fi
 #
 # PUBLIC
 #
+if [ "$1" == "java" ]; then
+    installJava
+fi
+if [ "$1" == "shell" ]; then
+    setupShell
+fi
 if [ "$1" == "install" ]; then
     performInstall
 fi
