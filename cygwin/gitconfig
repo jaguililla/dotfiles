@@ -1,0 +1,5 @@
+[user]
+	name = jamming
+	email = juanjoaguililla@gmail.com
+[http]
+	proxy = http://10.4.48.2:8080

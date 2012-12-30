@@ -1,0 +1,12 @@
+Transparency=0
+OpaqueWhenFocused=1
+FontHeight=9
+Locale=es_ES
+Charset=UTF-8
+CopyAsRTF=0
+RightClickAction=1
+Columns=150
+Rows=50
+ConfirmExit=0
+Font=DejaVu Sans Mono
+BackgroundColour=40,40,40

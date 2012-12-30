@@ -271,13 +271,13 @@ performConfig () {
     pacrem heirloom-mailx jfsutils nano pcmciautils reiserfsprogs vi xfsprogs
     pacupg
     pacins linux-lts linux-lts-headers ${SYSTEM_CHIP}-ucode reflector sudo iptables colordiff \
-        bash-completion fdupes rsync net-tools xz openssh
+        bash-completion fdupes rsync net-tools xz openssh ntfs-3g
 
     # Load the 'microcode' module
     echo microcode >/etc/modules-load.d/microcode.conf
 
-    # TODO Add linux-lts entry in grub
-    #sudo grub-mkconfig -o /boot/grub/grub.cfg
+    # Add linux-lts entry in grub
+    grub-mkconfig -o /boot/grub/grub.cfg
     # TODO Adjust default option
  
     updateMirrors

@@ -9,10 +9,12 @@
 ; loaded.  So feel free to customize it to suit your needs.
 
 ; Program Launchers
-#e::Run "C:\Program Files\Vim\vim73\gvim.exe"
+; #e::Run "C:\Program Files\Vim\vim73\gvim.exe"
+#e::Run "C:\home\devel\sublimetext-2b\sublime_text.exe"
 #t::Run "C:\cygwin\bin\mintty.exe" -
-#f::Run "C:\home\util\freecommander-2009.02\FreeCommander.exe"
-#w::Run "C:\Documents and Settings\JAguililla\Local Settings\Application Data\Google\Chrome\Application\chrome.exe"
+; #f::Run "C:\Program Files\Double Commander\doublecmd.exe"
+#f::Run "C:\Program Files\FreeCommander\FreeCommander.exe"
+#w::Run "C:\Documents and Settings\JAguililla\Local Settings\Application Data\Google\Chrome\Application\chrome.exe" --allow-file-access-from-files
 #x::WinClose, Program Manager
 
 ; Window Cycle
