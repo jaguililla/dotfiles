@@ -318,7 +318,7 @@ installX () {
     # Install X
     spacins xorg-server xorg-xinit xorg-server-utils xorg-twm xorg-xclock xterm $XDRIVER
 
-    sudo modprobe $XDRIVER_MODULE
+    #sudo modprobe $XDRIVER_MODULE
 
     # Fix the keyboard layout (write 10-keyboard.conf)
     sudo bash -c 'cat >>/etc/X11/xorg.conf.d/10-keyboard.conf' <<EOD
@@ -365,7 +365,7 @@ installTools () {
 }
 
 installDevel () {
-    spacins python python2 ruby graphviz git nodejs subversion doxygen
+    spacins python python-docs python2 python2-docs ruby ruby-docs graphviz git nodejs subversion doxygen
 }
 
 installJava () {
