@@ -370,7 +370,7 @@ installDevel () {
 
 installJava () {
     yaourt -S jdk jdk-docs
-    spacins scala groovy groovy-docs apache-ant maven intellij-idea-community-edition
+    spacins scala scala-devel-docs groovy groovy-docs apache-ant maven intellij-idea-community-edition
     yaourt -S gradle
 }
 
@@ -424,12 +424,11 @@ if [ "$1" == "user" ]; then
     performUserConfig
 fi
 
+# TODO Post install cleanup: delete tty1.service~, modify akonadiserverrc...
+# TODO Don't load X driver when installing in VBox
 #
 # PUBLIC
 #
-if [ "$1" == "java" ]; then
-    installJava
-fi
 if [ "$1" == "shell" ]; then
     setupShell
 fi
