@@ -312,6 +312,7 @@ vboxsf
 vboxvideo
 EOD
     sudo modprobe vboxguest vboxsf vboxvideo
+    sudo gpasswd -a $SYSTEM_USER vboxusers
 }
 
 installX () {
@@ -346,12 +347,14 @@ installKde () {
         kde-meta-kdemultimedia kde-meta-kdeplasma-addons kde-meta-kdeutils k3b phonon-vlc \
         ktorrent smplayer kwebkitpart
 
+    yaourt -S kcm-gtk
+
     # Create desktop directories
     mkdir -p \
         ~/Desktop ~/.kde4/Autostart ~/Documents ~/Downloads ~/Videos ~/Pictures ~/Music 2>/dev/null
 
     # Disable akonadi
-    subs 'StartServer=true' 'StartServer=false' '~/.config/akonadi/akonadiserverrc'
+    #subs 'StartServer=true' 'StartServer=false' '~/.config/akonadi/akonadiserverrc'
 
     pause 'Press any key to install KDM service'
     sudo systemctl enable kdm.service
@@ -361,16 +364,19 @@ installTools () {
     spacins \
         firefox chromium flashplugin blender gimp inkscape \
         gvim libreoffice-base htop p7zip yakuake calibre nmap wget \
-        xcursor-vanilla-dmz oxygen-gtk2 gtk-theme-switch2
+        xcursor-vanilla-dmz oxygen-gtk2 gtk-theme-switch2 \
+        virtualbox virtualbox-host-modules kaffeine
 }
 
 installDevel () {
-    spacins python python-docs python2 python2-docs ruby ruby-docs graphviz git nodejs subversion doxygen
+    spacins python python-docs python2 python2-docs ruby ruby-docs graphviz git \
+        nodejs subversion doxygen
 }
 
 installJava () {
     yaourt -S jdk jdk-docs
-    spacins scala scala-devel-docs groovy groovy-docs apache-ant maven intellij-idea-community-edition
+    spacins scala scala-devel-docs groovy groovy-docs apache-ant maven \
+        intellij-idea-community-edition
     yaourt -S gradle
 }
 
