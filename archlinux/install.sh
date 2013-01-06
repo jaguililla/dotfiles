@@ -245,6 +245,8 @@ performInstall () {
 EOD
 
     setupConsole
+    pause 'Check disk partitions. Press enter to continue'
+    cfdisk
     setupDisk
     setupPacman
     setupDate
@@ -363,9 +365,9 @@ installKde () {
 installTools () {
     spacins \
         firefox chromium flashplugin blender gimp inkscape \
-        gvim libreoffice-base htop p7zip yakuake calibre nmap wget \
-        xcursor-vanilla-dmz oxygen-gtk2 gtk-theme-switch2 \
-        virtualbox virtualbox-host-modules kaffeine
+        gvim htop p7zip yakuake calibre nmap wget \
+        libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-en-US libreoffice-es \
+        libreoffice-kde4 xcursor-vanilla-dmz oxygen-gtk2 virtualbox virtualbox-host-modules kaffeine
 }
 
 installDevel () {
@@ -432,12 +434,10 @@ fi
 
 # TODO Post install cleanup: delete tty1.service~, modify akonadiserverrc...
 # TODO Don't load X driver when installing in VBox
+# TODO Find *~ files *.pac* files and check logs
 #
 # PUBLIC
 #
-if [ "$1" == "shell" ]; then
-    setupShell
-fi
 if [ "$1" == "install" ]; then
     performInstall
 fi
