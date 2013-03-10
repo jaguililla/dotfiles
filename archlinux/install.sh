@@ -46,7 +46,7 @@ SYSTEM_TIMEZONE='Europe/Madrid'
 SYSTEM_USER='jam'
 SYSTEM_HOST="${SYSTEM_USER}host"
 
-NETWORK_IFACE='eth0'
+NETWORK_IFACE='eth0'                    # 'enp0s3' for VirtualBox
 
 XDRIVER='nvidia'                        # X Driver package
 XDRIVER_MODULE='nvidia'                 # X Driver module
