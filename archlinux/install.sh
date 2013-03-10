@@ -232,6 +232,7 @@ performChroot () {
     # Keep tty output
     GETTY='/etc/systemd/system/getty.target.wants/getty@tty1.service'
     subs 'TTYVTDisallocate=yes' 'TTYVTDisallocate=no' $GETTY
+    rm "$GETTY~"
 }
 
 performInstall () {
@@ -377,7 +378,7 @@ installDevel () {
 
 installJava () {
     yaourt -S jdk jdk-docs
-    spacins scala scala-devel-docs groovy groovy-docs apache-ant maven \
+    spacins scala scala-docs groovy groovy-docs apache-ant maven \
         intellij-idea-community-edition
     yaourt -S gradle
 }
