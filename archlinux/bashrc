@@ -67,6 +67,10 @@ alias hist='history | grep $1'      # requires an argument
 alias openports='netstat --all --numeric --programs --inet'
 alias pg='ps -Af | grep $1'         # requires an argument
 
+alias ssha='eval `keychain --eval --agents ssh id_rsa`'
+alias backup='rsync -a --delete'
+
+
 # privileged access
 if [ $UID -ne 0 ]; then
     alias sudo='sudo '
@@ -109,8 +113,6 @@ alias ..='cd ..'
 # Pacman
 alias pac='pacman'
 alias spac='sudo pac'
-
-alias ssha='eval `keychain --eval --agents ssh id_rsa`'
 
 #alias pac-update='spac -Syu'
 #alias pac-clean='spac -Sc'
