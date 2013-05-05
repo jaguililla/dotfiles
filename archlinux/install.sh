@@ -46,7 +46,7 @@ SYSTEM_TIMEZONE='Europe/Madrid'
 SYSTEM_USER='jam'
 SYSTEM_HOST="${SYSTEM_USER}host"
 
-NETWORK_IFACE='eth0'                    # 'enp0s3' for VirtualBox
+NETWORK_IFACE='enp0s3'
 
 XDRIVER='nvidia'                        # X Driver package
 XDRIVER_MODULE='nvidia'                 # X Driver module
@@ -271,7 +271,7 @@ performConfig () {
     clear
 
     # Install useful packages
-    pacrem heirloom-mailx jfsutils nano pcmciautils reiserfsprogs vi xfsprogs
+    pacrem heirloom-mailx jfsutils nano pcmciautils reiserfsprogs xfsprogs
     pacupg
     pacins linux-lts linux-lts-headers ${SYSTEM_CHIP}-ucode reflector sudo iptables colordiff \
         bash-completion fdupes rsync net-tools xz openssh ntfs-3g
@@ -348,9 +348,9 @@ EOD
 installKde () {
     spacins kde-meta-kdeadmin kde-meta-kdeartwork kde-meta-kdebase kde-meta-kdegraphics \
         kde-meta-kdemultimedia kde-meta-kdeplasma-addons kde-meta-kdeutils k3b phonon-vlc \
-        ktorrent smplayer kwebkitpart
+        ktorrent smplayer kwebkitpart gtk-theme-switch2
 
-    yaourt -S kcm-gtk
+    # TODO Use gtk-theme-switch2 command line to set GTK oxigen theme using the command line
 
     # Create desktop directories
     mkdir -p \
