@@ -5,6 +5,7 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 set guitablabel=%N\ %f
+set clipboard=unnamed
 set number
 set ignorecase
 set ts=4

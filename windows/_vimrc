@@ -30,6 +30,7 @@ endfunction
 
 set guifont=DejaVu_Sans_Mono:h8:cANSI
 set guioptions=rgmteh
+set clipboard=unnamed
 set columns=110
 set lines=40
 set number

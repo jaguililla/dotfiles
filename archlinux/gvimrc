@@ -6,6 +6,7 @@ behave mswin
 
 set guifont=Inconsolata\ Medium\ 10
 set guioptions=rgmteh
+set clipboard=unnamed
 set columns=110
 set lines=40
 set number
