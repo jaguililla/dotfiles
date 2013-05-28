@@ -17,6 +17,7 @@ display=Display
 {55bd8f27-4834-4cf5-883b-7f859eccb703}=Meta+S
 {a25ff0db-d215-4a31-b7a4-b112a19f9dc1}=Meta+F
 {c65de470-fb6b-4cc9-9722-f36abaeb8ffd}=Meta+W
+{cbb1a215-776a-4d75-b661-604bf6b67dfa}=Meta+E
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=Search
 
 [klipper][Global Shortcuts]
@@ -90,7 +91,6 @@ increase_volume=Volume Up
 mute=Volume Mute
 
 [krunner][Global Shortcuts]
-Lock Session=Meta+L
 PowerDevil=none
 Run Command=Meta+Space
 Run Command on clipboard contents=Alt+Shift+F2
@@ -99,6 +99,7 @@ Switch User=Ctrl+Alt+Ins
 bookmarks=none
 desktopsessions=none
 kabccontacts=none
+katesessions=none
 locations=none
 marble=none
 nepomuksearch=none
@@ -112,8 +113,12 @@ webshortcuts=none
 wikipedia=none
 windows=none
 
+[kscreenlocker][Global Shortcuts]
+Lock Session=none
+
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=Ctrl+Alt+Shift+PgDown
+Lock Session=Ctrl+Alt+L
 Log Out=Meta+X
 Log Out Without Confirmation=Ctrl+Alt+Shift+Del
 Reboot Without Confirmation=Ctrl+Alt+Shift+PgUp
@@ -282,6 +287,7 @@ view_zoom_out=Meta+-
 Next Activity=Meta+Tab
 Previous Activity=Meta+Shift+Tab
 Show Dashboard=Ctrl+F12
+Stop Activity=none
 Systemtray-Klipper-6=Ctrl+Alt+V
 activate widget 10=none
 manage activities=Meta+Q
