@@ -1,0 +1,2 @@
+# Overcome the global ignore for JAR files only for IntelliJ configuration file
+!intellij/settings.jar
