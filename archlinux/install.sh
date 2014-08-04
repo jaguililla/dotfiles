@@ -271,7 +271,7 @@ performConfig () {
     clear
 
     # Install useful packages
-    pacrem heirloom-mailx jfsutils nano pcmciautils reiserfsprogs xfsprogs
+    pacrem s-nail jfsutils nano pcmciautils reiserfsprogs xfsprogs
     pacupg
     pacins linux-lts linux-lts-headers ${SYSTEM_CHIP}-ucode reflector sudo iptables colordiff \
         bash-completion fdupes rsync net-tools xz openssh ntfs-3g
