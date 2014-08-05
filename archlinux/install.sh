@@ -37,7 +37,7 @@ FILESYSTEM_BOOT='ext2'
 FILESYSTEM_ROOT='ext4'
 FILESYSTEM_HOME='ext4'
 
-SYSTEM_CHIP='amd'                       # 'amd' or 'intel'
+SYSTEM_CHIP='intel'                     # 'amd' or 'intel'
 SYSTEM_LOCALE='en_US.UTF-8'
 SYSTEM_SECOND_LOCALE='es_ES.UTF-8'
 SYSTEM_ENCODING='UTF-8'
@@ -50,6 +50,11 @@ NETWORK_IFACE='enp0s3'
 
 XDRIVER='nvidia'                        # X Driver package
 XDRIVER_MODULE='nvidia'                 # X Driver module
+
+# C H E C K S ######################################################################################
+lspci|grep 'VirtualBox' >/dev/null
+[ $? == 0 ] && VBOX=true
+[ $VBOX == true ] && XDRIVER=''
 
 # A L I A S E S ####################################################################################
 alias pac='pacman --noconfirm'
@@ -65,12 +70,7 @@ alias spacupg='spac -Syu'
 
 alias svim='sudo vim'
 
-# C H E C K S ######################################################################################
-lspci|grep 'VirtualBox' >/dev/null
-[ $? == 0 ] && VBOX=true
-[ $VBOX == true ] && XDRIVER=''
-
-# F U N C T I O N S ################################################################################
+# H E L P E R   F U N C T I O N S ##################################################################
 pause () {
     [ "$1" != "" ] && echo $1
     read pauseReply
@@ -78,6 +78,35 @@ pause () {
 
 subs () {
     [ "$1" != "" -a "$3" != "" ] && sed -i~ "s/$1/$2/g" $3
+}
+
+# F U N C T I O N S ################################################################################
+
+##### I N S T A L L #####
+
+performInstall () {
+    clear
+    cat <<EOD
+
+==================================================================
+        A R C H   L I N U X   I N S T A L L   S C R I P T
+==================================================================
+
+EOD
+
+    setupConsole
+    pause 'Check disk partitions. Press enter to continue'
+    cfdisk
+    setupDisk
+    setupPacman
+    setupDate
+
+    pacstrap /mnt base base-devel
+    mountSystem
+    arch-chroot /mnt /install.sh chroot
+
+    umount /mnt/{boot,home,}
+    reboot
 }
 
 setupConsole () {
@@ -149,7 +178,7 @@ Include = /etc/pacman.d/mirrorlist
 
 EOD
     cat /etc/pacman.conf
-    pause 'Pacman configuration. Press any key to continue...'
+    pause 'Pacman configuration (check multilib if x86_64). Press any key to continue...'
 }
 
 setupDate () {
@@ -167,6 +196,21 @@ mountSystem () {
     pause "Press any key to edit the file... "
     vi /mnt/etc/fstab
     cp install.sh /mnt # Copy this install script to the new root
+}
+
+##### C H R O O T #####
+
+performChroot () {
+    setupLocale
+    setupNetwork
+    setupInitramdisk 
+    setupBootloader
+    echo && echo "Enter 'root' password:"
+    passwd
+    # Keep tty output
+    GETTY='/etc/systemd/system/getty.target.wants/getty@tty1.service'
+    subs 'TTYVTDisallocate=yes' 'TTYVTDisallocate=no' $GETTY
+    rm "$GETTY~"
 }
 
 # See https://wiki.archlinux.org/index.php/Time#UTC_in_Windows
@@ -205,16 +249,6 @@ setupInitramdisk () {
     mkinitcpio -p linux
 }
 
-createUser () {
-    # Add a user
-    useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner,network \
-        -s /bin/bash $SYSTEM_USER
-    echo && echo "Enter '$SYSTEM_USER' password:"
-    passwd $SYSTEM_USER
-
-    subs '# %wheel ALL=(ALL) ALL' '%wheel ALL=(ALL) ALL' /etc/sudoers
-}
-
 setupBootloader () {
     pacins grub-bios
     grub-install --target=i386-pc --recheck $BOOT_DISK
@@ -222,50 +256,7 @@ setupBootloader () {
     grub-mkconfig -o /boot/grub/grub.cfg
 }
 
-performChroot () {
-    setupLocale
-    setupNetwork
-    setupInitramdisk 
-    setupBootloader
-    echo && echo "Enter 'root' password:"
-    passwd
-    # Keep tty output
-    GETTY='/etc/systemd/system/getty.target.wants/getty@tty1.service'
-    subs 'TTYVTDisallocate=yes' 'TTYVTDisallocate=no' $GETTY
-    rm "$GETTY~"
-}
-
-performInstall () {
-    clear
-    cat <<EOD
-
-==================================================================
-        A R C H   L I N U X   I N S T A L L   S C R I P T
-==================================================================
-
-EOD
-
-    setupConsole
-    pause 'Check disk partitions. Press enter to continue'
-    cfdisk
-    setupDisk
-    setupPacman
-    setupDate
-
-    pacstrap /mnt base base-devel
-    mountSystem
-    arch-chroot /mnt /install.sh chroot
-
-    umount /mnt/{boot,home,}
-    reboot
-}
-
-updateMirrors () {
-    mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist~
-    reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist
-    pac -Syy
-    pacupg
-}
+##### C O N F I G #####
 
 performConfig () {
     clear
@@ -297,14 +288,38 @@ performConfig () {
     sudo -i -u $SYSTEM_USER /install.sh user
 }
 
-setupSound () {
-    spacins alsa-utils alsa-oss
-    echo && echo "ALSAMIXER: To unmute channels press 'M' and set a proper value"
-    pause "Press any key to execute 'alsamixer'"
-    alsamixer 
-    speaker-test -l2 -c2 -Ddefault -twav
-    sudo alsactl -f /var/lib/alsa/asound.state store
-    # Edit rc.conf (add 'alsa' to daemons)
+updateMirrors () {
+    mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist~
+    reflector -l 5 --sort rate --save /etc/pacman.d/mirrorlist
+    pac -Syy
+    pacupg
+}
+
+createUser () {
+    # Add a user
+    useradd -m -g users -G audio,lp,optical,storage,video,wheel,games,power,scanner,network \
+        -s /bin/bash $SYSTEM_USER
+    echo && echo "Enter '$SYSTEM_USER' password:"
+    passwd $SYSTEM_USER
+
+    subs '# %wheel ALL=(ALL) ALL' '%wheel ALL=(ALL) ALL' /etc/sudoers
+}
+
+##### U S E R #####
+
+performUserConfig () {
+    [ $VBOX == true ] && setupVbox
+
+    setupSound
+    installX
+    installAur
+    installKde
+    installTools
+    installDevel
+    installJava
+    setupShell
+
+    sudo reboot
 }
 
 setupVbox () {
@@ -316,6 +331,16 @@ vboxvideo
 EOD
     sudo modprobe vboxguest vboxsf vboxvideo
     sudo gpasswd -a $SYSTEM_USER vboxusers
+}
+
+setupSound () {
+    spacins alsa-utils alsa-oss
+    echo && echo "ALSAMIXER: To unmute channels press 'M' and set a proper value"
+    pause "Press any key to execute 'alsamixer'"
+    alsamixer 
+    speaker-test -l2 -c2 -Ddefault -twav
+    sudo alsactl -f /var/lib/alsa/asound.state store
+    # Edit rc.conf (add 'alsa' to daemons)
 }
 
 installX () {
@@ -343,6 +368,17 @@ EOD
     # Install fonts
     spacins ttf-dejavu ttf-bitstream-vera ttf-cheapskate ttf-freefont \
         ttf-linux-libertine ttf-inconsolata ttf-liberation ttf-ubuntu-font-family
+}
+
+installAur () {
+    # Add repo to /etc/pacman.conf
+    sudo bash -c 'cat >>/etc/pacman.conf' <<EOD
+[archlinuxfr]
+SigLevel = Optional TrustAll
+Server = http://repo.archlinux.fr/\$arch
+EOD
+    spac -Syy
+    spacins yaourt namcap
 }
 
 installKde () {
@@ -383,22 +419,6 @@ installJava () {
     yaourt -S gradle
 }
 
-installAur () {
-    # Add repo to /etc/pacman.conf
-    sudo bash -c 'cat >>/etc/pacman.conf' <<EOD
-[archlinuxfr]
-SigLevel = Optional TrustAll
-Server = http://repo.archlinux.fr/\$arch
-EOD
-    spac -Syy
-    spacins yaourt namcap
-}
-
-fetchFile () {
-    mv ~/.$1 ~/.$1~
-    curl "${WEB_FILES}/$1" >~/.$1
-}
-
 setupShell () {
     fetchFile 'bash_profile'
     fetchFile 'bashrc'
@@ -407,19 +427,9 @@ setupShell () {
     fetchFile 'vimrc'
 }
 
-performUserConfig () {
-    [ $VBOX == true ] && setupVbox
-
-    setupSound
-    installX
-    installAur
-    installKde
-    installTools
-    installDevel
-    installJava
-    setupShell
-
-    sudo reboot
+fetchFile () {
+    mv ~/.$1 ~/.$1~
+    curl "${WEB_FILES}/$1" >~/.$1
 }
 
 # I N S T A L L ####################################################################################
