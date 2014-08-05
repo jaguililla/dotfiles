@@ -17,12 +17,12 @@ allow_lo="yes";
 # interfaces (confirm)
 
 localnet="lo";
-internet="eth+";    # the ending '+' is a wildcard for matching patterns
+internet="enp0s+";    # the ending '+' is a wildcard for matching patterns
                     # will match for example 'eth0' , 'eth1' ,  etc..
 # ----------------------------------------------------------------------------
 
 # stop the iptables
-rc.d stop iptables
+systemctl stop iptables
 
 #  reset iptables rules
 iptables -P INPUT ACCEPT
@@ -108,11 +108,11 @@ iptables -I INPUT -p icmp --icmp-type address-mask-reply -j DROP
 # ----------------------------------------------------------------------------
 # the end
 
-rc.d save iptables
+iptables-save > /etc/iptables/iptables.rules
 
-rc.d start iptables
+systemctl start iptables
 
-systemctl enable iptables.service
+systemctl enable iptables
 
 # print the iptables
 iptables -L;
