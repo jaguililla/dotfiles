@@ -30,7 +30,7 @@ PARTITION_HOME="${BOOT_DISK}8"
 # NOT USED could be used in the future to create the partition table
 #
 SIZE_BOOT=100
-SIZE_SWAP=1000
+SIZE_SWAP=8000
 SIZE_ROOT=70000
 
 FILESYSTEM_BOOT='ext2'
