@@ -1,6 +1,6 @@
 #!/bin/sh
 
-####################################################################################################
+###############################################################################################
 #
 # Arch Linux install script
 #
@@ -10,9 +10,9 @@
 # For reference see: Beginner's Guide & General Recommendations in the Arch Linux Wiki
 # Start ISO with vga=ask for a pleasant console installation
 #
-####################################################################################################
+###############################################################################################
 
-# V A R I A B L E S ################################################################################
+# V A R I A B L E S ###########################################################################
 WEB_FILES='https://raw.githubusercontent.com/jamming/dotfiles/master/archlinux'
 
 KB_LAYOUT='es'
@@ -51,12 +51,12 @@ NETWORK_IFACE='enp0s3'
 XDRIVER='nvidia'                        # X Driver package
 XDRIVER_MODULE='nvidia'                 # X Driver module
 
-# C H E C K S ######################################################################################
+# C H E C K S #################################################################################
 lspci|grep 'VirtualBox' >/dev/null
 [ $? == 0 ] && VBOX=true
 [ $VBOX == true ] && XDRIVER=''
 
-# A L I A S E S ####################################################################################
+# A L I A S E S ###############################################################################
 alias pac='pacman --noconfirm'
 alias spac='sudo pacman --noconfirm'
 
@@ -70,7 +70,7 @@ alias spacupg='spac -Syu'
 
 alias svim='sudo vim'
 
-# H E L P E R   F U N C T I O N S ##################################################################
+# H E L P E R   F U N C T I O N S #############################################################
 pause () {
     [ "$1" != "" ] && echo $1
     read pauseReply
@@ -80,7 +80,7 @@ subs () {
     [ "$1" != "" -a "$3" != "" ] && sed -i~ "s/$1/$2/g" $3
 }
 
-# F U N C T I O N S ################################################################################
+# F U N C T I O N S ###########################################################################
 
 ##### I N S T A L L #####
 
@@ -329,6 +329,7 @@ vboxguest
 vboxsf
 vboxvideo
 EOD
+    sudo depmod
     sudo modprobe vboxguest vboxsf vboxvideo
     sudo gpasswd -a $SYSTEM_USER vboxusers
 }
@@ -384,13 +385,14 @@ EOD
 installKde () {
     spacins kde-meta-kdeadmin kde-meta-kdeartwork kde-meta-kdebase kde-meta-kdegraphics \
         kde-meta-kdemultimedia kde-meta-kdeplasma-addons kde-meta-kdeutils \
-        kdeplasma-applets-plasma-nm k3b phonon-vlc ktorrent smplayer kwebkitpart gtk-theme-switch2
+        kdeplasma-applets-plasma-nm k3b phonon-vlc ktorrent smplayer kwebkitpart \
+        gtk-theme-switch2
 
     # TODO Use gtk-theme-switch2 command line to set GTK oxigen theme using the command line
 
     # Create desktop directories
-    mkdir -p \
-        ~/Desktop ~/.kde4/Autostart ~/Documents ~/Downloads ~/Videos ~/Pictures ~/Music 2>/dev/null
+    mkdir -p ~/Desktop ~/.kde4/Autostart ~/Documents ~/Downloads ~/Videos ~/Pictures ~/Music \
+        2>/dev/null
 
     # Disable akonadi
     #subs 'StartServer=true' 'StartServer=false' '~/.config/akonadi/akonadiserverrc'
@@ -403,8 +405,9 @@ installTools () {
     spacins \
         firefox chromium flashplugin blender gimp inkscape \
         gvim htop p7zip yakuake calibre nmap wget \
-        libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-en-US libreoffice-es \
-        libreoffice-kde4 xcursor-vanilla-dmz oxygen-gtk2 virtualbox virtualbox-host-modules kaffeine
+        libreoffice-writer libreoffice-calc libreoffice-impress libreoffice-en-US \
+        libreoffice-es libreoffice-kde4 xcursor-vanilla-dmz oxygen-gtk2 virtualbox \
+        virtualbox-host-modules kaffeine
 }
 
 installDevel () {
@@ -432,7 +435,7 @@ fetchFile () {
     curl "${WEB_FILES}/$1" >~/.$1
 }
 
-# I N S T A L L ####################################################################################
+# I N S T A L L ###############################################################################
 #
 # INTERNAL
 #
