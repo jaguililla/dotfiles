@@ -383,8 +383,8 @@ EOD
 
 installKde () {
     spacins kde-meta-kdeadmin kde-meta-kdeartwork kde-meta-kdebase kde-meta-kdegraphics \
-        kde-meta-kdemultimedia kde-meta-kdeplasma-addons kde-meta-kdeutils k3b phonon-vlc \
-        ktorrent smplayer kwebkitpart gtk-theme-switch2
+        kde-meta-kdemultimedia kde-meta-kdeplasma-addons kde-meta-kdeutils \
+        kdeplasma-applets-plasma-nm k3b phonon-vlc ktorrent smplayer kwebkitpart gtk-theme-switch2
 
     # TODO Use gtk-theme-switch2 command line to set GTK oxigen theme using the command line
 
