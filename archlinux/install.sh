@@ -47,7 +47,7 @@ SYSTEM_USER='jam'
 SYSTEM_HOST="${SYSTEM_USER}host"
 
 NETWORK_IFACE='enp0s3'
-WIFI_IFACE='wlp3s0'
+WIFI_IFACE='wlp2s0'
 
 XDRIVER=''                              # X Driver package
 #XDRIVER_MODULE='nvidia'                 # X Driver module
@@ -204,6 +204,7 @@ mountSystem () {
 performChroot () {
     setupLocale
     setupNetwork
+    setupWifi
     setupInitramdisk 
     setupBootloader
     echo && echo "Enter 'root' password:"
@@ -248,6 +249,7 @@ setupNetwork () {
 setupWifi () {
     iw dev
     pause "Press any key to setup wifi..."
+    wifi-menu $WIFI_IFACE
 }
 
 setupInitramdisk () {
@@ -256,7 +258,7 @@ setupInitramdisk () {
 }
 
 setupBootloader () {
-    pacins grub
+    pacins grub efibootmgr dosfstools dialog iw
     grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck
     grub-mkconfig -o /boot/grub/grub.cfg
 }
