@@ -19,10 +19,10 @@ KB_LAYOUT='es'
 
 BOOT_DISK='/dev/sda'
 
-PARTITION_BOOT="${BOOT_DISK}5"
-PARTITION_SWAP="${BOOT_DISK}6"
-PARTITION_ROOT="${BOOT_DISK}7"
-PARTITION_HOME="${BOOT_DISK}8"
+PARTITION_BOOT="${BOOT_DISK}2"
+PARTITION_SWAP="${BOOT_DISK}3"
+PARTITION_ROOT="${BOOT_DISK}4"
+PARTITION_HOME="${BOOT_DISK}5"
 
 #
 # Partition sizes in MB
@@ -243,6 +243,9 @@ EOD
 setupNetwork () {
     echo $SYSTEM_HOST > /etc/hostname
     systemctl enable dhcpcd@${NETWORK_IFACE}.service
+}
+
+setupWifi () {
     iw dev
     pause "Press any key to setup wifi..."
 }
