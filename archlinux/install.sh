@@ -5,7 +5,7 @@
 # Arch Linux install script
 #
 # It isn't interactive, you need to set the variables
-# To change partitions, use 'gdisk' before running this script
+# To change partitions, use 'cgdisk' before running this script
 #
 # For reference see: Beginner's Guide & General Recommendations in the Arch Linux Wiki
 # Start ISO with vga=ask for a pleasant console installation
@@ -97,7 +97,7 @@ EOD
 
     setupConsole
     pause 'Check disk partitions. Press enter to continue'
-    gdisk
+    cgdisk $BOOT_DISK
     setupDisk
     setupPacman
     setupDate
