@@ -5,7 +5,7 @@
 # Arch Linux install script
 #
 # It isn't interactive, you need to set the variables
-# To change partitions, use 'cfdisk' before running this script
+# To change partitions, use 'gdisk' before running this script
 #
 # For reference see: Beginner's Guide & General Recommendations in the Arch Linux Wiki
 # Start ISO with vga=ask for a pleasant console installation
@@ -47,8 +47,9 @@ SYSTEM_USER='jam'
 SYSTEM_HOST="${SYSTEM_USER}host"
 
 NETWORK_IFACE='enp0s3'
+WIFI_IFACE='w'
 
-XDRIVER='nvidia'                        # X Driver package
+XDRIVER=''                              # X Driver package
 XDRIVER_MODULE='nvidia'                 # X Driver module
 
 # C H E C K S #################################################################################
@@ -96,7 +97,7 @@ EOD
 
     setupConsole
     pause 'Check disk partitions. Press enter to continue'
-    cfdisk
+    gdisk
     setupDisk
     setupPacman
     setupDate
@@ -242,6 +243,8 @@ EOD
 setupNetwork () {
     echo $SYSTEM_HOST > /etc/hostname
     systemctl enable dhcpcd@${NETWORK_IFACE}.service
+    iw dev
+    pause "Press any key to setup wifi..."
 }
 
 setupInitramdisk () {
