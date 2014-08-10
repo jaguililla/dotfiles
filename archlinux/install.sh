@@ -47,10 +47,10 @@ SYSTEM_USER='jam'
 SYSTEM_HOST="${SYSTEM_USER}host"
 
 NETWORK_IFACE='enp0s3'
-WIFI_IFACE='w'
+WIFI_IFACE='wlp3s0'
 
 XDRIVER=''                              # X Driver package
-XDRIVER_MODULE='nvidia'                 # X Driver module
+#XDRIVER_MODULE='nvidia'                 # X Driver module
 
 # C H E C K S #################################################################################
 lspci|grep 'VirtualBox' >/dev/null
@@ -256,9 +256,8 @@ setupInitramdisk () {
 }
 
 setupBootloader () {
-    pacins grub-bios
-    grub-install --target=i386-pc --recheck $BOOT_DISK
-    cp /usr/share/locale/en\@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
+    pacins grub
+    grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck
     grub-mkconfig -o /boot/grub/grub.cfg
 }
 
