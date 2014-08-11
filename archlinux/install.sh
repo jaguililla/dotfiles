@@ -99,6 +99,7 @@ EOD
     pause 'Check disk partitions. Press enter to continue'
     cgdisk $BOOT_DISK
     setupDisk
+    setupMirrors
     setupPacman
     setupDate
 
@@ -165,14 +166,16 @@ EOD
 }
 
 # Use rankmirror to get the fastest mirror
-setupPacman () {
+setupMirrors () {
     echo "Generating list of mirrors. This can take a long time, please be patient!"
     cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.all
     mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist~
     rankmirrors -n 6 /etc/pacman.d/mirrorlist~ >/etc/pacman.d/mirrorlist
     cat /etc/pacman.d/mirrorlist
     echo && pause 'List of mirrors. Press any key to continue...'
+}
 
+setupPacman () {
     [ "$(uname -m)" == "x86_64" ] && cat <<EOD >>/etc/pacman.conf
 [multilib]
 SigLevel = PackageRequired
@@ -205,7 +208,7 @@ mountSystem () {
 performChroot () {
     setupLocale
     setupNetwork
-    setupWifi
+    #setupWifi
     setupInitramdisk 
     setupBootloader
     echo && echo "Enter 'root' password:"
