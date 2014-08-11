@@ -262,11 +262,9 @@ setupInitramdisk () {
 }
 
 setupBootloader () {
-    pacins grub efibootmgr dosfstools dialog iw
-    grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=arch_grub --recheck
+    pacins grub efibootmgr dosfstools dialog iw wpa_supplicant
+    grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=archlinux --recheck
     grub-mkconfig -o /boot/grub/grub.cfg
-    #pacins gummiboot
-    #gummiboot install
 }
 
 ##### C O N F I G #####
