@@ -99,7 +99,7 @@ EOD
     pause 'Check disk partitions. Press enter to continue'
     cgdisk $BOOT_DISK
     setupDisk
-    setupMirrors
+    #setupMirrors
     setupPacman
     setupDate
 
@@ -343,7 +343,7 @@ vboxsf
 vboxvideo
 EOD
     sudo depmod
-    sudo modprobe vboxguest vboxsf vboxvideo
+    sudo modprobe -a vboxguest vboxsf vboxvideo
     sudo gpasswd -a $SYSTEM_USER vboxusers
 }
 
