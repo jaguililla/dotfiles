@@ -33,7 +33,7 @@ SIZE_BOOT=100
 SIZE_SWAP=8000
 SIZE_ROOT=70000
 
-FILESYSTEM_BOOT='ext2'
+FILESYSTEM_BOOT='fat'
 FILESYSTEM_ROOT='ext4'
 FILESYSTEM_HOME='ext4'
 
@@ -138,7 +138,8 @@ EOD
     [ "$pauseReply" != "y" ] && exit 1
 
     echo "Formatting $PARTITION_BOOT [$FILESYSTEM_BOOT]"
-    mkfs -t $FILESYSTEM_BOOT $PARTITION_BOOT
+    #mkfs -t $FILESYSTEM_BOOT $PARTITION_BOOT
+    mkfs.fat -F32 $PARTITION_BOOT # Required by UEFI
     echo "Formatting $PARTITION_SWAP [SWAP]"
     mkswap $PARTITION_SWAP
     echo "Formatting $PARTITION_ROOT [$FILESYSTEM_ROOT]"
