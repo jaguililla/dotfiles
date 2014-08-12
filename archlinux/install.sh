@@ -49,8 +49,8 @@ SYSTEM_HOST="${SYSTEM_USER}host"
 NETWORK_IFACE='enp0s3'
 WIFI_IFACE='wlp2s0'
 
-XDRIVER=''                              # X Driver package
-#XDRIVER_MODULE='nvidia'                 # X Driver module
+XDRIVER='xf86-video-intel'              # X Driver package
+XDRIVER_MODULE='i915'                   # X Driver module
 
 # C H E C K S #################################################################################
 lspci|grep 'VirtualBox' >/dev/null
@@ -335,7 +335,7 @@ performUserConfig () {
 
 setupVbox () {
     spacins virtualbox-guest-utils virtualbox-guest-modules-lts
-    sudo bash -c 'cat >>/etc/modules-load.d/virtualbox.conf' <<EOD
+    sudo bash -c 'cat >/etc/modules-load.d/virtualbox.conf' <<EOD
 vboxguest
 vboxsf
 vboxvideo
@@ -352,17 +352,16 @@ setupSound () {
     alsamixer 
     speaker-test -l2 -c2 -Ddefault -twav
     sudo alsactl -f /var/lib/alsa/asound.state store
-    # Edit rc.conf (add 'alsa' to daemons)
 }
 
 installX () {
     # Install X
     spacins xorg-server xorg-xinit xorg-server-utils xorg-twm xorg-xclock xterm $XDRIVER
 
-    #sudo modprobe $XDRIVER_MODULE
+    sudo modprobe $XDRIVER_MODULE
 
     # Fix the keyboard layout (write 10-keyboard.conf)
-    sudo bash -c 'cat >>/etc/X11/xorg.conf.d/10-keyboard.conf' <<EOD
+    sudo bash -c 'cat >/etc/X11/xorg.conf.d/10-keyboard.conf' <<EOD
 Section "InputClass"
     Identifier         "Keyboard Defaults"
     MatchIsKeyboard	   "yes"
@@ -372,6 +371,7 @@ EOD
 
     echo "Xorg: Check the Xorg setup, specially the keyboard layout"
     pause "Press any key to start X. To continue exit all xterms"
+    chmod u+s /usr/bin/Xorg
     startx # TEST
 
     # Remove xterm, twm, unused fonts, etc.
