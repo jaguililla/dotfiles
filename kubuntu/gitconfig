@@ -1,0 +1,6 @@
+[user]
+	email = juanjoaguililla@gmail.com
+	name = jamming
+[core]
+	autocrlf = input
+	excludesfile = /home/jam/.gitignore_global

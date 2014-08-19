@@ -70,7 +70,6 @@ alias pg='ps -Af | grep $1'         # requires an argument
 alias ssha='eval `keychain --eval --agents ssh id_rsa`'
 alias backup='rsync -a --delete'
 
-
 # privileged access
 if [ $UID -ne 0 ]; then
     alias sudo='sudo '
@@ -123,7 +122,7 @@ alias spac='sudo pac'
 #alias pac-search='pac -Ss'
 #alias pac-query='pac -Q'
 
-# Pacman alias examples
+# Pacman aliases
 alias pacupg='spac -Syu'  # Synchronize with repositories before upgrading packages that are out of date on the local system.
 alias pacin='spac -S'     # Install specific package(s) from the repositories
 alias pacins='spac -Up'   # Install specific package not from the repositories but from a file 
