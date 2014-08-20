@@ -4,3 +4,46 @@
 [core]
 	autocrlf = input
 	excludesfile = /home/jam/.gitignore_global
+    editor = vim
+[color]
+    ui = auto
+[push]
+    default = current
+[status]
+    displayCommentPrefix = true
+[alias]
+    co = checkout
+    ci = commit
+    st = status -sb
+    br = branch
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+    slog = log --pretty=oneline --abbrev-commit
+    tree = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative
+    wipe = !git reset --hard && git clean -fd
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lglist = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    diffbranches = diff --name-status
+    filesInCi = show --pretty="format:" --name-only 
+    alias = config --get-regexp alias
+    kdiff = mergetool -t kdiff3
+    lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+    unstage = reset HEAD --
+    web = instaweb --httpd=webrick
+    webstop = instaweb --httpd=webrick --stop
+    startweb = instaweb --httpd=webrick --start
+    stopweb = instaweb --httpd=webrick --stop
+    pushall = push --recurse-submodules=on-demand
+    whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+    lci = "!sh -c \"git log --no-merges --author $1\" -"
+    delremotetag="!sh -c \"git push origin :refs/tags/$1\" -"
+    coremotebr="!sh -c \"git checkout -b $2 --track $1/$2\" -"
+    pullr="pull --rebase"
+    rtagl='git ls-remote --tags ./.'
+    prune="remote prune origin"
+    untrack="!sh -c \"git config --file .git/config --unset branch.$1.merge\" -"
+    brtotaldelete="!sh -c \"git branch -d $2 && git branch -d -r $1/$2 && git push $1 :$2\" -"
+    addall = add -A :/
+
