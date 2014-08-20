@@ -1,3 +1,7 @@
+[KDE Keyboard Layout Switcher][Global Shortcuts]
+Switch keyboard layout to Spanish=none
+Switch to Next Keyboard Layout=none
+
 [kactivitymanagerd][Global Shortcuts]
 switch-to-activity-50f4da8f-e8d8-45c0-af8a-55b6a4f2024b=none
 switch-to-activity-e649f6bc-a7eb-45a4-8f91-325b859e3a28=none
@@ -19,11 +23,22 @@ Toggle Keyboard Backlight=Keyboard Light On/Off
 display=Display
 
 [khotkeys][Global Shortcuts]
+{14b22439-41c3-496c-a4b6-732556cf28cb}=Meta+E
 {14f5d1fd-8ad5-42e6-8820-afeb0a50c2ca}=Meta+F
 {200ddbcc-fc32-4d8e-9441-84817921ab3b}=Meta+S
 {6fbac892-e434-4f12-860f-cb76751a372e}=Print
 {a5aeee8e-18a9-47e6-bd2d-776fe4cd0896}=Meta+W
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=Search
+
+[klipper][Global Shortcuts]
+clear-history=none
+clipboard_action=none
+cycleNextAction=none
+cyclePrevAction=none
+edit_clipboard=none
+repeat_action=none
+show-barcode=none
+show-on-mouse-pos=none
 
 [kmix][Global Shortcuts]
 decrease_volume=Volume Down
