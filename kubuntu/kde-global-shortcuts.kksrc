@@ -30,16 +30,6 @@ display=Display
 {a5aeee8e-18a9-47e6-bd2d-776fe4cd0896}=Meta+W
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=Search
 
-[klipper][Global Shortcuts]
-clear-history=none
-clipboard_action=none
-cycleNextAction=none
-cyclePrevAction=none
-edit_clipboard=none
-repeat_action=none
-show-barcode=none
-show-on-mouse-pos=none
-
 [kmix][Global Shortcuts]
 decrease_volume=Volume Down
 increase_volume=Volume Up
@@ -83,10 +73,10 @@ Invert Screen Colors=none
 Kill Window=Ctrl+Alt+Esc
 MoveMouseToCenter=Meta+F6
 MoveMouseToFocus=Meta+F5
-MoveZoomDown=Meta+Down
-MoveZoomLeft=Meta+Left
-MoveZoomRight=Meta+Right
-MoveZoomUp=Meta+Up
+MoveZoomDown=none
+MoveZoomLeft=none
+MoveZoomRight=none
+MoveZoomUp=none
 Remove Window From Group=none
 Setup Window Shortcut=none
 Show Desktop=none
@@ -154,12 +144,12 @@ Window Fullscreen=Meta+F11
 Window Grow Horizontal=none
 Window Grow Vertical=none
 Window Lower=none
-Window Maximize=none
+Window Maximize=Meta+Up
 Window Maximize Horizontal=none
 Window Maximize Vertical=none
-Window Minimize=none
+Window Minimize=Meta+Down
 Window Move=none
-Window No Border=none
+Window No Border=Meta+F12
 Window On All Desktops=none
 Window One Desktop Down=none
 Window One Desktop Up=none
@@ -172,8 +162,8 @@ Window Pack Right=none
 Window Pack Up=none
 Window Quick Tile Bottom Left=none
 Window Quick Tile Bottom Right=none
-Window Quick Tile Left=none
-Window Quick Tile Right=none
+Window Quick Tile Left=Meta+Left
+Window Quick Tile Right=Meta+Right
 Window Quick Tile Top Left=none
 Window Quick Tile Top Right=none
 Window Raise=none
@@ -224,23 +214,6 @@ Previous Activity=none
 Show Dashboard=none
 Stop Activity=none
 SystemTray-Klipper-6=none
-activate widget 20=none
-activate widget 21=none
-activate widget 22=none
-activate widget 23=none
 activate widget 26=none
-activate widget 28=none
-activate widget 29=none
-activate widget 30=none
+activate widget 43=none
 manage activities=none
-
-[wacomtablet][Global Shortcuts]
-Map to fullscreen=Meta+Ctrl+F
-Map to screen 1=Meta+Ctrl+1
-Map to screen 2=Meta+Ctrl+2
-Toggle screen map selection=Meta+Ctrl+M
-Toggle stylus mode=Meta+Ctrl+S
-Toggle touch tool=Meta+Ctrl+T
-
-[yakuake][Global Shortcuts]
-toggle-window-state=Meta+T
