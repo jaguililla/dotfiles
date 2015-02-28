@@ -1,0 +1,89 @@
+INFORMACIÓN SOBRE LA COMPILACIÓN DEL PROYECTO
+=============================================
+Para la construcción del proyecto se usa el script "build.*" (dependiendo del
+sistema operativo) en el directorio raiz del mismo.
+Para la compilación y gestión del proyecto se usa la herramienta de desarrollo
+Jam (PENDIENTE (CAMBIAR URL) http://jakarta.apache.org/ant). A fin de que no se
+tenga que instalar Jam aparte, en el subdirectorio build del proyecto se proporciona
+una copia de esta (directorios bin y lib). El script build.* se encarga de inicializar las
+variables de entorno apropiadas y llamar a esta copia de Jam, la sintaxis es la
+misma que Jam. Para más información referirse a la documentación de Jam o
+escribir "build -help".
+
+build [opciones] [targets]
+
+FICHEROS
+========
+Estos ficheros contienen información utilizada en el proceso de construcción
+de la aplicación.
+    * build.jam
+
+Para más información acerca de los ficheros y directorios del proyecto ver el
+archivo project.txt.
+
+PROPIEDADES
+===========
+Las propiedades son variables utilizadas por el programa de construccion (Ant),
+se pueden fijar desde la linea de comandos con la opcion -D, por ejemplo:
+"build -Dpropiedad=valor"
+
+Propiedades de configuracion del proyecto:
+    * appName: nombre corto de la aplicacion.
+    * docPath: directorio de la documentacion del proyecto.
+    * javadocPath: directorio de la documentacion del codigo (javadoc).
+    * javadocPackageNames: nombres de los paquetes de los que se generará la documentación.
+    * javaBinaryPath: directorio base de las clases Java compiladas.
+    * libraryPath: directorio donde se guardan los ficheros de información acerca de la aplicación en si misma.
+    * resourcePath: directorio de recursos (archivos que no son codigo fuente)
+    * packPath: directorio en el que se almacenan los binarios empaquetados (zip, jar, war).
+    * snapshotPath: directorio para almacenar las instantaneas del proyecto.
+    * sourcePath: directorio base de todo el codigo fuente del proyecto.
+    * javaSourcePath: directorio base del codigo fuente Java.
+    * javaSourceFiles: conjunto de ficheros con los fuentes Java que corresponden a este proyecto.
+    * javaSourcePattern:
+        <!-- <include name="pkg/**/?*.java"/> -->
+
+TARGETS
+=======
+Target (objetivo): es un conjunto de acciones.
+Para saber los targets que se pueden invocar en un proyecto, se puede ejecutar
+la sentencia: "build -projecthelp" que lista todos los targets principales y
+una pequeña descripción de cada uno. Los targets implementados por defecto en
+la plantilla son:
+    * clean: Borra todos los ficheros generados.
+    * compile:Compila los ficheros de código fuente del proyecto.
+    * build:Recompila todos los ficheros de código fuente del proyecto.
+    * javadoc:Genera la documentación del código fuente.
+    * snapshot:Crea una copia de los ficheros del proyecto.
+    * mkjar:Crea un directorio con la estructura de ficheros del jar.
+    * jar:Genera un fichero JAR.
+    * mkwar:Crea un directorio con la estructura de ficheros del war.
+    * war:Genera un fichero WAR.
+    * release:Genera el archivo de la aplicación (binarios, documentación y código). estructura de una release:
+          release.zip
+              /app.jar, app.war, app.ear, ... (ejecutable)
+              /app-src.zip (fuentes del proyecto -snapshot-)
+              /doc/api (documentacion api)
+              /doc/**otros documentos** (manual usuario, instalacion, etc.)
+
+AMPLIACION
+==========
+Como crear targets especificos de la aplicación.
+
+EJEMPLOS
+========
+Ejemplos de uso más común:
+
+build
+
+build javadoc
+
+build clean
+
+build compile javadoc
+
+build -DjavaSourcePath=src
+
+build -DjavaSourcePath=src compile
+
+build -logfile log.txt

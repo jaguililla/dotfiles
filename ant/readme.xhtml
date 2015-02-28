@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- H E A D ============================================================= -->
+<head>
+    <title>README</title>
+</head>
+
+<!-- B O D Y ============================================================= -->
+<body>
+
+<h1>INFORMACIÓN SOBRE LA COMPILACIÓN DEL PROYECTO</h1>
+
+<p>Para la construcción del proyecto se usa el script "build.*" (dependiendo del
+sistema operativo) en el directorio raiz del mismo.</p>
+
+<p>Para la compilación y gestión del proyecto se usa la herramienta de desarrollo
+Ant <a href="http://ant.apache.org">(http://ant.apache.org)</a>. Ant debe estar
+instalado en la máquina en la que se construya el proyecto y la variable de
+entorno "ANT_HOME" debe estar inicializada al directorio de instalación de Ant.
+El script build.* se encarga de comprobar que Ant esta correctamente instalado,
+la sintaxis de este comando es la misma que Ant. Para más información referirse
+a la documentación de Ant.</p>
+
+<p>build [opciones] [targets]</p>
+
+<h1>FICHEROS</h1>
+
+<p>Estos ficheros contienen información utilizada en el proceso de construcción
+de la aplicación.</p>
+
+<ul>
+    <li>build.xml</li>
+    <li>project.xml</li>
+    <li>checks.xml</li>
+</ul>
+
+<p>Para más información acerca de los ficheros y directorios del proyecto ver el
+apartado <a href="#estructuraDirectorios">ESTRUCTURA DE DIRECTORIOS DEL PROYECTO</a>.</p>
+
+<h1>PROPIEDADES</h1>
+
+<p>Las propiedades son variables utilizadas por el programa de construccion (Ant),
+se pueden fijar desde la linea de comandos con la opcion -D, por ejemplo:</p>
+
+<p>"build -Dpropiedad=valor"</p>
+
+<p>Sus valores por defecto estan definidos en el fichero project.xml junto con
+las propiedades del proyecto (las unicas que es necesario modificar)</p>
+
+<p>Propiedades de configuracion del proyecto:</p>
+
+    <p>PROYECTO (definidas en el elemento 'project/application')</p>
+    <ul>
+        <li>appName: nombre corto de la aplicacion.</li>
+        <li>ant.project.name</li>
+        <li>javaLibraries</li>
+        <li>mainClass</li>
+    </ul>
+
+    <p>SISTEMA (definidas en 'build.properties')</p>
+    <ul>
+        <li>javaPath: directorio base del codigo fuente Java.</li>
+        <li>docPath: directorio de la documentacion del proyecto.</li>
+        <li>javadocPath: directorio de la documentacion del codigo (javadoc).</li>
+        <li>binaryPath: directorio base de las clases Java compiladas.</li>
+        <li>configPath: directorio de los ficheros de informacion (web.xml, manifest.mf, directorio services, etc.).</li>
+        <li>libraryPath: directorio donde se guardan los ficheros de información acerca de la aplicación en si misma.</li>
+        <li>resourcePath: directorio de recursos (archivos que no son codigo fuente)</li>
+        <li>distPath: directorio en el que se almacenan los binarios empaquetados (zip, jar, war).</li>
+        <li>snapshotPath: directorio para almacenar las instantaneas del proyecto.</li>
+        <li>javadocResourcePath</li>
+        <li>buildPath</li>
+        <li>libraryStore</li>
+        <li>jarPath</li>
+        <li>warPath</li>
+        <li>tempPath</li>
+    </ul>
+
+<h1>TARGETS</h1>
+
+<p>Target (objetivo): es un conjunto de acciones.</p>
+<p>Para saber los targets que se pueden invocar en un proyecto, se puede ejecutar
+la sentencia: "build -projecthelp" que lista todos los targets principales y
+una pequeña descripción de cada uno. Los targets implementados por defecto en
+la plantilla son:</p>
+<ul>
+    <li>clean: borra todos los ficheros generados.</li>
+    <li>compile: compila los ficheros de código fuente del proyecto.</li>
+    <li>debug: crea la estructura de ficheros necesaria para ejecutar en modo de depuración en 'bin'</li>
+    <li>rebuild: recompila todos los ficheros de código fuente del proyecto.</li>
+    <li>javadoc: genera la documentación del código fuente.</li>
+    <li>snapshot: crea una copia de los ficheros del proyecto.</li>
+    <li>mkjar: crea un directorio con la estructura de ficheros del jar.</li>
+    <li>jar: genera un fichero JAR.</li>
+    <li>mkwar: crea un directorio con la estructura de ficheros del war.</li>
+    <li>war: genera un fichero WAR.</li>
+    <li>dist:</li>
+    <li>release: genera el archivo de la aplicación (binarios, documentación y código). estructura de una release:
+        <p>release.zip</p>
+        <ul>
+            <li>/app.jar, app.war, app.ear, ... (ejecutable)</li>
+            <li>/app-src.zip (fuentes del proyecto -snapshot-)</li>
+            <li>/doc/api (documentacion api)</li>
+            <li>/doc/**otros documentos** (manual usuario, instalacion, etc.)</li>
+        </ul>
+    </li>
+</ul>
+
+<h1>AMPLIACION</h1>
+
+<p>Como crear targets especificos de la aplicación.</p>
+
+<h1>EJEMPLOS</h1>
+
+<p>Ejemplos de uso más común:</p>
+
+<p>build</p>
+
+<p>build javadoc</p>
+
+<p>build clean</p>
+
+<p>build compile javadoc</p>
+
+<p>build -DjavaSourcePath=src</p>
+
+<p>build -DjavaSourcePath=src compile</p>
+
+<p>build -logfile log.txt</p>
+
+
+<h1>INFORMACION ACERCA DE LA FIRMA</h1>
+
+<!-- NOTA: solo se debe ejecutar una vez  (generar con keytool -exec-) -->
+<!--
+<genkey alias="${signAlias}" storepass="${signStorepass}" keypass="${signKeypass}" verbose="true">
+        <dname>
+                <param name="CN" value="Nombre y apellidos"/>
+                <param name="OU" value="Unidad de la organizacion"/>
+                <param name="O" value="Organizacion"/>
+                <param name="L" value="Ciudad"/>
+                <param name="ST" value="Provincia"/>
+                <param name="C" value="Codigo de pais (ES)"/>
+        </dname>
+</genkey>
+-->
+
+<h1>INFORMACION DE EJECUCION</h1>
+
+<p>Depuración</p>
+
+<h1>INTEGRACION CON ENTORNOS</h1>
+
+<ul>
+  <li>Eclipse</li>
+  <li>NetBeans</li>
+</ul>
+
+<h1><a name="estructuraDirectorios"/>ESTRUCTURA DE DIRECTORIOS DEL PROYECTO</h1>
+
+<p>Este documento pretende ser una referencia a la hora de decidir en que localización
+del proyecto guardar un determinado fichero.</p>
+
+<p>Ficheros y directorios relevantes del proyecto.</p>
+
+<pre>
+proyecto/                   directorio raiz del proyecto. Los logs se almacenan aquí.
+    bin/                    directorio de los binarios
+    build/                  directorio con la información de construcción del proyecto
+        build.properties    propiedades internas del sistema de construcción del proyecto
+        build.xml           fichero de construcción del proyecto (procesado por Ant)
+        doclet.css          fichero de estilo del doclet
+        doclet.properties   propiedades del doclet que usa javadoc para generar la documentación
+        project.properties  propiedades especificas del proyecto
+        sign.properties     propiedades de cifrado de los binarios
+    doc/                    directorio raiz de la documentación
+        apidoc/             documentación del código fuente
+        apires/             archivos y carpetas que serán copiados al directorio de la documentación
+                            del código (javadoc)
+        build.txt           información de compilación
+        project.txt         descripción de los ficheros y directorios más importantes del proyecto
+        debug.txt           información acerca de como depurar el proyecto en un IDE.
+        sign.txt            documentación para firmar los archivos del proyecto.
+    etc/                    directorio con información acerca de la aplicación
+        web.xml             descriptor de una aplicación web
+    file/                   ficheros de la aplicación (almacenados fuera de los .jar y .war) por ejemplo los scripts
+    misc/                   (opcional) Ficheros de utilidad del proyecto (los que no encajan en ningun otro sitio)
+    dist/                   directorio con los ficheros empaquetados y las instantaneas de la aplicación.
+        jar/                (temporal) Estructura de ficheros del jar. Usada para lanzar la aplicación en pruebas (debug).
+        war/                (temporal) Estructura de ficheros del war
+    res/                    directorio de los recursos del proyecto
+    src/                    código fuente del proyecto
+    build.bat               script de compilación (windows)
+    build.sh                script de compilación (unix)
+</pre>
+
+<p>Extensiones de los ficheros</p>
+
+<ul>
+  <li>.bak (backup) fichero de respaldo. se borrara automaticamente !!! no dejar ficheros validos con esta extensión.</li>
+  <li>.old Copia antigua</li>
+</ul>
+
+<p>MOVER al directorio de los proyectos !!!</p>
+
+<h1>SISTEMA DE CONTROL DE VERSIONES</h1>
+
+<p>Ficheros ignorados:</p>
+
+<ul>
+  <li>.*</li>
+  <li>*~</li>
+  <li>*.class</li>
+  <li>*.bak</li>
+  <li>*.old</li>
+  <li>*.jar</li>
+  <li>bin</li>
+  <li>dist</li>
+</ul>
+
+</body>
+
+</html>
