@@ -1,0 +1,79 @@
+/*
+ * Maven Site Style Sheet
+ * Visual appearance for the generated Maven site
+ */
+
+h2 { font-size: 22px; }
+h3 { font-size: 17px; }
+
+h3 { color: #FD0000; }
+h2, h4, h5 { color: #C1030D; }
+
+a:link, a:active, a:hover { color: #FD0000; }
+a:visited { color: #C1030D; }
+
+#leftColumn a:link { color: #C1030D; }
+#leftColumn a:visited { color: #FD0000; }
+#leftColumn .active a { color: #FFF; }
+#leftColumn .active a:hover { background-color: #ED0000; }
+#leftColumn {
+  width: 225px;
+  margin-top: 30px;
+}
+
+#bodyColumn { margin-top: 10px; }
+#breadcrumbs, #banner { display: none; }
+#poweredBy img { border: 1px solid rgba(0, 0, 0, 0.05); }
+
+/* .brand { padding: 5px 20px 5px 20px; } */
+/* .brand img { height: 32px; } */
+
+.navbar .nav { margin-top: 12px; }
+
+.navbar .nav li.dropdown.open>.dropdown-toggle .caret,
+.navbar .nav li.dropdown.active>.dropdown-toggle .caret,
+.navbar .nav li.dropdown.open.active>.dropdown-toggle .caret,
+.navbar .nav li.dropdown>a:hover .caret,
+.navbar .nav li.dropdown>.dropdown-toggle .caret,
+.navbar .nav li.dropdown>.dropdown-toggle .caret:hover { border-top-color: #FFF; }
+
+.navbar .nav li.dropdown.open>.dropdown-toggle,
+.navbar .nav li.dropdown.active>.dropdown-toggle,
+.navbar .nav .dropdown-menu li>a:hover,
+.navbar .nav .dropdown-menu li>a:focus,
+.navbar .nav .dropdown-submenu:hover>a {
+  color: #FFF;
+  background: #FD0000 none;
+}
+
+.navbar .nav > li > a {
+  color: #FFF;
+  font-size: 18px;
+  text-shadow: none;
+}
+.navbar .nav > li > a:hover { color: #FFF; }
+
+.nav-list .active > a {
+  background-color: #ED0000;
+  color: #FFF;
+}
+
+.navbar-inner {
+  background-image: -webkit-gradient(
+    linear, left bottom, left top, color-stop(0.2, #C1030D), color-stop(0.80, #ED0000)
+  );
+  background-image: -moz-linear-gradient(
+    center bottom, #C1030D 20%, #ED0000 80%
+  );
+  background-color: #C1030D;
+}
+
+.table tbody th { background-color: #B9B09D; }
+.table { border: 1px solid #DDD }
+
+input.search-query {
+  padding: 5px;
+  border-radius: 3px;
+}
+
+footer { color: #B9B09D; }

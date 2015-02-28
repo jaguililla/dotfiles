@@ -1,0 +1,39 @@
+<assembly>
+	<id>bundle</id>
+
+	<formats>
+		<format>zip</format>
+	</formats>
+
+    <!-- The application JAR -->
+	<files>
+		<file>
+			<source>${project.build.directory}/${project.build.finalName}.jar</source>
+		</file>
+	</files>
+
+	<fileSets>
+		<!-- Application configuration files and profiles -->
+		<fileSet>
+			<directory>src/main/config</directory>
+            <outputDirectory>/</outputDirectory>
+            <filtered>true</filtered> <!-- Required to filter 'readme.md' -->
+			<excludes>
+				<exclude>intellij-*.xml</exclude>
+				<exclude>eclipse-*.xml</exclude>
+			</excludes>
+		</fileSet>
+
+		<!--
+         | Documentation site, you need to execute the 'site' goal to include it in the bundle.
+         | If you don't mind using 'site' as the documents directory, you can simply use the
+         | 'includeSiteDirectory' assembly property.
+         !-->
+		<fileSet>
+			<directory>${project.reporting.outputDirectory}</directory>
+			<outputDirectory>/documents</outputDirectory>
+		</fileSet>
+        
+        <!-- TODO Add pdf documentation once it is generated correctly -->
+	</fileSets>
+</assembly>

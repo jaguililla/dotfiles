@@ -1,0 +1,19 @@
+<!-- TODO Filter this file with project parameters and setup https://bintray.com/ -->
+<jnlp spec="1.6+" codebase="http://bintray">
+	<information>
+		<title>POPAPP</title>
+		<vendor>Jamming</vendor>
+		<description>Framework</description>
+<!-- 		<homepage href=".html" /> -->
+<!-- 		<icon href=".jpg" /> -->
+<!-- 		<icon kind="splash" href=".gif" /> -->
+		<offline-allowed />
+	</information>
+	<security>
+		<all-permissions />
+	</security>
+	<resources>
+		<jar href="releases/popapp.jar" />
+	</resources>
+	<application-desc main-class="Main" />
+</jnlp>

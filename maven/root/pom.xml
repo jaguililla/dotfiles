@@ -1,0 +1,639 @@
+<!--
+ | POPAPP Copyright © 2011 Juan José Aguililla. All rights reserved.
+ |
+ | This program comes WITHOUT ANY WARRANTY; It is free software, you can redistribute it and/or
+ | modify it under the terms of the GNU General Public License, Version 3.0.
+ | You may obtain a copy of the License at: http://www.gnu.org/licenses/gpl.html
+-->
+
+<!--
+ | Javadoc uses a custom doclet that creates class diagrams. It requires
+ | the 'graphviz' program installed with the executable in the path.
+ |
+ | Maven rules:
+ | * One group per project
+ | * 3 digit versions aligned with SCM (release plugin)
+ |
+ | TODO Profiles (http://maven.apache.org/guides/introduction/introduction-to-profiles.html)
+ | TODO Archetypes (http://maven.apache.org/guides/mini/guide-creating-archetypes.html)
+ | TODO SCM (http://maven.apache.org/scm/maven-scm-plugin/index.html)
+ | TODO Jetty testing (http://docs.codehaus.org/display/JETTY/Maven+Jetty+Plugin)
+ | TODO ciManagement
+ | TODO Releases (maven.apache.org/plugins/maven-release-plugin/examples/prepare-release.html)
+ |      (docs.codehaus.org/display/MAVENUSER/Create+a+release+using+CVSNT)
+ | TODO Sign JARs
+ | TODO DOAP report
+ | TODO Tasklist (TODOs) report
+ | TODO Change cobertura report stylesheet
+ | TODO Use Eclipse plugin to configure code formatting and save actions
+ | TODO Support for markdown wiki syntax (when mylyn supports it). See doxia-module-markdown
+ | TODO Use lesscss (http://lesscss.org) in site and Javadoc and Xref stylesheets. See Wro4j
+-->
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+    http://maven.apache.org/POM/4.0.0
+    http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <!-- C O R E   P R O P E R T I E S ====================================================== -->
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>co.popapp.maven</groupId>
+  <artifactId>root</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0.0</version>
+
+  <name>Root POM</name>
+  <description>Root POM. Base POM for all the projects.</description>
+  <inceptionYear>2010</inceptionYear>
+  <url>https://github.com/jamming/popapp</url>
+
+  <prerequisites>
+    <maven>3.2</maven>
+  </prerequisites>
+
+  <!-- P R O J E C T   P R O P E R T I E S ================================================ -->
+  <properties>
+    <!-- RESOURCES CONFIGURATION -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <!-- COMPILER CONFIGURATION -->
+    <maven.compiler.source>${java.specification.version}</maven.compiler.source>
+    <maven.compiler.target>${java.specification.version}</maven.compiler.target>
+
+    <!-- IDE CONFIGURATION -->
+    <downloadSources>true</downloadSources>
+    <downloadJavadocs>true</downloadJavadocs>
+
+    <!-- JAVADOC CONFIGURATION -->
+    <!--<doclet>org.jboss.apiviz.APIviz</doclet>-->
+    <source>${java.specification.version}</source>
+    <stylesheetfile>stylesheet-${java.specification.version}.css</stylesheetfile>
+    <quiet>true</quiet>
+    <detectLinks>true</detectLinks>
+    <detectOfflineLinks>false</detectOfflineLinks>
+    <show>private</show>
+
+    <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
+    <doclet.additionalparam>
+      -views
+      -inferrel
+      -inferdep
+      -collapsible
+      -hide java.*
+      -collpackages
+      -qualify
+      -postfixpackage
+      -Xdoclint:none
+      -nodefontsize 9
+      -nodefontpackagesize 7
+      -link http://download.oracle.com/javase/8/docs/api/
+      -link http://docs.oracle.com/javase/8/docs/jdk/api/javadoc/doclet/
+    </doclet.additionalparam>
+    <useStandardDocletOptions>true</useStandardDocletOptions>
+
+    <!-- SITE CONFIGURATION -->
+    <locales>en</locales>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <dependency.locations.enabled>false</dependency.locations.enabled>
+    <targetJdk>${java.specification.version}</targetJdk>
+    <jacoco.version>0.7.1.201405082137</jacoco.version>
+  </properties>
+
+  <!-- D E P E N D E N C I E S ============================================================ -->
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.11</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <!-- P R O F I L E S ==================================================================== -->
+  <profiles>
+    <profile>
+      <id>optimize</id>
+      <properties>
+        <maven.compiler.optimize>true</maven.compiler.optimize>
+        <maven.compiler.debug>false</maven.compiler.debug>
+      </properties>
+    </profile>
+    <profile>
+      <id>bundle</id>
+      <properties>
+        <maven.compiler.optimize>true</maven.compiler.optimize>
+        <maven.compiler.debug>false</maven.compiler.debug>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-site-plugin</artifactId>
+            <version>3.3</version>
+            <executions>
+              <execution>
+                <id>site</id>
+                <phase>prepare-package</phase>
+                <goals>
+                  <goal>site</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <!--<plugin>-->
+            <!--<artifactId>maven-pdf-plugin</artifactId>-->
+            <!--<version>1.2</version>-->
+            <!--<executions>-->
+              <!--<execution>-->
+                <!--<id>pdf</id>-->
+                <!--<phase>site</phase>-->
+                <!--<goals>-->
+                  <!--<goal>pdf</goal>-->
+                <!--</goals>-->
+                <!--<configuration>-->
+                  <!--<includeReports>false</includeReports>-->
+                  <!--<aggregate>false</aggregate>-->
+                  <!--<locales>en</locales>-->
+                <!--</configuration>-->
+              <!--</execution>-->
+            <!--</executions>-->
+          <!--</plugin>-->
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>sign</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-jarsigner-plugin</artifactId>
+            <version>1.3.2</version>
+            <executions>
+              <execution>
+                <id>sign</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>verify</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>verify</goal>
+                </goals>
+              </execution>
+            </executions>
+            <!-- TODO Add cert settings to CI server -->
+            <!-- TODO Check if config can be properties (no configuration) -->
+            <configuration>
+              <alias>alias</alias>
+              <storepass>123alias</storepass>
+              <keypass>123alias</keypass>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+  <!-- O R G A N I Z A T I O N ============================================================ -->
+  <organization>
+    <name>POPAPP</name>
+    <url>http://www.popapp.co</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>jamming</id>
+      <name>Juan José Aguililla</name>
+      <organization>http://www.popapp.co</organization>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>+1</timezone>
+    </developer>
+  </developers>
+
+  <!-- P L U G I N S   &   S E T T I N G S ================================================ -->
+  <build>
+    <defaultGoal>test</defaultGoal>
+
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
+    <testResources>
+      <testResource>
+        <directory>src/test/resources</directory>
+        <filtering>true</filtering>
+      </testResource>
+    </testResources>
+
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.4</version>
+          <configuration>
+            <archive>
+              <manifestEntries>
+                <Class-Path>.</Class-Path>
+                <App-Version>${project.version}</App-Version>
+              </manifestEntries>
+            </archive>
+          </configuration>
+        </plugin>
+        <!--
+         | Creates the assembly in the package phase. This way it is deployed to the
+         | repository with the JAR.
+         !-->
+        <plugin>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>2.4</version>
+          <configuration>
+            <descriptors>
+              <descriptor>src/main/assembly/bundle.xml</descriptor>
+            </descriptors>
+          </configuration>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>single</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>2.5</version>
+          <configuration>
+            <filesets>
+              <fileset>
+                <directory>${basedir}</directory>
+                <includes>
+                  <include>logs/</include>
+                  <include>log/</include>
+                  <include>*.log</include>
+                </includes>
+              </fileset>
+            </filesets>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>2.6</version>
+          <configuration>
+            <nonFilteredFileExtensions>
+              <nonFilteredFileExtension>doc</nonFilteredFileExtension>
+              <nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+              <nonFilteredFileExtension>swf</nonFilteredFileExtension>
+            </nonFilteredFileExtensions>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.5</version>
+          <configuration>
+            <checkModificationExcludes>
+              <checkModificationExcludes>~</checkModificationExcludes>
+              <checkModificationExcludes>.*</checkModificationExcludes>
+              <checkModificationExcludes>*.log</checkModificationExcludes>
+            </checkModificationExcludes>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>2.17</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>integration-test</goal>
+                <goal>verify</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.1</version>
+        </plugin>
+        <!--
+         | TODO To support integration tests (UI tests) in Bamboo, a virtual framebuffer
+         | for Linux is required
+         !-->
+        <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>${jacoco.version}</version>
+          <executions>
+            <execution>
+              <id>coverage-instrumentation</id>
+              <phase>process-test-classes</phase>
+              <goals>
+                <goal>prepare-agent</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- SITE REPORTS -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.3</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.apache.maven.doxia</groupId>
+              <artifactId>doxia-module-confluence</artifactId>
+              <version>1.5</version>
+            </dependency>
+            <dependency>
+              <groupId>org.apache.maven.doxia</groupId>
+              <artifactId>doxia-module-markdown</artifactId>
+              <version>1.5</version>
+            </dependency>
+          </dependencies>
+          <configuration>
+            <port>9090</port>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.eclipse.jetty</groupId>
+          <artifactId>jetty-maven-plugin</artifactId>
+          <version>9.2.0.v20140526</version>
+          <configuration>
+            <scanIntervalSeconds>10</scanIntervalSeconds>
+            <stopPort>9966</stopPort>
+            <stopKey>halt</stopKey>
+            <webAppConfig>
+              <contextPath>/</contextPath>
+            </webAppConfig>
+          </configuration>
+        </plugin>
+
+        <!--
+         | This plugin's configuration is used to store Eclipse m2e settings only. It
+         | has no influence on the Maven build itself.
+         !-->
+        <plugin>
+          <groupId>org.eclipse.m2e</groupId>
+          <artifactId>lifecycle-mapping</artifactId>
+          <version>1.0.0</version>
+          <configuration>
+            <lifecycleMappingMetadata>
+              <pluginExecutions>
+                <pluginExecution>
+                  <pluginExecutionFilter>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <versionRange>[0.5.6.201201232323,)</versionRange>
+                    <goals>
+                      <goal>prepare-agent</goal>
+                    </goals>
+                  </pluginExecutionFilter>
+                  <action>
+                    <ignore></ignore>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
+          </configuration>
+        </plugin>
+        <!--
+         | Joins all libraries in a JAR, cleaner to deploy (when you don't have a
+         | lot of dependencies)
+         |
+         | NOTE To include missing files after "minimization". The only way is to create an
+         | array with references to the desired classes (see 'Application.classes' array)
+         !-->
+        <plugin>
+          <artifactId>maven-shade-plugin</artifactId>
+          <version>2.2</version>
+          <configuration>
+            <minimizeJar>true</minimizeJar>
+            <createDependencyReducedPom>false</createDependencyReducedPom>
+          </configuration>
+          <executions>
+            <execution>
+              <phase>package</phase>
+              <goals>
+                <goal>shade</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+        <!--       <plugin> -->
+        <!--         <groupId>com.pyx4me</groupId> -->
+        <!--         <artifactId>proguard-maven-plugin</artifactId> -->
+        <!--         <version>2.0.7</version> -->
+        <!--         <configuration> -->
+        <!--           <proguardVersion>4.10</proguardVersion> -->
+        <!--           <obfuscate>true</obfuscate> -->
+        <!--           <options> -->
+        <!--             <option>-allowaccessmodification</option> -->
+        <!--           </options> -->
+        <!--           <injar>${project.build.finalName}.jar</injar> -->
+        <!--           <outjar>${project.build.finalName}-small.jar</outjar> -->
+        <!--           <outputDirectory>${project.build.directory}</outputDirectory> -->
+        <!--            <libs> -->
+        <!--              <lib>${java.home}/lib/rt.jar</lib> -->
+        <!--              <lib>${java.home}/lib/jsse.jar</lib> -->
+        <!--            </libs> -->
+        <!--           <addMavenDescriptor>false</addMavenDescriptor> -->
+        <!--         </configuration> -->
+        <!--         <dependencies> -->
+        <!--           <dependency> -->
+        <!--             <groupId>net.sf.proguard</groupId> -->
+        <!--             <artifactId>proguard-base</artifactId> -->
+        <!--             <version>4.10</version> -->
+        <!--             <scope>runtime</scope> -->
+        <!--           </dependency> -->
+        <!--         </dependencies> -->
+        <!--         <executions> -->
+        <!--           <execution> -->
+        <!--             <phase>package</phase> -->
+        <!--             <goals> -->
+        <!--               <goal>proguard</goal> -->
+        <!--             </goals> -->
+        <!--           </execution> -->
+        <!--         </executions> -->
+        <!--       </plugin> -->
+      </plugins>
+    </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
+        <configuration>
+          <docletArtifact>
+            <groupId>org.umlgraph</groupId>
+            <artifactId>umlgraph</artifactId>
+            <version>5.6.7-SNAPSHOT</version>
+          </docletArtifact>
+          <tags>
+            <tag>
+              <name>depend</name>
+            </tag>
+            <tag>
+              <name>hidden</name>
+            </tag>
+            <tag>
+              <name>opt</name>
+            </tag>
+          </tags>
+          <additionalparam>${doclet.additionalparam}</additionalparam>
+        </configuration>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.version}</version>
+        <executions>
+          <execution>
+            <id>coverage-instrumentation</id>
+            <phase>process-test-classes</phase>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+
+    <!-- Extensions to deploy the site to Github pages -->
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.scm</groupId>
+        <artifactId>maven-scm-provider-gitexe</artifactId>
+        <version>1.9</version>
+      </extension>
+      <extension>
+        <groupId>org.apache.maven.scm</groupId>
+        <artifactId>maven-scm-manager-plexus</artifactId>
+        <version>1.9</version>
+      </extension>
+      <extension>
+        <groupId>org.kohsuke</groupId>
+        <artifactId>wagon-gitsite</artifactId>
+        <version>0.3.5</version>
+      </extension>
+    </extensions>
+  </build>
+
+  <!-- R E P O R T S ====================================================================== -->
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.7</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
+        <configuration>
+          <docletArtifact>
+            <groupId>org.umlgraph</groupId>
+            <artifactId>umlgraph</artifactId>
+            <version>5.6.7-SNAPSHOT</version>
+          </docletArtifact>
+          <tags>
+            <tag>
+              <name>depend</name>
+            </tag>
+            <tag>
+              <name>hidden</name>
+            </tag>
+            <tag>
+              <name>opt</name>
+            </tag>
+          </tags>
+          <additionalparam>${doclet.additionalparam}</additionalparam>
+        </configuration>
+      </plugin>
+      <!-- TODO Configure to not to fail when connection is not available -->
+      <plugin>
+        <artifactId>maven-changelog-plugin</artifactId>
+        <version>2.2</version>
+      </plugin>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco.version}</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.17</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <stylesheet>${basedir}/src/xref/stylesheet.css</stylesheet>
+        </configuration>
+      </plugin>
+      <!-- TODO Update when this plugins support Java 8 -->
+      <!--<plugin>-->
+      <!--<artifactId>maven-pmd-plugin</artifactId>-->
+      <!--<version>3.1</version>-->
+      <!--</plugin>-->
+      <!--<plugin>-->
+        <!--<groupId>org.codehaus.mojo</groupId>-->
+        <!--<artifactId>findbugs-maven-plugin</artifactId>-->
+        <!--<version>2.5.4</version>-->
+      <!--</plugin>-->
+      <!--<plugin>-->
+        <!--<groupId>org.codehaus.mojo</groupId>-->
+        <!--<artifactId>javancss-maven-plugin</artifactId>-->
+        <!--<version>2.0</version>-->
+      <!--</plugin>-->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jdepend-maven-plugin</artifactId>
+        <version>2.0</version>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>taglist-maven-plugin</artifactId>
+        <version>2.4</version>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>

@@ -1,0 +1,30 @@
+<document
+  xmlns="http://maven.apache.org/DOCUMENT/1.0.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  outputName="popapp"
+  xsi:schemaLocation="
+    http://maven.apache.org/DOCUMENT/1.0.1
+    http://maven.apache.org/xsd/document-1.0.1.xsd">
+
+  <meta>
+    <title>POPAPP Documentation</title>
+    <author>${project.developers[1].name} (${project.developers[1].id})</author>
+  </meta>
+
+  <toc name="Table of Contents">
+    <item name="Introduction" ref="index.confluence" />
+    <item name="Usage" ref="user-guide.confluence" />
+    <item name="Development" ref="architecture.confluence" />
+  </toc>
+
+  <cover>
+    <coverTitle>${project.name}</coverTitle>
+    <coverSubTitle>v. ${project.version}</coverSubTitle>
+    <coverType>User Guide</coverType>
+    <projectName>${project.name}</projectName>
+    <companyName>Jamming</companyName>
+    <projectLogo>img/logo-white.png</projectLogo>
+    <!-- TODO Add application logo -->
+    <companyLogo>img/logo-white.png</companyLogo>
+  </cover>
+</document>
