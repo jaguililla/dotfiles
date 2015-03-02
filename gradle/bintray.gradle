@@ -12,49 +12,10 @@
  * and limitations under the License.
  */
 
-apply plugin: 'idea'
-apply plugin: 'eclipse'
-
-apply plugin: 'java'
-apply plugin: 'groovy'
-
-apply plugin: 'jacoco'
-apply plugin: 'maven'
 apply plugin: 'maven-publish'
-
-/*
- * These properties are defined in 'gradle.properties'
- */
-group = projectGroup
-version = projectVersion
-description = projectDescription
-
-// TODO To be completed
-//processResources {
-//    filesMatching('**/config.properties') {
-//        filter {
-//            it.replace('localhost', project.property('myhost'))
-//        }
-//    }
-//}
-
-repositories {
-    jcenter ()
-}
 
 configurations {
     deployerJars
-}
-
-test {
-    useTestNG ()
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled = true // Coveralls plugin depends on xml format report
-        html.enabled = true
-    }
 }
 
 task sourceJar(type: Jar) {
