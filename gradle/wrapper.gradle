@@ -13,7 +13,7 @@
  */
 
 wrapper {
-    gradleVersion = projectGradleVersion
+    gradleVersion = wrapperGradleVersion
     jarFile = "${project.projectDir}/" + wrapperPath + '/wrapper.jar'
     scriptFile = "${project.projectDir}/" + wrapperPath + '/wrapper'
 }
