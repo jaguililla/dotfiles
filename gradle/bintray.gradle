@@ -22,6 +22,13 @@ task sourceJar(type: Jar) {
     from sourceSets.main.allJava
 }
 
+String getProperty (String name, String value) {
+    project.hasProperty (name)? project.property (name) : value
+}
+
+def bintrayUser = getProperty ("bintrayUser", "anonymous")
+def bintrayKey = getProperty ("${project.name}BintrayKey", "anonymous")
+
 publishing {
     publications {
         mavenJava (MavenPublication) {
