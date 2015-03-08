@@ -18,11 +18,10 @@ apply plugin: 'eclipse'
 apply plugin: 'java'
 apply plugin: 'jacoco'
 
-apply plugin: 'pmd'
+//apply plugin: 'pmd'
 //apply plugin: 'checkstyle'
-apply plugin: 'findbugs'
-apply plugin: 'jdepend'
-
+//apply plugin: 'findbugs'
+//apply plugin: 'jdepend'
 
 defaultTasks 'check'
 
@@ -57,10 +56,10 @@ jacocoTestReport {
     }
 }
 
-pmd {
-    ignoreFailures = true
-}
+//pmd {
+//    ignoreFailures = true
+//}
 
-findbugs {
-    ignoreFailures = true
-}
+//findbugs {
+//    ignoreFailures = true
+//}
