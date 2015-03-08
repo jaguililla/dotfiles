@@ -56,3 +56,7 @@ jacocoTestReport {
         html.enabled = true
     }
 }
+
+findbugs {
+    ignoreFailures = true
+}
