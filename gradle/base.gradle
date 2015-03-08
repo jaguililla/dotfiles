@@ -12,6 +12,18 @@
  * and limitations under the License.
  */
 
+def projectSite = getProperty ("projectSite", "site")
+
+def wrapperPath = getProperty ("wrapperPath", "gradle")
+def wrapperGradleVersion = getProperty ("wrapperGradleVersion", "2.3")
+
+def bintrayUser = getProperty ("bintrayUser", "anonymous")
+def bintrayKey = getProperty ("${project.name}BintrayKey", "public")
+
+String getProperty (String name, String value) {
+    project.hasProperty (name)? project.property (name) : value
+}
+
 wrapper {
     gradleVersion = wrapperGradleVersion
     jarFile = "${project.projectDir}/" + wrapperPath + '/wrapper.jar'

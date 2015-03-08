@@ -32,15 +32,12 @@ publishing {
             }
         }
     }
+
     repositories {
         maven {
             url bintrayUrl
             credentials {
-                // Set 'bintrayKey' in '~/.gradle/gradle.properties'
-                def hasBintrayKey = project.hasProperty ("${project.name}BintrayKey")
-                def bintrayKey = hasBintrayKey?
-                    project.property ("${project.name}BintrayKey") : "UNDEFINED"
-
+                // Set 'bintrayUser' and 'bintrayKey' in '~/.gradle/gradle.properties'
                 username bintrayUser
                 password bintrayKey
             }
