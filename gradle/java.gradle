@@ -18,6 +18,12 @@ apply plugin: 'eclipse'
 apply plugin: 'java'
 apply plugin: 'jacoco'
 
+apply plugin: 'pmd'
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+apply plugin: 'jdepend'
+
+
 defaultTasks 'check'
 
 /*
