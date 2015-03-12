@@ -113,10 +113,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+### CUSTOM CONFIG ###
 
-
-
-
+# Taken from: https://github.com/git/git/blob/v2.3.2/contrib/completion/git-prompt.sh
+source ~/.git-prompt.sh
 
 set -o vi
 
@@ -154,9 +154,18 @@ bakcyn='\e[46m'   # Cyan
 bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 
-PS1="$txtcyn\u@\h $txtwht\w$txtrst\n\$ "
+#PS1="$txtcyn\u@\h $txtwht\w$txtrst\n\$ "
+PROMPT_BEFORE="$txtcyn\u@\h $txtwht\w$txtrst"
+PROMPT_AFTER="\\n\\\$ "
+PROMPT_COMMAND='__git_ps1 "$PROMPT_BEFORE" "$PROMPT_AFTER"'
 
 eval $(dircolors -b)
+
+export GIT_PS1_SHOWDIRTYSTATE="true"
+export GIT_PS1_SHOWSTASHSTATE="true"
+export GIT_PS1_SHOWUNTRACKEDFILES="true"
+export GIT_PS1_SHOWUPSTREAM="auto"
+export GIT_PS1_SHOWCOLORHINTS="true"
 
 export EDITOR=vim
 export GREP_COLOR="1;33"
@@ -227,9 +236,11 @@ alias fbak='sudo find / -name "*.bak" -or -name "*~"'
 
 alias ..='cd ..'
 
+alias gw='gradle/wrapper'
+
 # APT
 alias pakget='sudo apt-get'
-alias pakcache='apt-cache'
+alias pakca='apt-cache'
 alias pak='dpkg'
 
 # TODO Translate to APT
@@ -249,3 +260,4 @@ alias paklocl='pac -Ql'   # Display the file list of a given package in the loca
 #export PATH=$PATH:$TYPESAFE_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/.gem/jruby/1.8/bin:/usr/share/java/apache-ant/bin:/opt/jruby/bin
 #export JAVAHOME=$JAVA_HOME
 #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel' # lcd, gasp... (see Wiki)
+export PATH=$PATH:~/.todo
