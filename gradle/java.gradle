@@ -40,6 +40,21 @@ repositories {
     jcenter ()
 }
 
+configurations {
+    umlgraphDoclet
+}
+
+dependencies {
+    umlgraphDoclet "org.umlgraph:umlgraph:5.6.6"
+}
+
+javadoc {
+    failOnError = false
+    options.docletpath = configurations.umlgraphDoclet.files.asType(List)
+    options.doclet = "com.lunatech.doclets.jax.jaxrs.JAXRSDoclet"
+    options.addStringOption("jaxrscontext", "http://localhost:8080/myapp")
+}
+
 test {
     useTestNG ()
 }
