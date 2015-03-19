@@ -68,8 +68,8 @@ javadoc {
 }
 
 clean {
-    delete "$buildDir/"
-    delete "log?/"
+    delete "$buildDir"
+    delete "log?"
     delete "*.log"
 }
 
