@@ -67,7 +67,7 @@ javadoc {
     options.addStringOption('link', 'http://docs.oracle.com/javase/8/docs/jdk/api/javadoc/doclet/')
 }
 
-clean {
+clean << {
     delete "$buildDir"
     delete "log?"
     delete "*.log"
