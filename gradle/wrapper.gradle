@@ -12,6 +12,13 @@
  * and limitations under the License.
  */
 
+task clean << {
+    delete "$buildDir"
+    delete ".gradle"
+    delete "*.log"
+    delete "log?"
+}
+
 String getProperty (String name, String value) {
     project.hasProperty (name)? project.property (name) : value
 }

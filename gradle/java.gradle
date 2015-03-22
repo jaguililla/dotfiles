@@ -36,6 +36,13 @@ description = projectDescription
 //    }
 //}
 
+task clean << {
+    delete "$buildDir"
+    delete ".gradle"
+    delete "*.log"
+    delete "log?"
+}
+
 repositories {
     jcenter ()
 }
@@ -67,10 +74,11 @@ javadoc {
     options.addStringOption('link', 'http://docs.oracle.com/javase/8/docs/jdk/api/javadoc/doclet/')
 }
 
-clean << {
+task wipe (dependsOn: 'clean') << {
     delete "$buildDir"
-    delete "log?"
+    delete ".gradle"
     delete "*.log"
+    delete "log?"
 }
 
 test {
@@ -83,3 +91,5 @@ jacocoTestReport {
         html.enabled = true
     }
 }
+
+task bundle (dependsOn: [ 'check', 'javadoc', 'jacoco' ])
