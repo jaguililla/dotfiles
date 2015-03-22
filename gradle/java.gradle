@@ -88,4 +88,4 @@ jacocoTestReport {
     }
 }
 
-task bundle (dependsOn: [ 'check', 'javadoc', 'jacoco' ])
+task bundle (dependsOn: [ 'check', 'javadoc' ])
