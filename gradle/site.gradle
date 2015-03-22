@@ -53,6 +53,11 @@ task site (dependsOn: 'jbake') {
             from "$buildDir/${projectSite}.orig/"
             into "$buildDir/$projectSite"
             include ('**')
+        }
+        copy {
+            from "$buildDir/${projectSite}.orig/"
+            into "$buildDir/$projectSite"
+            include ('**/*.html')
             filter {ln -> ln.replace ('${config.projectVersion}', projectVersion)}
         }
         delete "$buildDir/${projectSite}.orig/"
