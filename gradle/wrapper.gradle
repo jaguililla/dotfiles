@@ -14,9 +14,12 @@
 
 task clean << {
     delete "$buildDir"
-    delete ".gradle"
     delete "*.log"
     delete "log?"
+}
+
+task wipe (dependsOn: 'clean') << {
+    delete ".gradle"
 }
 
 String getProperty (String name, String value) {

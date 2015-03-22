@@ -38,7 +38,6 @@ description = projectDescription
 
 clean << {
     delete "$buildDir"
-    delete ".gradle"
     delete "*.log"
     delete "log?"
 }
@@ -75,10 +74,7 @@ javadoc {
 }
 
 task wipe (dependsOn: 'clean') << {
-    delete "$buildDir"
     delete ".gradle"
-    delete "*.log"
-    delete "log?"
 }
 
 test {
