@@ -14,9 +14,8 @@
  */
 
 /*
- * To apply this script, you need to add the JBake and Github Pages plugins manually at the top of
- * your build script as that is not possible in included scripts like this one. These are the
- * required lines to do so:
+ * To apply this script, you need to add the JBake plugin manually at the top of your build script
+ * as that is not possible in included scripts like this one. These are the required lines to do so:
  *
  * buildscript {
  *     repositories {
@@ -32,7 +31,6 @@
  *
  * plugins {
  *     id 'me.champeau.jbake' version '0.2'
- *     id 'org.ajoberstar.github-pages' version '1.1.0-milestone.1'
  * }
  */
 def projectSite = 'site'
@@ -82,11 +80,3 @@ task site (dependsOn: 'jbake') {
     }
 }
 
-githubPages {
-    repoUri = githubUrl
-    pages {
-        from (file ("$buildDir/$projectSite")) {
-            into '.'
-        }
-    }
-}
