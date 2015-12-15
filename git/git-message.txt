@@ -1,4 +1,4 @@
-feat(type): title
+type(module): title
 
 Description
 

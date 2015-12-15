@@ -1,11 +1,8 @@
 [user]
 	email = juanjoaguililla@gmail.com
 	name = jamming
-	#email = juanjoaguililla@packlink.es
-	#name = juanjoaguililla
 [core]
 	autocrlf = input
-	excludesfile = /home/jam/.gitignore_global
     editor = vim
 
 [commit]
