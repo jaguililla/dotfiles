@@ -4,6 +4,11 @@ source $VIMRUNTIME/mswin.vim
 
 behave mswin
 
+set viminfo="~/.vim/viminfo"
+set nobackup
+set nowritebackup
+set noswapfile
+
 set guifont=Inconsolata\ Medium\ 10
 set guioptions=rgmteh
 set clipboard=unnamed
