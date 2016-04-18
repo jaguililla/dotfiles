@@ -255,6 +255,9 @@ alias pakloc='pac -Qi'    # Display information about a given package in the loc
 alias paklocs='pac -Qs'   # Search for package(s) in the local database
 alias paklocl='pac -Ql'   # Display the file list of a given package in the local database
 
+source ~/.docker_aliases
+source ~/.ssh_aliases
+
 #export ANDROID_HOME=/opt/android
 #export SBT_HOME=/opt/typesafe-stack/bin
 #export TYPESAFE_HOME=/opt/typesafe-stack

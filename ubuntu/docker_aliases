@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# DOCKER
+alias d='docker'
+alias dstats='d stats -a --no-stream'
+alias dimages='d images'
+alias drm='d rm -v'
+alias drmi='d rmi'
+alias dstop='d stop'
+alias dlogs='d logs -f'
+alias dps='d ps -a --format "table{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}"'
+alias dpull='d pull'
+alias drun='d run -d'
+dsh () { d exec -it "$1" bash; }
+
+# DOCKER MACHINE
+alias dm='docker-machine'
+dmswarm () {
+    eval $(dm env --swarm $1);
+    dm ls;
+}
+
+# DOCKER COMPOSE
+alias dc='docker-compose'
+alias dclog='dc logs'
+alias dcrm='dc rm'
+alias dcstop='dc stop'
+alias dcupd='dc up -d'
+alias dcres='dc restart'
+

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# SSH
+alias tunnel='ssh -fNL'
+alias lstunnel='ps -ef|grep "ssh -fNL"'
+
