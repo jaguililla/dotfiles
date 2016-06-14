@@ -7,15 +7,6 @@ set si
 set nowrap
 set ed
 
-map <CR> i<CR><ESC>
-map <Space> i <ESC>l
-map <S-Space> i
-imap <S-Space> <ESC>
-map <F12> <C-w>s
-map <S-F12> <C-w>v
-map <C-F12> <C-w>c
-map <M-F12> i
-
 map <F5> @a
 map <F6> @b
 map <F7> @c
