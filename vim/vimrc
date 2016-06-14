@@ -11,15 +11,20 @@ set noswapfile
 
 set guitablabel=%N\ %f
 set clipboard=unnamed
+set guioptions=rgmtehb
 set number
 set ignorecase
+set bdir=/tmp,~/tmp,.
 set ts=4
 set sts=4
 set sw=4
 set et
 set si
 set nowrap
+set cursorline
+set cursorcolumn
 set fcs=vert:\ ,fold:-
+set so=999
 set ed
 
 map <CR> i<CR><ESC>
@@ -36,4 +41,10 @@ map <F6> @b
 map <F7> @c
 map <F8> @d
 
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+:colorscheme desert
 :syn on
+
+:set encoding=utf8

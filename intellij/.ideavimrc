@@ -1,25 +1,10 @@
-set nocompatible
 
-source $VIMRUNTIME/mswin.vim
-
-behave mswin
-
-set viminfo="~/.vim/viminfo"
-set nobackup
-set nowritebackup
-set noswapfile
-
-set guitablabel=%N\ %f
-set clipboard=unnamed
 set number
+set relativenumber
 set ignorecase
-set ts=4
-set sts=4
-set sw=4
 set et
 set si
 set nowrap
-set fcs=vert:\ ,fold:-
 set ed
 
 map <CR> i<CR><ESC>
@@ -36,4 +21,3 @@ map <F6> @b
 map <F7> @c
 map <F8> @d
 
-:syn on
