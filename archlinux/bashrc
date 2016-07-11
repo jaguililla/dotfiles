@@ -46,81 +46,10 @@ export EDITOR=vim
 export GREP_COLOR="1;33"
 export HISTCONTROL=ignoredups
 
-# Aliases
-alias diff='colordiff'              # requires colordiff package
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-# modified commands
-alias more='less'
-alias df='df -h'
-alias du='du -c -h'
-alias mkdir='mkdir -p -v'
-alias ping='ping -c 5'
-alias sudo='sudo -E'
-
-# new commands
-alias da='date "+%A, %B %d, %Y [%T]"'
-alias du1='du --max-depth=1'
-alias hist='history | grep $1'      # requires an argument
-alias openports='netstat --all --numeric --programs --inet'
-alias pg='ps -Af | grep $1'         # requires an argument
-
-alias ssha='eval `keychain --eval --agents ssh id_rsa`'
-alias backup='rsync -a --delete'
-
-# privileged access
-if [ $UID -ne 0 ]; then
-    alias sudo='sudo '
-    alias scat='sudo cat'
-    alias svim='sudo vim'
-    alias root='sudo su'
-    alias reboot='sudo reboot'
-    alias halt='sudo halt'
-fi
-
-# cd
-alias back='cd $OLDPWD'
-alias ..='cd ..'
-
-# ls
-alias ls='ls -hFX --color=auto --group-directories-first'
-alias lr='ls -R'                    # recursive ls
-alias ll='ls -l'
-alias la='ll -A'
-alias lx='ll -BX'                   # sort by extension
-alias lz='ll -rS'                   # sort by size
-alias lt='ll -rt'                   # sort by date
-alias lm='la | more'
-alias l='ls -ACF'
-
-# safety features
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-alias ln='ln -i'
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
-
-alias f='find .'
-alias fn='find . -name'
-alias fpac='sudo find / -name "*.pacnew" -or -name "*.pacsave"'
-alias fbak='sudo find / -name "*.bak" -or -name "*~"'
-
-alias ..='cd ..'
-
 # Pacman
+alias fpac='sudo find / -name "*.pacnew" -or -name "*.pacsave"'
 alias pac='yaourt'
 alias spac='sudo pac'
-
-#alias pac-update='spac -Syu'
-#alias pac-clean='spac -Sc'
-#alias pac-install='spac -S'
-#alias pac-remove='spac -R'
-#alias pac-search='pac -Ss'
-#alias pac-query='pac -Q'
 
 # Pacman aliases
 alias pacupg='spac -Syu'  # Synchronize with repositories before upgrading packages that are out of date on the local system.
@@ -134,9 +63,11 @@ alias pacloc='pac -Qi'    # Display information about a given package in the loc
 alias paclocs='pac -Qs'   # Search for package(s) in the local database
 alias paclocl='pac -Ql'   # Display the file list of a given package in the local database
 
+source ~/.aliases
+source ~/.docker_aliases
+source ~/.ssh_aliases
+
 #export ANDROID_HOME=/opt/android
-#export SBT_HOME=/opt/typesafe-stack/bin
-#export TYPESAFE_HOME=/opt/typesafe-stack
 #export PATH=$PATH:$TYPESAFE_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/.gem/jruby/1.8/bin:/usr/share/java/apache-ant/bin:/opt/jruby/bin
 #export JAVAHOME=$JAVA_HOME
 #export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel' # lcd, gasp... (see Wiki)

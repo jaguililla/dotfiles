@@ -6,9 +6,5 @@ set et
 set si
 set nowrap
 set ed
-
-map <F5> @a
-map <F6> @b
-map <F7> @c
-map <F8> @d
+set so=999
 

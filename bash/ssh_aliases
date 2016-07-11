@@ -4,3 +4,10 @@
 alias tunnel='ssh -fNL'
 alias lstunnel='ps -ef|grep "ssh -fNL"'
 
+kssh () {
+    ssh $@
+    konsoleprofile colors=DarkPastels
+}
+
+alias ssh=kssh
+
