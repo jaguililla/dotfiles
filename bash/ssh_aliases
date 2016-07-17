@@ -5,6 +5,7 @@ alias tunnel='ssh -fNL'
 alias lstunnel='ps -ef|grep "ssh -fNL"'
 
 alias ssha='eval "$(ssh-agent -s)"'
+alias kc='eval $(keychain --eval)'
 
 kssh () {
     /usr/bin/ssh $@

@@ -45,6 +45,7 @@ PROMPT_AFTER="\\n\\\$ "
 PROMPT_COMMAND='__git_ps1 "$PROMPT_BEFORE" "$PROMPT_AFTER"'
 
 eval $(dircolors -b)
+#eval $(keychain --eval keys)
 
 export GIT_PS1_SHOWDIRTYSTATE="true"
 export GIT_PS1_SHOWSTASHSTATE="true"
