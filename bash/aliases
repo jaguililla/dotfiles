@@ -21,7 +21,6 @@ alias hist='history | grep $1'      # requires an argument
 alias openports='netstat --all --numeric --programs --inet'
 alias pg='ps -Af | grep $1'         # requires an argument
 
-alias ssha='eval `keychain --eval --agents ssh id_rsa`'
 alias backup='rsync -a --delete'
 
 # privileged access
@@ -64,5 +63,7 @@ alias fbak='sudo find / -name "*.bak" -or -name "*~"'
 
 # Build systems
 alias gw='gradle/wrapper'
+alias gwnd='gradle/wrapper --no-daemon'
 alias mci='mvn clean install'
+alias vg='vagrant'
 
