@@ -44,9 +44,6 @@ PROMPT_BEFORE="$txtcyn\u@\h $txtwht\w$txtrst"
 PROMPT_AFTER="\\n\\\$ "
 PROMPT_COMMAND='__git_ps1 "$PROMPT_BEFORE" "$PROMPT_AFTER"'
 
-eval $(dircolors -b)
-#eval $(keychain -q --eval keys)
-
 export GIT_PS1_SHOWDIRTYSTATE="true"
 export GIT_PS1_SHOWSTASHSTATE="true"
 export GIT_PS1_SHOWUNTRACKEDFILES="true"
@@ -57,10 +54,16 @@ export EDITOR=vim
 export GREP_COLOR="1;33"
 export HISTCONTROL=ignoredups
 
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+
+eval $(dircolors -b)
+eval $(keychain -q --eval gmail azampar)
+
 source ~/.aliases
 source ~/.docker_aliases
 source ~/.ssh_aliases
 source ~/.azampar_aliases
+source ~/.hexagon_aliases
 
 export ANDROID_HOME=/opt/android-sdk
 export JAVA_HOME=/usr/lib/jvm/default-java
