@@ -57,7 +57,7 @@ export HISTCONTROL=ignoredups
 export SSH_ASKPASS=/usr/bin/ksshaskpass
 
 eval $(dircolors -b)
-eval $(keychain -q --eval gmail azampar)
+eval $(keychain -q --eval $SSH_KEYS)
 
 source ~/.aliases
 source ~/.docker_aliases
