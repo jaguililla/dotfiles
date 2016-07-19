@@ -67,3 +67,4 @@ alias gwnd='gradle/wrapper --no-daemon'
 alias mci='mvn clean install'
 alias vg='vagrant'
 
+alias sys='sudo systemctl'
