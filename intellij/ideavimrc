@@ -1,0 +1,21 @@
+
+set number
+set relativenumber
+set ignorecase
+set et
+set si
+set nowrap
+set ed
+set so=999
+
+map <CR> i<CR><ESC>
+map <Space> i <ESC>l
+
+map <S-F5> @a
+map <S-F6> @b
+map <S-F7> @c
+map <S-F8> @d
+
+autocmd InsertEnter * :set norelativenumber
+autocmd InsertLeave * :set relativenumber
+
