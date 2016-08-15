@@ -16,6 +16,3 @@ map <S-F6> @b
 map <S-F7> @c
 map <S-F8> @d
 
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
-
