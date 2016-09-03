@@ -190,6 +190,7 @@ alias paklocl='pac -Ql'   # Display the file list of a given package in the loca
 source ~/.aliases
 source ~/.docker_aliases
 source ~/.ssh_aliases
+source ~/.apt_aliases
 
 #export ANDROID_HOME=/opt/android
 #export PATH=$PATH:$TYPESAFE_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:~/.gem/jruby/1.8/bin:/usr/share/java/apache-ant/bin:/opt/jruby/bin

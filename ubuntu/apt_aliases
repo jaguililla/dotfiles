@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# APT
+alias apt='sudo apt'
+alias aptin='apt install'
+alias aptrem='apt remove'
+alias aptse='apt search'
+alias aptar='apt autoremove'
+
