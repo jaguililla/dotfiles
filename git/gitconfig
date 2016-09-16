@@ -55,12 +55,13 @@
     whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
     whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
     lci = "!sh -c \"git log --no-merges --author $1\" -"
-    delremotetag="!sh -c \"git push origin :refs/tags/$1\" -"
-    coremotebr="!sh -c \"git checkout -b $2 --track $1/$2\" -"
-    pullr="pull --rebase"
-    rtagl='git ls-remote --tags ./.'
-    prune="remote prune origin"
-    untrack="!sh -c \"git config --file .git/config --unset branch.$1.merge\" -"
-    brtotaldelete="!sh -c \"git branch -d $2 && git branch -d -r $1/$2 && git push $1 :$2\" -"
+    delremotetag = "!sh -c \"git push origin :refs/tags/$1\" -"
+    coremotebr = "!sh -c \"git checkout -b $2 --track $1/$2\" -"
+    pullr = "pull --rebase"
+    rtagl = 'git ls-remote --tags ./.'
+    prune = "remote prune origin"
+    untrack = "!sh -c \"git config --file .git/config --unset branch.$1.merge\" -"
+    brtotaldelete = "!sh -c \"git branch -d $2 && git branch -d -r $1/$2 && git push $1 :$2\" -"
     addall = add -A :/
+    aci = "!git add -A && git commit"
 
