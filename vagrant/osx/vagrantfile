@@ -2,8 +2,10 @@
 # vi: set ft=ruby :
 
 #
-# TODO Add VBox Guess Additions
+# VBox Guess Additions are not available.
+#
 # TODO Setup video memory to the maximum available
+# TODO http://superuser.com/questions/945910/how-to-select-paravirtualization-interface-in-virtual-box
 #
 Vagrant.configure("2") do |config|
   config.vm.box = "AndrewDryga/vagrant-box-osx"
