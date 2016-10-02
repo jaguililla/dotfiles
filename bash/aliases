@@ -69,3 +69,8 @@ alias mci='mvn clean install'
 alias vg='vagrant'
 
 alias sys='sudo systemctl'
+alias sy='sys status'
+alias syup='sys start'
+alias sydown='sys stop'
+alias syrestart='sys restart'
+
