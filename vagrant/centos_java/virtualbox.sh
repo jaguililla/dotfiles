@@ -17,4 +17,4 @@ umount ~/virtualbox
 rm ~/vboxga.iso
 rm -rf ~/virtualbox
 
-lsmod|grep vb
+lsmod|grep vb|cat

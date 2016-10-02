@@ -2,3 +2,4 @@
 !intellij/settings.jar
 
 .idea
+.vagrant

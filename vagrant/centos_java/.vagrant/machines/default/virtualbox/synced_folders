@@ -1,1 +1,0 @@
-{"sshfs":{"/vagrant":{"type":"sshfs","guestpath":"/vagrant","hostpath":"/home/jam/Projects/jaguililla/dotfiles/vagrant/centos_java","disabled":false,"__vagrantfile":true,"ssh_exe_path":"/usr/bin/ssh","sftp_server_exe_path":"/usr/lib/openssh/sftp-server","sshfs_opts":" -o allow_other  -o noauto_cache ","ssh_opts":" -o StrictHostKeyChecking=no  -o ServerAliveInterval=30 "}}}
