@@ -1,0 +1,16 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+#
+# TODO Add VBox Guess Additions
+# TODO Setup video memory to the maximum available
+#
+Vagrant.configure("2") do |config|
+  config.vm.box = "AndrewDryga/vagrant-box-osx"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "osx"
+    vb.cpus = 4
+    vb.memory = 4096
+  end
+end
