@@ -6,5 +6,5 @@ vagrant up
 vagrant package
 vagrant box add --name centos_java package.box
 
-#vagrant destroy -f
+vagrant destroy -f
 rm package.box
