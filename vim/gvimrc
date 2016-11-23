@@ -1,5 +1,5 @@
 
-set guifont=Inconsolata\ Medium\ 10
+set guifont=Input\ Mono\ Narrow\ 12
 set guioptions=rgmteh
 set clipboard=unnamed
 set columns=110

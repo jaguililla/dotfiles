@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Pacman
+alias fpac='sudo find / -name "*.pacnew" -or -name "*.pacsave"'
+alias pac='yaourt'
+alias spac='sudo pac'
+
+# Pacman aliases
+alias pacupg='spac -Syu'  # Synchronize with repositories before upgrading packages that are out of date on the local system.
+alias pacin='spac -S'     # Install specific package(s) from the repositories
+alias pacins='spac -Up'   # Install specific package not from the repositories but from a file 
+alias pacre='spac -R'     # Remove the specified package(s), retaining its configuration(s) and required dependencies
+alias pacrem='spac -Rns'  # Remove the specified package(s), its configuration(s) and unneeded dependencies
+alias pacrep='pac -Si'    # Display information about a given package in the repositories
+alias pacreps='pac -Ss'   # Search for package(s) in the repositories
+alias pacloc='pac -Qi'    # Display information about a given package in the local database
+alias paclocs='pac -Qs'   # Search for package(s) in the local database
+alias paclocl='pac -Ql'   # Display the file list of a given package in the local database
+

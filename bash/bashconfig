@@ -1,7 +1,7 @@
 
 ### CUSTOM CONFIG ###
 
-# Taken from: https://raw.githubusercontent.com/git/git/v2.9.2/contrib/completion/git-prompt.sh
+# Taken from: https://raw.githubusercontent.com/git/git/v2.10.2/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
 
 set -o vi
@@ -51,6 +51,7 @@ export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_SHOWCOLORHINTS="true"
 
 export EDITOR=vim
+export VISUAL="$EDITOR"
 export GREP_COLOR="1;33"
 export HISTCONTROL=ignoredups
 
@@ -59,14 +60,10 @@ export SSH_ASKPASS=/usr/bin/ksshaskpass
 eval $(dircolors -b)
 eval $(keychain -q --eval $SSH_KEYS)
 
-source ~/.aliases
-source ~/.docker_aliases
-source ~/.ssh_aliases
-source ~/.azampar_aliases
-source ~/.hexagon_aliases
-
 export ANDROID_HOME=/opt/android-sdk
-export JAVA_HOME=/usr/lib/jvm/default-java
+export JAVA_HOME=/usr/lib/jvm/default
 export JAVAHOME=$JAVA_HOME
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+stty -ctlecho
 

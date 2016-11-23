@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-alias az='cd ~/Projects/azampar.co'
-alias azup='az && gw -x test clean installDist installShadowApp && vg up && gwnd site dokka test deployIntegration'
-alias azhalt='az && vg halt devel integration'
-
-alias azint=''
-alias azpro=''
-
