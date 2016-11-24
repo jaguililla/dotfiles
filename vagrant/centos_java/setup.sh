@@ -60,10 +60,6 @@ timedatectl set-timezone Europe/Madrid
 timedatectl
 
 # Setup shell
-cp /vagrant/bashconfig ~/.bashconfig
-cp /vagrant/inputrc ~/.inputrc
-echo -e "\nsource .bashconfig\n" >>~/.bashrc
-
 cp ~/.bashconfig /home/vagrant
 cp ~/.inputrc /home/vagrant
 echo -e "\nsource .bashconfig\n" >>/home/vagrant/.bashrc

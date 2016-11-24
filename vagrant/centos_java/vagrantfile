@@ -4,22 +4,19 @@
 #
 # WARN: Install Vagrant from HashiCorp's packages, Linux distributions' ones can be broken
 #
-# Disable default shared folder and shares box root.
-#
-# To setup SSHFS you need to install the following software:
-#     sudo apt-get install openssh-server
-#     vagrant plugin install vagrant-sshfs
+# Disable default shared folder.
 #
 # Execute `build.sh` to setup the box (centos_java)
 #
 # For a complete reference, please see the online documentation at: https://docs.vagrantup.com
 #
 Vagrant.configure(2) do |config|
-  config.vm.box = "centos/7"
+  config.vm.box = 'centos/7'
 
-  config.vm.synced_folder ".", "/home/vagrant/sync", disabled: true
-  config.vm.synced_folder ".", "/vagrant", type: "sshfs"
+  config.vm.synced_folder '.', '/vagrant', disabled: true
 
-  config.vm.provision :shell, path: "setup.sh"
-  config.vm.provision :shell, path: "virtualbox.sh"
+  config.vm.provision :file, source: 'inputrc', destination: '~/.inputrc'
+  config.vm.provision :file, source: 'bashconfig', destination: '~/.bashconfig'
+  config.vm.provision :shell, path: 'setup.sh'
+  config.vm.provision :shell, path: 'virtualbox.sh'
 end
