@@ -3,6 +3,7 @@
 
 # Taken from: https://raw.githubusercontent.com/git/git/v2.10.2/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
+source /usr/share/git/completion/git-completion.bash
 
 set -o vi
 
