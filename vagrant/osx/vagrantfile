@@ -10,9 +10,12 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "AndrewDryga/vagrant-box-osx"
 
+  config.vm.synced_folder '~/Projects', '/vagrant', type: "rsync"
+
   config.vm.provider "virtualbox" do |vb|
     vb.name = "osx"
     vb.cpus = 4
     vb.memory = 4096
+    vb.gui = true
   end
 end
