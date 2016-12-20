@@ -38,7 +38,10 @@ map <F8> @d
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
-:colorscheme desert
-:syn on
+colorscheme desert
+syn on
 
-:set encoding=utf8
+set encoding=utf8
+
+set t_Co=256
+

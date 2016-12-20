@@ -10,6 +10,20 @@
 
 echo "<<<<<< EXECUTING SETUP.SH >>>>>>"
 
+# Install infrastructure
+yum -q -y update
+yum -q -y install epel-release
+yum -q -y install git ntp htop vim wget
+yum -q -y install java-1.8.0-openjdk-devel
+yum -q -y clean all
+
+git version
+ntpd -!
+htop -v
+vim --version
+wget -V
+java -version
+
 # SELinux 'permissive' mode
 setenforce 0
 sed -i~ "s/SELINUX=enforcing/SELINUX=permissive/g" /etc/selinux/config
@@ -31,20 +45,6 @@ sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
 
 swapon
 
-# Install infrastructure
-yum -q -y update
-yum -q -y install epel-release
-yum -q -y install git ntp htop vim wget
-yum -q -y install java-1.8.0-openjdk-devel
-yum -q -y clean all
-
-git version
-ntpd -!
-htop -v
-vim --version
-wget -V
-java -version
-
 # Start base services
 systemctl start ntpd
 systemctl enable ntpd
@@ -60,12 +60,13 @@ timedatectl set-timezone Europe/Madrid
 timedatectl
 
 # Setup shell
-cp ~/.bashconfig /home/vagrant
-cp ~/.inputrc /home/vagrant
 echo -e "\nsource .bashconfig\n" >>/home/vagrant/.bashrc
 
 echo "/home/vagrant/.bashconfig"
 cat /home/vagrant/.bashconfig
 echo "/home/vagrant/.bashrc"
 cat /home/vagrant/.bashrc
+
+cp /home/vagrant/.bashconfig /root
+cp /home/vagrant/.inputrc /root
 
