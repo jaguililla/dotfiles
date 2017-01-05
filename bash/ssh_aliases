@@ -9,7 +9,7 @@ alias kc='eval $(keychain --eval)'
 
 kssh () {
     /usr/bin/ssh $@
-    konsoleprofile colors=DarkPastels
+    konsoleprofile colors=DarkPastels &>/dev/null
 }
 
 alias ssh=kssh
