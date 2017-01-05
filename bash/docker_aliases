@@ -11,7 +11,9 @@ alias dlogs='d logs -f'
 alias dps='d ps -a --format "table{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}"'
 alias dpull='d pull'
 alias drun='d run -d'
-dsh () { d exec -it "$1" bash; }
+alias dit='d exec -it'
+
+dsh () { dit "$1" bash; }
 
 # DOCKER MACHINE
 alias dm='docker-machine'
