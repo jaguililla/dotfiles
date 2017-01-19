@@ -13,7 +13,7 @@ echo "<<<<<< EXECUTING SETUP.SH >>>>>>"
 # Install infrastructure
 yum -q -y update
 yum -q -y install epel-release
-yum -q -y install git ntp htop vim wget
+yum -q -y install git ntp htop vim wget zip unzip
 yum -q -y install java-1.8.0-openjdk-devel
 yum -q -y clean all
 
