@@ -10,6 +10,27 @@
 
 echo "<<<<<< EXECUTING SETUP.SH >>>>>>"
 
+# Disable rankmirror (poor performance)
+sed -i~ "s/enabled=1/enabled=0/g" /etc/yum/pluginconf.d/fastestmirror.conf
+
+echo "/etc/yum/pluginconf.d/fastestmirror.conf"
+cat /etc/yum/pluginconf.d/fastestmirror.conf
+
+# SELinux 'permissive' mode
+setenforce 0
+sed -i~ "s/SELINUX=enforcing/SELINUX=permissive/g" /etc/selinux/config
+
+sestatus
+
+# Add swap
+dd if=/dev/zero of=/swapfile bs=1M count=1024 status=none
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+sh -c 'echo "/swapfile swap swap sw 0 0" >> /etc/fstab'
+
+free
+
 # Install infrastructure
 yum -q -y update
 yum -q -y install epel-release
@@ -23,27 +44,6 @@ htop -v
 vim --version
 wget -V
 java -version
-
-# SELinux 'permissive' mode
-setenforce 0
-sed -i~ "s/SELINUX=enforcing/SELINUX=permissive/g" /etc/selinux/config
-
-sestatus
-
-# Disable rankmirror (poor performance)
-sed -i~ "s/enabled=1/enabled=0/g" /etc/yum/pluginconf.d/fastestmirror.conf
-
-echo "/etc/yum/pluginconf.d/fastestmirror.conf"
-cat /etc/yum/pluginconf.d/fastestmirror.conf
-
-# Add swap
-fallocate -l 1G /swapfile
-chmod 600 /swapfile
-mkswap /swapfile
-swapon /swapfile
-sh -c 'echo "/swapfile none swap sw 0 0" >> /etc/fstab'
-
-swapon
 
 # Start base services
 systemctl start ntpd

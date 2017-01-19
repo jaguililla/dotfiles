@@ -2,19 +2,16 @@
 
 echo "<<<<<< EXECUTING VIRTUALBOX.SH >>>>>>"
 
-yum -q -y install dkms kernel-devel
+yum -q -y install dkms kernel-devel-$(uname -r)
 yum -q -y clean all
 
 mkdir ~/virtualbox
-VBOXVER="5.1.6"
-VBOXDL="http://download.virtualbox.org/virtualbox"
-wget -nv -O ~/vboxga.iso "$VBOXDL/$VBOXVER/VBoxGuestAdditions_$VBOXVER.iso"
-
-mount -o loop ~/vboxga.iso ~/virtualbox
+mount -o ro,loop /home/vagrant/vboxga.iso ~/virtualbox
 ~/virtualbox/VBoxLinuxAdditions.run
 umount ~/virtualbox
 
-rm ~/vboxga.iso
-rm -rf ~/virtualbox
+rm -rf ~/virtualbox /home/vagrant/vboxga.iso
 
-lsmod|grep vb|cat
+lsmod|awk '{ print $1 }'|grep vb|cat >>/etc/modules-load.d/virtualbox.conf
+
+cat /etc/modules-load.d/virtualbox.conf
