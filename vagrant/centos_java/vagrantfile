@@ -17,6 +17,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision :file, source: 'inputrc', destination: '~/.inputrc'
   config.vm.provision :file, source: 'bashconfig', destination: '~/.bashconfig'
+  config.vm.provision :file, source: 'vboxga.iso', destination: '~/vboxga.iso'
   config.vm.provision :shell, path: 'setup.sh'
   config.vm.provision :shell, path: 'virtualbox.sh'
 end
