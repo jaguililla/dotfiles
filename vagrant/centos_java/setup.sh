@@ -55,14 +55,14 @@ systemctl status firewalld
 # Timezone
 timedatectl
 
-# Setup shell
-echo -e "\nsource .bashconfig\n" >>/home/vagrant/.bashrc
+# Setup shell (files taken from GH to be able to reuse this script in other Vagrant boxes)
+GH_PROJECT="https://raw.githubusercontent.com/jaguililla/dotfiles"
+wget "$GH_PROJECT/master/vagrant/centos_java/bashconfig" -O ~/.bashconfig 2>/dev/null
+wget "$GH_PROJECT/master/vagrant/centos_java/inputrc" -O ~/.inputrc 2>/dev/null
 
-echo "/home/vagrant/.bashconfig"
-cat /home/vagrant/.bashconfig
-echo "/home/vagrant/.bashrc"
-cat /home/vagrant/.bashrc
+echo -e "\nsource .bashconfig\n" >>~/.bashrc
 
-cp /home/vagrant/.bashconfig /root
-cp /home/vagrant/.inputrc /root
-
+echo "~/.bashconfig"
+cat ~/.bashconfig
+echo "~/.bashrc"
+cat ~/.bashrc
