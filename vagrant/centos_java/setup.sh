@@ -30,10 +30,10 @@ sh -c 'echo "/swapfile swap swap sw 0 0" >> /etc/fstab'
 free
 
 # Install infrastructure
-yum -q -y update
-yum -q -y install epel-release
-yum -q -y install git ntp htop vim wget zip unzip
-yum -q -y install java-1.8.0-openjdk-devel
+yum -q -y update 2>/dev/null
+yum -q -y install epel-release 2>/dev/null
+yum -q -y install git ntp htop vim wget zip unzip 2>/dev/null
+yum -q -y install java-1.8.0-openjdk-devel 2>/dev/null
 yum -q -y clean all
 
 git version
