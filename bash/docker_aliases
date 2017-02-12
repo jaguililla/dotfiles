@@ -27,6 +27,6 @@ alias dc='docker-compose'
 alias dclog='dc logs'
 alias dcrm='dc rm'
 alias dcstop='dc stop'
-alias dcupd='dc up -d'
+alias dcup='dc up -d'
 alias dcres='dc restart'
 
