@@ -53,6 +53,7 @@ systemctl status ntpd
 systemctl status firewalld
 
 # Timezone
+timedatectl set-local-rtc 0
 timedatectl
 
 # Setup shell (files taken from GH to be able to reuse this script in other Vagrant boxes)
