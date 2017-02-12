@@ -8,6 +8,12 @@
 #
 # Execute `build.sh` to setup the box (centos_java)
 #
+# Uses the vagrant-vbguest plugin (https://github.com/dotless-de/vagrant-vbguest) to install type:
+#
+# vagrant plugin install vagrant-vbguest
+#
+# To deploy to Atlas, execute: vagrant up && vagrant package and upload package.box
+#
 # For a complete reference, please see the online documentation at: https://docs.vagrantup.com
 #
 Vagrant.configure(2) do |config|
@@ -17,8 +23,6 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision :file, source: 'inputrc', destination: '~/.inputrc'
   config.vm.provision :file, source: 'bashconfig', destination: '~/.bashconfig'
-  config.vm.provision :file, source: 'vboxga.iso', destination: '~/vboxga.iso'
   config.vm.provision :shell, path: 'setup.sh'
-  config.vm.provision :shell, path: 'virtualbox.sh'
   config.vm.provision :docker
 end

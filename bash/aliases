@@ -63,10 +63,9 @@ alias fbak='sudo find / -name "*.bak" -or -name "*~"'
 
 # Build systems
 alias gw='gradle/wrapper'
+alias gwatch='gw -t'
 alias gcb='gw clean build'
-alias gwnd='gradle/wrapper --no-daemon'
 alias mci='mvn clean install'
-alias vg='vagrant'
 
 alias sys='sudo systemctl'
 alias sy='sys status'

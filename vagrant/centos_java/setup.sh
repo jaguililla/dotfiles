@@ -8,8 +8,6 @@
 # www.digitalocean.com/community/tutorials/initial-server-setup-with-centos-7
 #
 
-echo "<<<<<< EXECUTING SETUP.SH >>>>>>"
-
 # Disable rankmirror (poor performance)
 sed -i~ "s/enabled=1/enabled=0/g" /etc/yum/pluginconf.d/fastestmirror.conf
 
@@ -55,8 +53,6 @@ systemctl status ntpd
 systemctl status firewalld
 
 # Timezone
-timedatectl set-timezone Europe/Madrid
-
 timedatectl
 
 # Setup shell
