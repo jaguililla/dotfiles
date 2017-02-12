@@ -6,4 +6,5 @@ alias vgup='vg up'
 alias vghalt='vg halt'
 alias vgrm='vg destroy -f'
 alias vgsh='vg ssh'
+alias vgrebuild='vgrm && vgup'
 
