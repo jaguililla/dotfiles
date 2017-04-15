@@ -6,13 +6,13 @@
 #
 # Disable default shared folder.
 #
-# Execute `build.sh` to setup the box (centos_java)
-#
 # Uses the vagrant-vbguest plugin (https://github.com/dotless-de/vagrant-vbguest) to install type:
 #
 # vagrant plugin install vagrant-vbguest
 #
-# To deploy to Atlas, execute: vagrant up && vagrant package and upload package.box
+# To deploy to Atlas, execute:
+#
+# `vagrant box update && vagrant up && vagrant package and upload package.box`
 #
 # For a complete reference, please see the online documentation at: https://docs.vagrantup.com
 #
