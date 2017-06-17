@@ -1,9 +1,9 @@
 
 ### CUSTOM CONFIG ###
 
-# Taken from: https://raw.githubusercontent.com/git/git/v2.10.2/contrib/completion/git-prompt.sh
+# Taken from: https://raw.githubusercontent.com/git/git/v2.13.0/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
-source /usr/share/git/completion/git-completion.bash
+#source /usr/share/git/completion/git-completion.bash
 
 set -o vi
 
@@ -59,7 +59,7 @@ export HISTCONTROL=ignoredups
 export SSH_ASKPASS=/usr/bin/ksshaskpass
 
 eval $(dircolors -b)
-eval $(keychain -q --eval $SSH_KEYS)
+#eval $(keychain -q --eval $SSH_KEYS)
 
 export ANDROID_HOME=/opt/android-sdk
 export JAVA_HOME=/usr/lib/jvm/default
