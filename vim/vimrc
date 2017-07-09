@@ -45,3 +45,5 @@ set encoding=utf8
 
 set t_Co=256
 
+hi CursorLine cterm=NONE ctermbg=darkgray guibg=darkgray
+
