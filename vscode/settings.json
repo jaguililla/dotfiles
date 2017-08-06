@@ -36,5 +36,11 @@
     "files.insertFinalNewline": true,
     "terminal.external.linuxExec": "konsole",
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.cursorStyle": "underline"
+    "terminal.integrated.cursorStyle": "underline",
+    // Check: https://code.visualstudio.com/docs/getstarted/theme-color-reference
+    "workbench.colorCustomizations": {
+        "editorCursor.foreground": "#FFFFFF",
+        "panel.background": "#555555",
+        "sideBar.background": "#444444"
+    }
 }
