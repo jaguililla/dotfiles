@@ -4,7 +4,7 @@
     "window.menuBarVisibility": "toggle",
     "files.autoSave": "onFocusChange",
     "workbench.colorTheme": "An Old Hope",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.iconTheme": "vscode-icons",
     "material-icon-theme.showUpdateMessage": false,
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [

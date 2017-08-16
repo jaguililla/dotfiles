@@ -12,5 +12,13 @@
     {
         "key": "ctrl+shift+p",
         "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "alt+0",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal"
     }
 ]
