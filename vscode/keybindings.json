@@ -20,5 +20,13 @@
     {
         "key": "ctrl+e",
         "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "alt+0",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal"
     }
 ]

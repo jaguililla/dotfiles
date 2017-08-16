@@ -13,6 +13,7 @@ alias dpull='d pull'
 alias drun='d run -d'
 alias dit='d exec -it'
 
+#dps () { d ps -a --format "table{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}" -f name=$1; }
 dsh () { dit "$1" bash; }
 
 # DOCKER MACHINE
