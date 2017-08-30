@@ -3,9 +3,7 @@
     "vsicons.dontShowNewVersionMessage": true,
     "window.menuBarVisibility": "toggle",
     "files.autoSave": "onFocusChange",
-    "workbench.colorTheme": "An Old Hope",
     "workbench.iconTheme": "vscode-icons",
-    "material-icon-theme.showUpdateMessage": false,
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
         100
@@ -39,8 +37,8 @@
     "terminal.integrated.cursorStyle": "underline",
     // Check: https://code.visualstudio.com/docs/getstarted/theme-color-reference
     "workbench.colorCustomizations": {
-        "editorCursor.foreground": "#FFFFFF",
-        "panel.background": "#555555",
-        "sideBar.background": "#444444"
+        "editorCursor.foreground": "#FFFFFF"
+        //"panel.background": "#555555",
+        //"sideBar.background": "#444444"
     }
 }
