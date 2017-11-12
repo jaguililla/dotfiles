@@ -6,8 +6,8 @@
     editor = vim
 	excludesfile = ~/.gitignore
 
-[commit]
-    template = ~/.git-message.txt
+#[commit]
+    #template = ~/.git-message.txt
 
 [color]
     ui = auto
@@ -35,6 +35,8 @@
     st = status -sb
     br = branch
     b = branch -avv
+    brm = branch --merged
+    brnm = branch --no-merged
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     type = cat-file -t
     dump = cat-file -p
@@ -66,4 +68,7 @@
     brtotaldelete = "!sh -c \"git branch -d $2 && git branch -d -r $1/$2 && git push $1 :$2\" -"
     addall = add -A :/
     aci = "!git add -A && git commit"
+
+[url "ssh://git@globaldevtools.bbva.com:7999/"]
+    insteadOf = https://globaldevtools.bbva.com:7999/
 
