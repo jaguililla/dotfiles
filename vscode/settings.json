@@ -19,7 +19,6 @@
     "vim.useCtrlKeys": false,
     "vim.useSystemClipboard": true,
     "vim.textwidth": 100,
-    "vim.disableAnnoyingNeovimMessage": true,
     "editor.minimap.showSlider": "always",
     "editor.formatOnType": false,
     "editor.formatOnPaste": true,
@@ -42,5 +41,6 @@
         //"sideBar.background": "#444444"
     },
     "workbench.panel.location": "bottom",
-    "editor.fontSize": 13
+    "editor.fontSize": 13,
+    "git.confirmSync": false
 }
