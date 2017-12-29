@@ -1,3 +1,7 @@
+#
+# Install Git-extras package for more goodies
+#
+
 [user]
 	email = juanjoaguililla@gmail.com
 	name = jamming
@@ -6,8 +10,8 @@
     editor = vim
 	excludesfile = ~/.gitignore
 
-#[commit]
-    #template = ~/.git-message.txt
+[commit]
+    template = ~/.git-message.txt
 
 [color]
     ui = auto
@@ -34,7 +38,7 @@
     ci = commit
     st = status -sb
     br = branch
-    b = branch -avv
+    b = branch -avv --sort=-committerdate
     brm = branch --merged
     brnm = branch --no-merged
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
@@ -47,7 +51,7 @@
     lglist = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     diffbranches = diff --name-status
     filesInCi = show --pretty="format:" --name-only 
-    alias = config --get-regexp alias
+    #alias = config --get-regexp alias # Commented because of conflict with `git-extras`
     kdiff = mergetool -t kdiff3
     lgb = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
     unstage = reset HEAD --
