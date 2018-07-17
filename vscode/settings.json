@@ -3,7 +3,7 @@
     "vsicons.dontShowNewVersionMessage": true,
     "window.menuBarVisibility": "toggle",
     "files.autoSave": "onFocusChange",
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "material-icon-theme",
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
         100
