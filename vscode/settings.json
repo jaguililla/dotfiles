@@ -60,5 +60,6 @@
     "gitlens.keymap": "alternate",
     "window.zoomLevel": 0,
     "gitlens.historyExplorer.enabled": true,
-    "git.autofetch": true
+    "git.autofetch": true,
+    "material-icon-theme.hidesExplorerArrows": true
 }
