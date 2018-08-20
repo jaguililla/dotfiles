@@ -42,5 +42,24 @@
     },
     "workbench.panel.location": "bottom",
     "editor.fontSize": 13,
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "vsicons.presets.hideExplorerArrows": true,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": true,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": true
+    },
+    "git.enableSmartCommit": true,
+    "gitlens.keymap": "alternate",
+    "window.zoomLevel": 0,
+    "gitlens.historyExplorer.enabled": true,
+    "git.autofetch": true,
+    "material-icon-theme.hidesExplorerArrows": true
 }
