@@ -38,7 +38,8 @@ alias back='cd "$OLDPWD"'
 alias ..='cd ..'
 
 # ls
-alias ls='ls -hFX --color=auto --group-directories-first'
+# Requires 'coreutils': brew install coreutils
+alias ls='gls -hFX --color=auto --group-directories-first'
 alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
 alias la='ll -A'
@@ -53,9 +54,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
 alias ln='ln -i'
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
+alias chown='gchown --preserve-root'
+alias chmod='gchmod --preserve-root'
+alias chgrp='gchgrp --preserve-root'
 
 alias f='find .'
 alias fn='find . -name'
