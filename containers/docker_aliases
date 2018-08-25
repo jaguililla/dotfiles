@@ -7,7 +7,7 @@ alias dimages='d images'
 alias drm='d rm -v'
 alias drmi='d rmi'
 alias dstop='d stop'
-alias dlog='d logs -f'
+alias dlogs='d logs -f'
 alias dps='d ps --format "table{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}"'
 alias dpull='d pull'
 alias drun='d run -d'
@@ -25,7 +25,8 @@ dmswarm () {
 
 # DOCKER COMPOSE
 alias dc='docker-compose'
-alias dclog='dc logs'
+alias dclogs='dc logs'
+alias dcps='dc ps'
 alias dcrm='dc rm'
 alias dcstop='dc stop'
 alias dcup='dc up -d'
