@@ -68,7 +68,7 @@ alias gwatch='gw -t'
 alias gcb='gw clean build'
 alias mci='mvn clean install'
 
-alias sys='sudo systemctl'
+alias sys='launchctl'
 alias sy='sys status'
 alias syup='sys start'
 alias sydown='sys stop'

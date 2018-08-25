@@ -56,4 +56,6 @@ export VISUAL="$EDITOR"
 export GREP_COLOR="1;33"
 export HISTCONTROL=ignoredups
 
+eval $(gdircolors -b)
+
 stty -ctlecho
