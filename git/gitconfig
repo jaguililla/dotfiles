@@ -3,12 +3,12 @@
 #
 
 [user]
-	email = juanjoaguililla@gmail.com
-	name = jamming
+    email = aguilillaj@ryanair.com
+    name = aguilillaj
 [core]
-	autocrlf = input
+    autocrlf = input
     editor = vim
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 
 [commit]
     template = ~/.git-message.txt

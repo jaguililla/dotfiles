@@ -1,5 +1,8 @@
 
 ### CUSTOM CONFIG ###
+#
+# Relies on `coreutils`: brew install coreutils
+#
 
 # Taken from: https://raw.githubusercontent.com/git/git/v2.13.0/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
