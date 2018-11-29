@@ -24,3 +24,40 @@ This script follows (more or less closely) the [Beginner's Guide](https://wiki.a
 The install script is not interactive, you should edit the script file and change the parameters prior to running it.
 
 Beware of the bugs: This install script is tailored for me, it may or may not suit your needs. Also, it is not extensively tested hence it may even don't work properly, so use it at your own risk!
+
+Mac OS X install
+----------------
+
+To install basic packages, run:
+
+```bash
+brew install \
+  awscli \
+  bash-completion \
+  coreutils \
+  dep \
+  docker \
+  docker-compose \
+  docker-compose-completion \
+  docker-machine \
+  fdupes \
+  git \
+  git-extras \
+  gnu-tar \
+  graphviz \
+  groovy
+  jenv \
+  jq \
+  kotlin \
+  kubernetes-cli \
+  kubernetes-helm \
+  maven \
+  mongodb \
+  neovim \
+  node \
+  node@10 \
+  packer \
+  ruby \
+  scala \
+  wget \
+```
