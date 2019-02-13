@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+alias ssm='aws ssm'
+alias ssmmk='ssm --name ' # --type t --value v
+alias ssmrm='ssm --name'
+
+alias cf='aws cloudformation'
+alias cfmk='cf create-stack --capabilities CAPABILITY_IAM --stack-name' # --template-body file://$(pwd)/$file
+alias cfrm='cf delete-stack --stack-name'
+alias cfw='cf wait --stack-name'
+
