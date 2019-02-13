@@ -6,7 +6,7 @@ set et
 set si
 set nowrap
 set ed
-set so=20
+"set so=20
 
 map <CR> i<CR><ESC>
 map <Space> i <ESC>l
