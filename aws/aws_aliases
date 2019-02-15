@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 
 alias ssm='aws ssm'
-alias ssmmk='ssm --name ' # --type t --value v
-alias ssmrm='ssm --name'
+alias ssmrm='ssm delete-parameter --name'
+
+ssmmk () {
+    ssm put-parameter --name $1  --type $2 --value $3;
+}
 
 alias cf='aws cloudformation'
-alias cfmk='cf create-stack --capabilities CAPABILITY_IAM --stack-name' # --template-body file://$(pwd)/$file
 alias cfrm='cf delete-stack --stack-name'
-alias cfw='cf wait --stack-name'
+alias cfw='cf wait create-stack-completed --stack-name'
+
+cfmk () {
+    cf create-stack --capabilities CAPABILITY_IAM --stack-name $1 --template-body file://$(pwd)/$2
+}
 
