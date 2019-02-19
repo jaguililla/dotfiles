@@ -1,4 +1,5 @@
 #!/bin/sh
 
 alias mkb=minikube
+alias kb=kubectl
 
