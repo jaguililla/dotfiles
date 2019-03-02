@@ -62,7 +62,7 @@ alias fn='find . -name'
 alias fbak='sudo find / -name "*.bak" -or -name "*~"'
 
 # Build systems
-alias gw='./gradlew'
+alias gw='./gradlew --stacktrace'
 alias gwatch='gw -t'
 alias gcb='gw clean build'
 alias mw='./mvnw'
