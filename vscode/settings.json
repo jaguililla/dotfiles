@@ -9,7 +9,7 @@
         100
     ],
     "editor.scrollBeyondLastLine": false,
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "editor.minimap.renderCharacters": false,
     "editor.minimap.maxColumn": 100,
     "editor.wordWrapColumn": 100,
@@ -61,5 +61,8 @@
     "window.zoomLevel": 0,
     "gitlens.historyExplorer.enabled": true,
     "git.autofetch": true,
-    "material-icon-theme.hidesExplorerArrows": true
+    "material-icon-theme.hidesExplorerArrows": true,
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "gitlens.mode.active": "zen"
 }
