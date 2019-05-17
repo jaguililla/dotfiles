@@ -1,5 +1,6 @@
 #!/bin/sh
 
-alias mkb=minikube
+alias mk=minikube
+alias mkenv='eval $(minikube docker-env)'
 alias kb=kubectl
 
