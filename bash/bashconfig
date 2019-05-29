@@ -56,7 +56,7 @@ export GREP_COLOR="1;33"
 export HISTCONTROL=ignoredups
 
 export SSH_ASKPASS=/usr/bin/ksshaskpass
-export SSH_KEYS='~/.ssh/id_rsa)'
+export SSH_KEYS=~/.ssh/id_rsa
 
 eval $(dircolors -b)
 eval $(keychain -q --eval $SSH_KEYS)
