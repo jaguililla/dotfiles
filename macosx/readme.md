@@ -41,6 +41,7 @@ brew install \
   node \
   ruby \
   scala \
+  jenv \
   wget
 ```
 
