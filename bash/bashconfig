@@ -1,7 +1,7 @@
 
 ### CUSTOM CONFIG ###
 
-[ ! -f ~/.git-prompt.sh ] && curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/v2.21.0/contrib/completion/git-prompt.sh
+[ ! -f ~/.git-prompt.sh ] && curl -o ~/.git-prompt.sh https://raw.githubusercontent.com/git/git/v2.23.0/contrib/completion/git-prompt.sh
 source ~/.git-prompt.sh
 
 set -o vi
@@ -71,4 +71,3 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$(ruby -e "puts Gem.user_dir")/bin
 
 stty -ctlecho
-
