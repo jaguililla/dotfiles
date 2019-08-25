@@ -1,11 +1,6 @@
 // Place your key bindings in this file to overwrite the defaults
 [
     {
-        "key": "capslock",
-        "command": "extension.vim_escape",
-        "when": "editorTextFocus && vim.active && !inDebugRepl"
-    },
-    {
         "key": "ctrl+enter",
         "command": "workbench.action.showCommands"
     },
