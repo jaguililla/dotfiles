@@ -1,9 +1,6 @@
 {
     "editor.cursorStyle": "underline",
-    "vsicons.dontShowNewVersionMessage": true,
-    "window.menuBarVisibility": "toggle",
     "files.autoSave": "onFocusChange",
-    "workbench.iconTheme": "material-icon-theme",
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
         100
@@ -23,7 +20,6 @@
     "editor.formatOnType": false,
     "editor.formatOnPaste": true,
     "editor.autoIndent": true,
-    "editor.cursorBlinking": "phase",
     "editor.folding": false,
     "editor.dragAndDrop": false,
     "editor.formatOnSave": true,
@@ -31,38 +27,22 @@
     "window.title": "${folderName} | ${activeEditorMedium} ${dirty}",
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
-    "terminal.external.linuxExec": "konsole",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyle": "underline",
-    // Check: https://code.visualstudio.com/docs/getstarted/theme-color-reference
-    "workbench.colorCustomizations": {
-        "editorCursor.foreground": "#FFFFFF"
-        //"panel.background": "#555555",
-        //"sideBar.background": "#444444"
-    },
-    "workbench.panel.location": "bottom",
-    "editor.fontSize": 13,
+    "editor.fontSize": 14,
     "git.confirmSync": false,
-    "vsicons.presets.hideExplorerArrows": true,
-    "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": true,
-        "suppressNoRepositoryWarning": false,
-        "suppressResultsExplorerNotice": false,
-        "suppressShowKeyBindingsNotice": true,
-        "suppressUpdateNotice": true,
-        "suppressWelcomeNotice": true
-    },
     "git.enableSmartCommit": true,
-    "gitlens.keymap": "alternate",
     "window.zoomLevel": 0,
-    "gitlens.historyExplorer.enabled": true,
     "git.autofetch": true,
-    "material-icon-theme.hidesExplorerArrows": true,
-    "gitlens.views.fileHistory.enabled": true,
-    "gitlens.views.lineHistory.enabled": true,
-    "gitlens.mode.active": "zen"
+    "editor.mouseWheelZoom": true,
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "phase",
+    "editor.cursorWidth": 2,
+    "editor.find.autoFindInSelection": true,
+    "files.trimFinalNewlines": true,
+    "workbench.fontAliasing": "antialiased",
+    "workbench.settings.useSplitJSON": true,
+    "window.titleBarStyle": "native",
+    "zenMode.centerLayout": false,
+    "terminal.integrated.fontSize": 14
 }

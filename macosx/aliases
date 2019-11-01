@@ -78,3 +78,5 @@ alias syup='sys start'
 alias sydown='sys stop'
 alias syrestart='sys restart'
 
+# Brew
+alias brewupg='brew update && brew upgrade && brew cask upgrade && brew cleanup'

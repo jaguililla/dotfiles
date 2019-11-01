@@ -3,6 +3,10 @@
 
 * https://github.com/tj/git-extras
 
+# Setup
+
+ln -s $HOME/Projects/dotfiles/git/gitconfig .gitconfig
+
 # Cleaning branches
 
 To list the branches of type feature mixed with the remote branch develop, you can execute the
@@ -18,3 +22,4 @@ With these commands the branches are deleted from the remote repository origin, 
 local repositories, to delete them from the local repositories must be executed:
 
 `git fetch --prune`
+
