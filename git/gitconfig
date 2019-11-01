@@ -39,7 +39,7 @@
     br = branch
     b = branch -avv --sort=-committerdate
     brm = branch --merged
-    bdmerged = branch -r --merged origin/develop
+    rotten = branch -r --merged origin/master
     brnm = branch --no-merged
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     type = cat-file -t
