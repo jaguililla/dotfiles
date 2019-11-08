@@ -7,8 +7,14 @@
 
 `ln -s $HOME/Projects/dotfiles/git/gitconfig .gitconfig`
 
-As the user is not stored in `.gitconfig`, you have to add the `EMAIL` environment variable to your
-`~/.bashrc` file.
+As the user is not stored in the user `.gitconfig` file, you have to create the `/etc/gitconfig`
+file with the following code:
+
+```
+[user]
+    email = email@gmail.com
+    name = User Name
+```
 
 # Cleaning branches
 
