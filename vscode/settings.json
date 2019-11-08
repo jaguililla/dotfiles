@@ -1,6 +1,8 @@
 {
     "editor.cursorStyle": "underline",
     "files.autoSave": "onFocusChange",
+    "breadcrumbs.enabled": false,
+    "window.menuBarVisibility": "toggle",
     "editor.renderWhitespace": "boundary",
     "editor.rulers": [
         100
@@ -45,5 +47,8 @@
     "window.titleBarStyle": "native",
     "zenMode.centerLayout": false,
     "terminal.integrated.fontSize": 14,
-    "http.proxySupport": "off"
+    "http.proxySupport": "off",
+    "keyboard.dispatch": "keyCode",
+    "rest-client.enableSendRequestCodeLens": false,
+    "workbench.iconTheme": "material-icon-theme"
 }
