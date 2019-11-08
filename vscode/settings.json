@@ -50,5 +50,6 @@
     "http.proxySupport": "off",
     "keyboard.dispatch": "keyCode",
     "rest-client.enableSendRequestCodeLens": false,
+    "rest-client.enableCustomVariableReferencesCodeLens": false,
     "workbench.iconTheme": "material-icon-theme"
 }
