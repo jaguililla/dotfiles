@@ -1,8 +1,9 @@
 
 .DS_Store
 
-.idea
-.vagrant
+.idea/
+.vscode/
+.vagrant/
 
 package.box
 vboxga.iso

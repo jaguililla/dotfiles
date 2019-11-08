@@ -2,9 +2,6 @@
 # Install Git-extras package for more goodies
 #
 
-[user]
-    email = juanjoaguililla@gmail.com
-    name = Juanjo Aguililla
 [core]
     autocrlf = input
     editor = vim
@@ -72,4 +69,3 @@
     brtotaldelete = "!sh -c \"git branch -d $2 && git branch -d -r $1/$2 && git push $1 :$2\" -"
     addall = add -A :/
     aci = "!git add -A && git commit"
-

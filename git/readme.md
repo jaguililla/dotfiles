@@ -5,7 +5,10 @@
 
 # Setup
 
-ln -s $HOME/Projects/dotfiles/git/gitconfig .gitconfig
+`ln -s $HOME/Projects/dotfiles/git/gitconfig .gitconfig`
+
+As the user is not stored in `.gitconfig`, you have to add the `EMAIL` environment variable to your
+`~/.bashrc` file.
 
 # Cleaning branches
 
@@ -22,4 +25,3 @@ With these commands the branches are deleted from the remote repository origin, 
 local repositories, to delete them from the local repositories must be executed:
 
 `git fetch --prune`
-

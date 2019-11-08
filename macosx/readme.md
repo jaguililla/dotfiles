@@ -50,6 +50,16 @@ brew install \
 brew link --overwrite docker-compose
 ```
 
+To setup JEnv execute:
+
+```bash
+jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home/
+jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home/
+jenv global 1.8
+jenv enable-plugin maven
+jenv enable-plugin export
+```
+
 The file `ssh_config` can be placed in `$HOME/.ssh/config` to use Keychain to remember passwords.
 
 You could add these lines to your `~/.bash_profile` file:

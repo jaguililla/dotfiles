@@ -44,5 +44,6 @@
     "workbench.settings.useSplitJSON": true,
     "window.titleBarStyle": "native",
     "zenMode.centerLayout": false,
-    "terminal.integrated.fontSize": 14
+    "terminal.integrated.fontSize": 14,
+    "http.proxySupport": "off"
 }
