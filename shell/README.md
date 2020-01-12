@@ -12,3 +12,6 @@ To allow using sudo without password. It is necessary to add the following line 
 
     Defaults:<user> !authenticate
 
+`shellconfig` file is meant to be used in any shell config (Bash or Zsh) and should
+be sourced at the end of these shells' configuration files.
+
