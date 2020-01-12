@@ -2,6 +2,7 @@
 ### CUSTOM CONFIG ###
 
 export KEYTIMEOUT=1
+export DEFAULT_USER="$(whoami)"
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
