@@ -1,0 +1,26 @@
+
+set -o vi
+
+export EDITOR=vim
+export VISUAL="$EDITOR"
+export BROWSER=/usr/bin/chromium
+export GREP_COLOR="1;33"
+export HISTCONTROL=ignoredups
+
+export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_KEYS=~/.ssh/id_rsa
+
+eval $(dircolors -b)
+eval $(keychain -q --eval $SSH_KEYS)
+
+eval $(go env)
+
+export ANDROID_HOME=/opt/android-sdk
+export JAVA_HOME=/usr/lib/jvm/default
+export JAVAHOME=$JAVA_HOME
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$(ruby -e "puts Gem.user_dir")/bin
+
+stty -ctlecho
+
