@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Example: rgita remote \;
+alias g='git'
 alias rgita='find . -type d -name .git -execdir git'
 
 # Example: rgit remote -vv
