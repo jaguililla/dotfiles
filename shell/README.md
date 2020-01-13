@@ -15,3 +15,5 @@ To allow using sudo without password. It is necessary to add the following line 
 `shellconfig` file is meant to be used in any shell config (Bash or Zsh) and should
 be sourced at the end of these shells' configuration files.
 
+For Zsh (using Oh My Zsh) add the following line for a great Git prompt plugin:
+`plugins=(git-prompt)`
