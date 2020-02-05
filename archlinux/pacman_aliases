@@ -2,8 +2,7 @@
 
 # Pacman
 alias fpac='sudo find / -name "*.pacnew" -or -name "*.pacsave 2>/dev/null"'
-alias pac='sudo pacman'
-alias spac='sudo pac'
+alias pac='yay'
 
 # Pacman aliases
 alias pacupg='pac -Syu && paccache -rk 2' # Synchronize with repositories and clean cache
