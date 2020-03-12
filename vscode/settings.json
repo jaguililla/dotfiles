@@ -1,4 +1,5 @@
 {
+    "workbench.colorTheme": "Codecourse Contrast (rainglow)",
     "editor.cursorStyle": "underline",
     "files.autoSave": "onFocusChange",
     "breadcrumbs.enabled": false,
@@ -21,7 +22,7 @@
     "editor.minimap.showSlider": "always",
     "editor.formatOnType": false,
     "editor.formatOnPaste": true,
-    "editor.autoIndent": true,
+    "editor.autoIndent": "full",
     "editor.folding": false,
     "editor.dragAndDrop": false,
     "editor.formatOnSave": true,
@@ -40,7 +41,7 @@
     "editor.smoothScrolling": true,
     "editor.cursorBlinking": "phase",
     "editor.cursorWidth": 2,
-    "editor.find.autoFindInSelection": true,
+    "editor.find.autoFindInSelection": "always",
     "files.trimFinalNewlines": true,
     "workbench.fontAliasing": "antialiased",
     "workbench.settings.useSplitJSON": true,
@@ -51,5 +52,7 @@
     "keyboard.dispatch": "keyCode",
     "rest-client.enableSendRequestCodeLens": false,
     "rest-client.enableCustomVariableReferencesCodeLens": false,
+    "material-icon-theme.folders.theme": "classic",
+    "material-icon-theme.hidesExplorerArrows": true,
     "workbench.iconTheme": "material-icon-theme"
 }

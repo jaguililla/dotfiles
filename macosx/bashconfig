@@ -57,6 +57,7 @@ export EDITOR=vim
 export VISUAL="$EDITOR"
 export GREP_COLOR="1;33"
 export HISTCONTROL=ignoredups
+export LC_ALL=en_US.UTF-8
 
 eval $(gdircolors -b)
 

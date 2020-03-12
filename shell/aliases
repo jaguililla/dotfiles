@@ -63,6 +63,10 @@ alias f='find .'
 alias fn='find . -name'
 alias fbak='sudo find / -name "*.bak" -or -name "*~"'
 
+# VI
+alias vi='nvim'
+alias vim='nvim'
+
 # Build systems
 alias gw='./gradlew --console=rich --warning-mode all'
 alias gwatch='gw -t'
@@ -70,6 +74,7 @@ alias gcb='gw clean build'
 alias mw='./mvnw'
 alias mci='mw clean install'
 
+# Processes
 alias sys='sudo systemctl'
 alias sy='sys status'
 alias syup='sys start'

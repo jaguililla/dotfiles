@@ -1,82 +1,17 @@
 #!/usr/bin/env bash
 
-# Aliases
-alias diff='colordiff'              # requires colordiff package
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+#
+# These aliases must be sources *AFTER* `shell/aliases`
+#
 
-# modified commands
-alias more='less'
-alias df='df -h'
-alias du='du -c -h'
-alias mkdir='mkdir -p -v'
-alias ping='ping -c 5'
-alias sudo='sudo -E'
-
-# new commands
-alias da='date "+%A, %B %d, %Y [%T]"'
-alias du1='du --max-depth=1'
-alias hist='history | grep $1'      # requires an argument
-alias openports='netstat --all --numeric --programs --inet'
-alias pg='ps -Af | grep $1'         # requires an argument
-
-alias backup='rsync -a --delete'
-
-# privileged access
-if [ $UID -ne 0 ]; then
-    alias sudo='sudo '
-    alias scat='sudo cat'
-    alias svim='sudo vim'
-    alias root='sudo su'
-    alias reboot='sudo reboot'
-    alias halt='sudo halt'
-fi
-
-# tar
-alias tar='gtar'
-
-# cd
-alias back='cd "$OLDPWD"'
-alias ..='cd ..'
-
-# ls
+# Core commands
 # Requires 'coreutils': brew install coreutils
+alias tar='gtar'
 alias ls='gls -hFX --color=auto --group-directories-first'
-alias lr='ls -R'                    # recursive ls
-alias ll='ls -l'
-alias la='ll -A'
-alias lx='ll -BX'                   # sort by extension
-alias lz='ll -rS'                   # sort by size
-alias lt='ll -rt'                   # sort by date
-alias lm='la | more'
-alias l='ls -ACF'
 
-# safety features
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-alias ln='ln -i'
-alias chown='gchown --preserve-root'
-alias chmod='gchmod --preserve-root'
-alias chgrp='gchgrp --preserve-root'
-
-alias f='find .'
-alias fn='find . -name'
-alias fbak='sudo find / -name "*.bak" -or -name "*~"'
-
-# Build systems
-alias gw='./gradlew --stacktrace'
-alias gwatch='gw -t'
-alias gcb='gw clean build'
-alias mw='./mvnw'
-alias mci='mw clean install'
-
+# Processes
 alias sys='launchctl'
-alias sy='sys status'
-alias syup='sys start'
-alias sydown='sys stop'
-alias syrestart='sys restart'
 
 # Brew
 alias brewupg='brew update && brew upgrade && brew cask upgrade && brew cleanup'
+

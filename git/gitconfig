@@ -30,6 +30,8 @@
 [status]
     displayCommentPrefix = true
 [alias]
+    remotes = remote -vv
+    prune = fetch --prune
     co = checkout
     ci = commit
     st = status -sb
@@ -69,3 +71,6 @@
     brtotaldelete = "!sh -c \"git branch -d $2 && git branch -d -r $1/$2 && git push $1 :$2\" -"
     addall = add -A :/
     aci = "!git add -A && git commit"
+[user]
+	email = jaguililla@bnext.es
+	name = jaguililla

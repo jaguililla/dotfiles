@@ -23,5 +23,13 @@
     {
         "key": "ctrl+`",
         "command": "-workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.previousEditor"
     }
 ]
