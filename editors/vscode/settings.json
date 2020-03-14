@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Codecourse Contrast (rainglow)",
+    "workbench.colorTheme": "Dare Contrast (rainglow)",
     "editor.cursorStyle": "underline",
     "files.autoSave": "onFocusChange",
     "breadcrumbs.enabled": false,
@@ -54,5 +54,6 @@
     "rest-client.enableCustomVariableReferencesCodeLens": false,
     "material-icon-theme.folders.theme": "classic",
     "material-icon-theme.hidesExplorerArrows": true,
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.tree.indent": 22
 }

@@ -1,1 +1,0 @@
-Change user home dir in 'passwd' file
