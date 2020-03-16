@@ -8,6 +8,9 @@
 # Requires 'coreutils': brew install coreutils
 alias tar='gtar'
 alias ls='gls -hFX --color=auto --group-directories-first'
+alias chown='gchown --preserve-root'
+alias chmod='gchmod --preserve-root'
+alias chgrp='gchgrp --preserve-root'
 
 # Processes
 alias sys='launchctl'
