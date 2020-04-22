@@ -73,6 +73,7 @@ alias gwatch='gw -t'
 alias gcb='gw clean build'
 alias mw='./mvnw'
 alias mci='mw clean install'
+alias npr='npm run'
 
 # Processes
 alias sys='sudo systemctl'
