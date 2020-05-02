@@ -2,6 +2,7 @@
 
 # Example: rgita remote \;
 alias g='git'
+alias gf='g fetch --prune && g pull origin master && g pull'
 alias rgita='find . -type d -name .git -execdir git'
 
 # Example: rgit remote -vv
@@ -9,9 +10,13 @@ rgit() {
   rgita "$@" \;
 }
 
+alias rg='rgit'
+alias rgf='rg fetch --prune && rg pull origin master && rg pull'
+
 # Example: GIT_BASE="git@github.com:" clone hexagonkt/todokt
 clone() {
     PROJECT_REPOSITORY=$1
 
     git clone "$GIT_BASE/${PROJECT_REPOSITORY}.git" "${PROJECT_REPOSITORY}"
 }
+
