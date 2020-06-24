@@ -24,6 +24,7 @@ plugins=(
 	zsh-navigation-tools
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+	zsh-z
 )
 ```
 
@@ -41,3 +42,10 @@ Spaceship ZSH Theme
 git clone https://github.com/denysdovhan/spaceship-prompt.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt"
 ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme"
 ```
+
+Z
+
+```
+git clone https://github.com/agkozak/zsh-z "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z"
+```
+
