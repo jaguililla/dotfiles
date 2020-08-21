@@ -1,6 +1,34 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-alias mk=minikube
-alias mkenv='eval $(minikube docker-env)'
-alias kb=kubectl
+alias mk='minikube'
+alias mkenv='eval $(mk docker-env)'
+alias mkstop='docker stop registry_socat ; mk stop'
+alias mkdel='mkstop ; mk delete'
+alias mkst='mk config view && mk addons list && mk status && mk ip ; mk service list || true'
+
+mkstart() {
+
+  # Setup
+  mk config set driver virtualbox
+  mk config set cpus 2
+  mk config set memory 4096
+  mk config set insecure-registry "10.0.0.0/8"
+
+  # Start
+  mk start
+  mk addons enable dashboard
+  mk addons enable registry
+  mk addons enable ingress
+  mk addons enable ingress-dns
+
+  docker run --rm -it --detach --name registry_socat --network=host alpine \
+    ash -c "apk add socat && socat TCP-LISTEN:5000,reuseaddr,fork TCP:$(mk ip):5000"
+
+  mkst
+}
+
+alias kb='kubectl'
+alias kbg='kb get'
+alias kba='kb apply'
+alias kbcu='kb config use'
 
