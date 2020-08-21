@@ -1,5 +1,0 @@
-#!/bin/sh
-
-alias ms=minishift
-alias msenv='eval $(minishift oc-env) && eval $(minishift docker-env)'
-
