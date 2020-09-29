@@ -16,5 +16,5 @@ alias chgrp='gchgrp --preserve-root'
 alias sys='launchctl'
 
 # Brew
-alias brewupg='brew update && brew upgrade && brew cask upgrade && brew cleanup'
+alias brewupg='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
 
