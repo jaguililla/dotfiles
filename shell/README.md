@@ -15,6 +15,14 @@ To allow using sudo without password. It is necessary to add the following line 
 `shellconfig` file is meant to be used in any shell config (Bash or Zsh) and should
 be sourced at the end of these shells' configuration files.
 
+To change shell. Use: `chsh --help`
+
+# ZSH
+
+Oh My ZSH:
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 For Zsh (using Oh My Zsh) add the following plugins for a great prompt:
 
 ```
@@ -35,6 +43,10 @@ installed separately.
 git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
+
+# Oh My ZSH
+
+Run `export ZSH_COMPDUMP="$ZSH/cache/.zcompdump"` before Oh My ZSH to change cache file directory.
 
 Spaceship ZSH Theme
 

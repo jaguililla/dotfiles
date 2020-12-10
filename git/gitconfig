@@ -7,7 +7,7 @@
     editor = vim
 
 [commit]
-    template = ~/.git-message.txt
+    template = ~/Projects/dotfiles/git/git-message.txt
 
 [color]
     ui = auto
@@ -73,3 +73,5 @@
     aci = "!git add -A && git commit"
 [pager]
 	branch = false
+[pull]
+	rebase = false

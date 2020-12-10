@@ -1,26 +1,40 @@
 
-set -o vi
+### CUSTOM CONFIG ###
 
-export EDITOR=vim
+# Shell config (~/.profile)
+
+export EDITOR=nvim
 export VISUAL="$EDITOR"
-export BROWSER=/usr/bin/chromium
+#export BROWSER=/usr/bin/chromium
+export BROWSER=/usr/bin/firefox
 export GREP_COLOR="1;33"
 export HISTCONTROL=ignoredups
+export LESSHISTFILE="$HOME/.cache/lesshst"
 
-export SSH_ASKPASS=/usr/bin/ksshaskpass
+export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
 export SSH_KEYS=~/.ssh/id_rsa
 
 eval $(dircolors -b)
-eval $(keychain -q --eval $SSH_KEYS)
+#eval $(keychain -q --eval $SSH_KEYS)
 
 eval $(go env)
+export PATH=$PATH:$GOPATH/bin
 
-export ANDROID_HOME=/opt/android-sdk
 export JAVA_HOME=/usr/lib/jvm/default
 export JAVAHOME=$JAVA_HOME
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$GOPATH/bin
+
 export PATH=$PATH:$(ruby -e "puts Gem.user_dir")/bin
+
+#export ANDROID_HOME=/opt/android-sdk
+#export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+export NNN_OPTS="e"
+
+export ZSH_COMPDUMP="$HOME/.oh-my-zsh/cache/.zcompdump"
+export ZSHZ_DATA="$HOME/.oh-my-zsh/cache/.z"
 
 stty -ctlecho
 

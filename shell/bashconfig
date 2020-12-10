@@ -47,4 +47,7 @@ export GIT_PS1_SHOWSTASHSTATE="true"
 export GIT_PS1_SHOWUNTRACKEDFILES="true"
 export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_SHOWCOLORHINTS="true"
+export HISTFILE="${HOME}/.cache/bash_history"
+
+set -o vi
 

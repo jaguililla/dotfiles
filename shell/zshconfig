@@ -1,6 +1,11 @@
 
 ### CUSTOM CONFIG ###
 
+# *IMPORTANT* If using Oh My ZSH:
+#  - This file must be sourced *BEFORE* Oh My ZSH
+#  - To use VIM line editing, bindkey -v must be called *BEFORE* Oh My ZSH
+
+export HISTFILE="${HOME}/.cache/zsh_history"
 export KEYTIMEOUT=1
 export DEFAULT_USER="$(whoami)"
 
