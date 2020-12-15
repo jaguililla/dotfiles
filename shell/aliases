@@ -64,8 +64,7 @@ alias fn='find . -name'
 alias fbak='sudo find / -name "*.bak" -or -name "*~"'
 
 # VI
-alias vi='nvim'
-alias vim='nvim'
+alias vi='vim'
 
 # Build systems
 alias gw='./gradlew'
