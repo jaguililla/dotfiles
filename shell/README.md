@@ -2,6 +2,9 @@
 BASH
 ====
 
+All bash files should be copied to user home (~) with a point (.) before the name. Ie:
+profile -> ~/.profile
+
 It is necessary to add SSH keys to keychain in `.bashrc` after calling `bashconfig`.
 Add the following line:
 
@@ -60,4 +63,3 @@ Z
 ```
 git clone https://github.com/agkozak/zsh-z "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z"
 ```
-

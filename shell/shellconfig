@@ -3,16 +3,15 @@
 
 # Shell config (~/.profile)
 
-export EDITOR=nvim
+export EDITOR=vim
 export VISUAL="$EDITOR"
-#export BROWSER=/usr/bin/chromium
 export BROWSER=/usr/bin/firefox
 export GREP_COLOR="1;33"
 export HISTCONTROL=ignoredups
-export LESSHISTFILE="$HOME/.cache/lesshst"
+export LESSHISTFILE="$HOME/.oh-my-zsh/cache/lesshst"
 
 export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
-export SSH_KEYS=~/.ssh/id_rsa
+#export SSH_KEYS=~/.ssh/id_rsa
 
 eval $(dircolors -b)
 #eval $(keychain -q --eval $SSH_KEYS)
@@ -37,4 +36,3 @@ export ZSH_COMPDUMP="$HOME/.oh-my-zsh/cache/.zcompdump"
 export ZSHZ_DATA="$HOME/.oh-my-zsh/cache/.z"
 
 stty -ctlecho
-

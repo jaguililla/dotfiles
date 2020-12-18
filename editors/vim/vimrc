@@ -43,9 +43,7 @@ colorscheme desert
 syn on
 
 set encoding=utf8
-
 set t_Co=256
 
 hi CursorLine cterm=NONE ctermbg=Black guibg=darkgray
 hi CursorColumn cterm=NONE ctermbg=Black guibg=darkgray
-

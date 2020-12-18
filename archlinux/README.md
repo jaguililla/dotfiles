@@ -38,7 +38,7 @@ sudo usermod -aG docker $user
 systemctl enable snapd
 systemctl start snapd
 
-Language settings can be changed by user in `~/.profile` file:
+Language settings can be changed by user (not system wide) in `~/.profile` file:
 
 ```
 export LANG=es_ES.UTF-8
@@ -76,8 +76,8 @@ ln -s ~/Projects/dotfiles/shell/shellconfig" ~/.profile
 ln -s ~/Projects/dotfiles/shell/inputrc ~/.inputrc
 ln -s ~/Projects/dotfiles/editors/vim/gvimrc ~/.gvimrc
 ln -s ~/Projects/dotfiles/editors/vim/vimrc ~/.vimrc
+ln -s ~/Projects/dotfiles/editors/intellij/ideavimrc ~/.ideavimrc
 ln -s ~/Projects/dotfiles/git/gitconfig ~/.gitconfig
-ln -s ~/Projects/dotfiles/git/git-message.txt ~/.git-message.txt
 
 echo "source ~/Projects/dotfiles/shell/bashconfig" >>~/.bashrc
 echo "source ~/Projects/dotfiles/archlinux/pacman_aliases" >>~/.bashrc
@@ -143,19 +143,6 @@ echo "source ~/Projects/dotfiles/vagrant/vagrant_aliases" >>~/.zshrc
 
 sudo systemctl -f enable sddm
 
-# Install Snap
-
-To install Snap package manager check: https://docs.snapcraft.io/core/install-arch-linux
-
 # Arch Linux install script
 
-This script follows (more or less closely) the
-[Beginner's Guide](https://wiki.archlinux.org/index.php/Beginners%27_Guide) and the
-[General Recommendations](https://wiki.archlinux.org/index.php/General_Recommendations) documents.
-
-The install script is not interactive, you should edit the script file and change the parameters
-prior to running it.
-
-Beware of the bugs: This install script is tailored for me, it may or may not suit your needs. Also,
-it is not extensively tested hence it may even don't work properly, so use it at your own risk!
-
+The script is in the repository tag `archlinux`.

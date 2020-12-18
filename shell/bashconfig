@@ -50,4 +50,3 @@ export GIT_PS1_SHOWCOLORHINTS="true"
 export HISTFILE="${HOME}/.cache/bash_history"
 
 set -o vi
-

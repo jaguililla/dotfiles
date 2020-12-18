@@ -13,7 +13,7 @@ brew unlink docker-compose
 brew tap adoptopenjdk/openjdk
 brew tap mongodb/brew
 
-brew cask install \
+brew install \
   virtualbox \
   docker \
   docker-toolbox \
@@ -23,17 +23,12 @@ brew cask install \
   firefox \
   google-chrome \
   adoptopenjdk11 \
-  adoptopenjdk8
-
-brew install \
+  macvim \
+  adoptopenjdk8 \
   awscli \
   bash-completion \
   coreutils \
   dep \
-  docker \
-  docker-compose \
-  docker-compose-completion \
-  docker-machine \
   fdupes \
   git \
   git-extras \
@@ -48,12 +43,10 @@ brew install \
   maven \
   gradle \
   mongodb-community \
-  vim \
-  neovim \
   node \
   ruby \
-  scala \
   jenv \
+  nnn \
   wget
 
 brew link --overwrite docker-compose

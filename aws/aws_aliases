@@ -14,4 +14,3 @@ alias cfw='cf wait create-stack-completed --stack-name'
 cfmk () {
     cf create-stack --capabilities CAPABILITY_IAM --stack-name $1 --template-body file://$(pwd)/$2
 }
-

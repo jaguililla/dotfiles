@@ -1,10 +1,20 @@
 
-# 1. Use the imperative mood in the subject line
-# 2. Capitalize the subject line
-# 3. Do not end the subject line with a period
-# 4. Limit the subject line to 50 characters
-# 5. Separate subject from body with a blank line
-# 6. Wrap the body at 72 characters
-# 7. Use the body to explain what and why vs. how
+# Summary [#TaskId] [:Tag] [!!!]
 #
-# RATIONALE: https://chris.beams.io/posts/git-commit
+# [Details]
+#
+#  1. Capitalize the summary line
+#  2. Use the imperative mood in the summary line
+#  3. Do not end the summary line with a period
+#  4. Limit the summary line to 50 characters
+#  5. Words starting with ':' are tag (check TAGS below)
+#  6. 'TaskId', 'Tag', '!!!' and 'Details' are optional
+#  7. If summary contains "!!!" the commit has breaking changes
+#  8. Separate summary from details with a blank line
+#  9. Wrap the details at 72 characters
+# 10. Use the details to explain what and why vs. how
+#
+# TAGS: You can set more than one. I.e.: :doc :test :chore :fix
+#
+# Rules inspired by https://chris.beams.io/posts/git-commit
+# and https://www.conventionalcommits.org
