@@ -47,6 +47,12 @@ brew install \
   ruby \
   jenv \
   nnn \
+  taskwarrior-tui \
+  taskwarrior-pomodoro \
+  hammerspoon \
+  neofetch \
+  plantuml \
+  alt-tab \
   wget
 
 brew link --overwrite docker-compose
@@ -63,7 +69,8 @@ jenv enable-plugin maven
 jenv enable-plugin export
 ```
 
-The file `ssh_config` can be placed in `$HOME/.ssh/config` to use Keychain to remember passwords.
+The file `ssh_config` can be linked in `$HOME/.ssh/config` to use Keychain to remember passwords.
+I.e.: `ln -s $DOTFILES/macosx/ssh_config $HOME/.ssh/config`
 
 You could add these lines to your `~/.bash_profile` file:
 
