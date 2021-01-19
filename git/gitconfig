@@ -72,6 +72,6 @@
     addall = add -A :/
     aci = "!git add -A && git commit"
 [pager]
-	branch = false
+    branch = false
 [pull]
-	rebase = false
+    rebase = false
