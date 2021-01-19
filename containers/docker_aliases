@@ -16,7 +16,7 @@ alias dit='d exec -it'
 alias dprune='sudo docker system prune -af && sudo docker volume prune -f'
 
 #dps () { d ps -a --format "table{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}" -f name=$1; }
-dsh () { dit "$1" bash; }
+dsh () { dit "$1" /bin/bash; }
 
 # DOCKER MACHINE
 alias dm='docker-machine'
@@ -33,3 +33,5 @@ alias dcrm='dc rm'
 alias dcstop='dc stop'
 alias dcup='dc up -d'
 alias dcres='dc restart'
+
+dcsh () { dc exec "$1" /bin/bash; }
