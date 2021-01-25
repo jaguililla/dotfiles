@@ -1,0 +1,16 @@
+#
+# Template for the `$HOME/.aws/config` file
+#
+
+[default]
+output = yaml
+region = eu-west-1
+
+[profile SampleProfile]
+# Default credentials
+source_profile = default
+role_arn = <role_arn>
+# open https://console.aws.amazon.com/iam/home?region=eu-west-1#/users/$USER?section=security_credentials
+# Pick ARN at: Assigned MFA device
+mfa_serial = arn:aws:iam::$IAM_ID:mfa/$USER
+

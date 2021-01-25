@@ -90,3 +90,12 @@ source $HOME/Projects/jaguililla/dotfiles/macosx/aliases
 ```
 
 Oh My Zsh: `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+
+# Python
+
+```bash
+brew install python@3
+
+# In .bashrc or .zshrc
+export PATH=/usr/local/opt/python@3/Frameworks/Python.framework/Versions/Current/bin:$PATH
+```
