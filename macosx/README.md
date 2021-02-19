@@ -99,3 +99,9 @@ brew install python@3
 # In .bashrc or .zshrc
 export PATH=/usr/local/opt/python@3/Frameworks/Python.framework/Versions/Current/bin:$PATH
 ```
+
+```
+sudo sysctl -w kern.maxfiles=24500
+sudo sysctl -w kern.maxfilesperproc=20480
+```
+
