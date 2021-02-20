@@ -29,7 +29,10 @@ sudo pacman -S \
   xdotool \
   unrar \
   snapd \
+  kotlin \
   go
+
+yay -S dbvis keystore-explorer-bin
 
 systemctl enable docker
 systemctl start docker
