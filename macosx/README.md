@@ -47,6 +47,12 @@ brew install \
   ruby \
   jenv \
   nnn \
+  taskwarrior-tui \
+  taskwarrior-pomodoro \
+  hammerspoon \
+  neofetch \
+  plantuml \
+  alt-tab \
   wget
 
 brew link --overwrite docker-compose
@@ -63,7 +69,8 @@ jenv enable-plugin maven
 jenv enable-plugin export
 ```
 
-The file `ssh_config` can be placed in `$HOME/.ssh/config` to use Keychain to remember passwords.
+The file `ssh_config` can be linked in `$HOME/.ssh/config` to use Keychain to remember passwords.
+I.e.: `ln -s $DOTFILES/macosx/ssh_config $HOME/.ssh/config`
 
 You could add these lines to your `~/.bash_profile` file:
 
@@ -83,3 +90,18 @@ source $HOME/Projects/jaguililla/dotfiles/macosx/aliases
 ```
 
 Oh My Zsh: `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+
+# Python
+
+```bash
+brew install python@3
+
+# In .bashrc or .zshrc
+export PATH=/usr/local/opt/python@3/Frameworks/Python.framework/Versions/Current/bin:$PATH
+```
+
+```
+sudo sysctl -w kern.maxfiles=24500
+sudo sysctl -w kern.maxfilesperproc=20480
+```
+
