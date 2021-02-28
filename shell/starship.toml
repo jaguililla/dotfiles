@@ -39,6 +39,9 @@ $battery\
 $status\
 $character"""
 
+[directory]
+truncate_to_repo = false
+
 [status]
 format = '[$status](red) '
 map_symbol = true
