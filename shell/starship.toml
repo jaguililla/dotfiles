@@ -1,0 +1,48 @@
+
+format = """
+$username\
+$hostname\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$time\
+$kubernetes\
+$docker_context\
+$package\
+$dart\
+$golang\
+$helm\
+$java\
+$kotlin\
+$nodejs\
+$perl\
+$php\
+$python\
+$ruby\
+$lua\
+$rust\
+$swift\
+$terraform\
+$vagrant\
+$aws\
+$gcloud\
+$env_var\
+$custom\
+$memory_usage\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$status\
+$character"""
+
+[status]
+format = '[$status](red) '
+map_symbol = true
+disabled = false
+
+[time]
+disabled = false

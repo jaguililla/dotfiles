@@ -30,12 +30,12 @@ For Zsh (using Oh My Zsh) add the following plugins for a great prompt:
 
 ```
 plugins=(
-	docker
-	git-prompt
-	zsh-navigation-tools
-	zsh-autosuggestions
-	zsh-syntax-highlighting
-	zsh-z
+#  docker
+#  git-prompt
+  zsh-navigation-tools
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-z
 )
 ```
 
@@ -51,15 +51,22 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 Run `export ZSH_COMPDUMP="$ZSH/cache/.zcompdump"` before Oh My ZSH to change cache file directory.
 
-Spaceship ZSH Theme
+# Spaceship ZSH Theme
 
 ```
 git clone https://github.com/denysdovhan/spaceship-prompt.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt"
 ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme"
 ```
 
-Z
+# Z
 
 ```
 git clone https://github.com/agkozak/zsh-z "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z"
+```
+
+# Starship Prompt
+
+```bash
+curl -fsSL https://starship.rs/install.sh | bash
+echo 'eval "$(starship init zsh)"'>>$HOME/.zshrc
 ```
