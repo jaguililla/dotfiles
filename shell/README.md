@@ -69,4 +69,5 @@ git clone https://github.com/agkozak/zsh-z "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 ```bash
 curl -fsSL https://starship.rs/install.sh | bash
 echo 'eval "$(starship init zsh)"'>>$HOME/.zshrc
+ln -s $DOTFILES/shell/starship.toml .config/starship.toml
 ```
