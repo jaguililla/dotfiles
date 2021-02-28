@@ -6,7 +6,7 @@ set et
 set si
 set nowrap
 set ed
-"set so=20
+set so=10
 
 map <CR> i<CR><ESC>
 map <Space> i <ESC>l
@@ -15,3 +15,19 @@ map <S-F5> @a
 map <S-F6> @b
 map <S-F7> @c
 map <S-F8> @d
+
+" Type :actionlist to get a list of all available actions
+" You can map keys to actions. I.e.:
+"map <_> :action ActivateProjectToolWindow<CR>
+
+"
+" Find IntelliJ IDEA VIM plugins information on:
+" https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
+"
+let g:NERDTreeMapActivateNode="l"
+let g:NERDTreeMapCloseDir="h"
+set NERDTree
+
+" Requires the 'AceJump' and 'IdeaVim-EasyMotion' plugins
+let mapleader=","
+set easymotion
