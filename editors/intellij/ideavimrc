@@ -28,6 +28,6 @@ let g:NERDTreeMapActivateNode="l"
 let g:NERDTreeMapCloseDir="h"
 set NERDTree
 
-" Requires the 'AceJump' and 'IdeaVim-EasyMotion' plugins
+" Requires the 'IdeaVim-EasyMotion' plugin
 let mapleader=","
 set easymotion
