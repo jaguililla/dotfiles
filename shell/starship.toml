@@ -49,3 +49,6 @@ disabled = false
 
 [time]
 disabled = false
+
+[kotlin]
+symbol = "K "
