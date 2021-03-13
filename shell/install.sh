@@ -1,0 +1,21 @@
+#!/usr/bin/env sh
+
+BASEDIR=$(dirname $0)
+BASEPATH=$(readlink -f $BASEDIR 2>/dev/null || greadlink -f $BASEDIR)
+
+export DOTFILES=${1:-"$BASEPATH/.."}
+[[ ! -d $DOTFILES ]] && echo 'DOTFILES must exists' && exit 1
+[[ ! -d $DOTFILES/shell ]] && echo 'Shell settings must exists' && exit 2
+
+ln -s $DOTFILES/shell/inputrc ~/.inputrc
+
+echo "export DOTFILES=$DOTFILES" >>~/.bashrc
+echo "source $DOTFILES/shell/bashconfig" >>~/.bashrc
+echo "source $DOTFILES/shell/aliases" >>~/.bashrc
+echo "source $DOTFILES/shell/ssh_aliases" >>~/.bashrc
+
+echo "export DOTFILES=$DOTFILES" >>~/.zshrc
+echo "source $DOTFILES/shell/shellconfig" >>~/.zshrc
+echo "source $DOTFILES/shell/zshconfig" >>~/.zshrc
+echo "source $DOTFILES/shell/aliases" >>~/.zshrc
+echo "source $DOTFILES/shell/ssh_aliases" >>~/.zshrc

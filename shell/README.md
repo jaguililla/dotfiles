@@ -1,7 +1,5 @@
 
-BASH
-====
-
+# BASH
 All bash files should be copied to user home (~) with a point (.) before the name. Ie:
 profile -> ~/.profile
 
@@ -20,8 +18,7 @@ be sourced at the end of these shells' configuration files.
 
 To change shell. Use: `chsh --help`
 
-# ZSH
-
+## ZSH
 Oh My ZSH:
 
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -47,24 +44,24 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-# Oh My ZSH
+## Oh My ZSH
 
 Run `export ZSH_COMPDUMP="$ZSH/cache/.zcompdump"` before Oh My ZSH to change cache file directory.
 
-# Spaceship ZSH Theme
+## Spaceship ZSH Theme
 
 ```
 git clone https://github.com/denysdovhan/spaceship-prompt.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt"
 ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme"
 ```
 
-# Z
+## Z
 
 ```
 git clone https://github.com/agkozak/zsh-z "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z"
 ```
 
-# Starship Prompt
+## Starship Prompt
 
 ```bash
 curl -fsSL https://starship.rs/install.sh | bash
