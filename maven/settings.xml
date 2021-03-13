@@ -1,0 +1,64 @@
+
+<!--
+ ! Example settings file.
+ !-->
+<settings>
+    <profiles>
+        <profile>
+            <id>company</id>
+
+            <repositories>
+                <repository>
+                    <id>company-central</id>
+                    <url>https://company.com/repository/all</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
+
+                <repository>
+                    <id>maven-central</id>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+            </repositories>
+ 
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>company-central</id>
+                    <url>https://company.com/repository/all</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </pluginRepository>
+
+                <pluginRepository>
+                    <id>maven-central</id>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>company</activeProfile>
+    </activeProfiles>
+
+    <servers>
+        <server>
+            <id>ssh_server</id>
+            <username>root</username>
+        </server>
+    </servers>
+</settings>
