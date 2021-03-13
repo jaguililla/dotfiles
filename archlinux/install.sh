@@ -28,6 +28,7 @@ sudo pacman -S \
   xdotool \
   unrar \
   snapd \
+  tldr \
   kotlin \
   go
 
