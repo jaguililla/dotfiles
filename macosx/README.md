@@ -36,4 +36,7 @@ sudo sysctl -w kern.maxfiles=24500
 sudo sysctl -w kern.maxfilesperproc=20480
 ```
 
-## Disable Mac
+## Disable macOS quarantine 
+```bash
+sudo xattr -r -d com.apple.quarantine path/to/program/folder/
+```
