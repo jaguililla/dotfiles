@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 alias vg='vagrant'
 alias vgst='vg status'
@@ -8,4 +8,3 @@ alias vghalt='vg halt'
 alias vgrm='vg destroy -f'
 alias vgsh='vg ssh'
 alias vgrebuild='vgrm && vgup'
-
