@@ -1,4 +1,6 @@
 
+"set norelativenumber
+
 set number
 set relativenumber
 set ignorecase
