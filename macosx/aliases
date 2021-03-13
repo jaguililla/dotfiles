@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 #
 # These aliases must be sources *AFTER* `shell/aliases`
@@ -11,6 +11,7 @@ alias ls='gls -hFX --color=auto --group-directories-first'
 alias chown='gchown --preserve-root'
 alias chmod='gchmod --preserve-root'
 alias chgrp='gchgrp --preserve-root'
+alias readlink='greadlink'
 
 # Processes
 alias sys='launchctl'
@@ -20,4 +21,3 @@ alias brewupg='brew update && brew upgrade && brew upgrade --cask && brew cleanu
 
 # Shortcut because it is so hard to type '~' in Mac :/
 export h="$HOME"
-
