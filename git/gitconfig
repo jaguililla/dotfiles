@@ -1,5 +1,5 @@
 #
-# Install Git-extras package for more goodies
+# Check README.md for more goodies and set up information
 #
 
 [core]
@@ -7,7 +7,7 @@
     editor = vim
 
 [commit]
-    template = ~/Projects/dotfiles/git/git-message.txt
+    template = $DOTFILES/git/git-message.txt
 
 [color]
     ui = auto
