@@ -39,3 +39,15 @@ sudo usermod -aG docker $user
 
 systemctl enable snapd
 systemctl start snapd
+
+BASEDIR=$(dirname $0)
+BASEPATH=$(readlink -f $BASEDIR)
+
+export DOTFILES=${1:-"$BASEPATH/.."}
+[[ ! -d $DOTFILES ]] && echo 'DOTFILES must exists' && exit 1
+[[ ! -d $DOTFILES/archlinux ]] && echo 'Arch Linux settings must exists' && exit 2
+
+ln -s $DOTFILES/shell/shellconfig ~/.profile
+
+echo "source $DOTFILES/archlinux/pacman_aliases" >>~/.bashrc
+echo "source $DOTFILES/archlinux/pacman_aliases" >>~/.zshrc

@@ -8,3 +8,5 @@ sudo pacman -S \
   kcmutils \
   sddm-kcm \
   sddm
+
+sudo systemctl -f enable sddm
