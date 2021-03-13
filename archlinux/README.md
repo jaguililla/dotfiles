@@ -1,79 +1,10 @@
 
 # Initial Setup
 
-sudo pacman -S \
-  yay \
-  base-devel \
-  keychain \
-  git \
-  vim \
-  gvim \
-  neovim \
-  vagrant \
-  docker \
-  docker-compose \
-  minikube \
-  kubectl \
-  virtualbox \
-  aws-cli \
-  xclip \
-  xsel \
-  lxqt-openssh-askpass \
-  curl \
-  httpie \
-  jq \
-  nnn \
-  zsh \
-  wmctrl \
-  the_silver_searcher \
-  xdotool \
-  unrar \
-  snapd \
-  kotlin \
-  go
-
-yay -S dbvis keystore-explorer-bin
-
-systemctl enable docker
-systemctl start docker
-sudo usermod -aG docker $user
-
-systemctl enable snapd
-systemctl start snapd
-
 Language settings can be changed by user (not system wide) in `~/.profile` file:
 
-```
-export LANG=es_ES.UTF-8
-export LC_NUMERIC=es_ES.UTF-8
-export LC_MONETARY=es_ES.UTF-8
-export LC_PAPER=es_ES.UTF-8
-export LC_NAME=es_ES.UTF-8
-export LC_ADDRESS=es_ES.UTF-8
-export LC_TELEPHONE=es_ES.UTF-8
-export LC_MEASUREMENT=es_ES.UTF-8
-export LC_IDENTIFICATION=es_ES.UTF-8
-export LC_TIME=es_ES.UTF-8
-export PAPERSIZE=a4
-export LANGUAGE=es_ES
-export LANG=es_ES.UTF-8
-```
-
-## KDE
-sudo pacman -S \
-  yakuake \
-  kaccounts-providers \
-  ksshaskpass \
-  kwallet-pam \
-  kcmutils \
-  sddm-kcm \
-  sddm
-
-## Java
-yay -S jdk11-graalvm-bin
-sudo pacman -S \
-  maven \
-  gradle
+Localization parameters can be changed sourcing `locale.env` in the `~/.profile` file and editing
+them there.
 
 ln -s ~/Projects/dotfiles/shell/shellconfig" ~/.profile
 ln -s ~/Projects/dotfiles/shell/inputrc ~/.inputrc

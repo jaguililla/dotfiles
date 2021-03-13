@@ -1,25 +1,28 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # DOCKER
 alias d='docker'
-alias dstats='d stats -a --no-stream'
-alias dimages='d images'
+alias drun='d run -d'
+alias dstop='d stop'
+alias dstart='d start'
+alias dres='d restart'
+alias dlog='d logs -f'
+alias dit='d exec -it'
 alias drm='d rm -v'
 alias drmi='d rmi'
-alias dstop='d stop'
-alias dlogs='d logs -f'
-alias dps='d ps --format "table{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}"'
 alias dpull='d pull'
-alias drun='d run -d'
-alias dit='d exec -it'
+
+alias dimg='d images'
+alias dstat='d stats -a --no-stream'
+alias dps='d ps --format "table{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}"'
 
 alias dprune='sudo docker system prune -af && sudo docker volume prune -f'
 
-#dps () { d ps -a --format "table{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}" -f name=$1; }
 dsh () { dit "$1" /bin/bash; }
 
 # DOCKER MACHINE
 alias dm='docker-machine'
+
 dmswarm () {
     eval $(dm env --swarm $1);
     dm ls;
@@ -27,11 +30,13 @@ dmswarm () {
 
 # DOCKER COMPOSE
 alias dc='docker-compose'
-alias dclogs='dc logs'
-alias dcps='dc ps'
-alias dcrm='dc rm'
-alias dcstop='dc stop'
 alias dcup='dc up -d'
+alias dcstop='dc stop'
+alias dcstart='dc start'
 alias dcres='dc restart'
+alias dclog='dc logs'
+alias dcrm='dc rm'
+
+alias dcps='dc ps'
 
 dcsh () { dc exec "$1" /bin/bash; }

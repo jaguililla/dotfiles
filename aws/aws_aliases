@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 alias ssm='aws ssm'
 alias ssmrm='ssm delete-parameter --name'

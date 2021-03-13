@@ -3,8 +3,8 @@
 alias mk='minikube'
 alias mkenv='eval $(mk docker-env)'
 alias mkstop='docker stop registry_socat ; mk stop'
-alias mkdel='mkstop ; mk delete'
-alias mkst='mk config view && mk addons list && mk status && mk ip ; mk service list || true'
+alias mkrm='mkstop ; mk delete'
+alias mkinfo='mk config view && mk addons list && mk status && mk ip ; mk service list || true'
 
 mkstart() {
 
@@ -24,7 +24,7 @@ mkstart() {
   docker run --rm -it --detach --name registry_socat --network=host alpine \
     ash -c "apk add socat && socat TCP-LISTEN:5000,reuseaddr,fork TCP:$(mk ip):5000"
 
-  mkst
+  mkinfo
 }
 
 alias kb='kubectl'
