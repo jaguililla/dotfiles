@@ -3,11 +3,6 @@
 All bash files should be copied to user home (~) with a point (.) before the name. Ie:
 profile -> ~/.profile
 
-It is necessary to add SSH keys to keychain in `.bashrc` after calling `bashconfig`.
-Add the following line:
-
-    eval $(keychain --eval --quiet <key1> <key2> <keyn>)
-
 To allow using sudo without password. It is necessary to add the following line with
 `visudo`:
 
@@ -48,12 +43,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 Run `export ZSH_COMPDUMP="$ZSH/cache/.zcompdump"` before Oh My ZSH to change cache file directory.
 
-## Spaceship ZSH Theme
-
-```
-git clone https://github.com/denysdovhan/spaceship-prompt.git "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt"
-ln -s "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship-prompt/spaceship.zsh-theme" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/spaceship.zsh-theme"
-```
+This can be done with `source ~/Projects/jam/dotfiles/shell/shellconfig` before
+`source $ZSH/oh-my-zsh.sh`.
 
 ## Z
 

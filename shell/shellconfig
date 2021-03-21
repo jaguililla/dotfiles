@@ -37,4 +37,7 @@ export NNN_OPTS="e"
 export ZSH_COMPDUMP="$HOME/.oh-my-zsh/cache/.zcompdump"
 export ZSHZ_DATA="$HOME/.oh-my-zsh/cache/.z"
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 stty -ctlecho
