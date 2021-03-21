@@ -5,6 +5,8 @@ To install basic packages, run:
 To install Docker Toolbox it is necessary to grant permissions in:
 `System Preferences... > Security & Privacy > General` after running the `brew` command.
 
+In `.zshrc` add `source ~/Projects/jam/dotfiles/macosx/aliases` before sourcing `shellconfig`.
+
 ## jEnv
 To setup JEnv execute:
 

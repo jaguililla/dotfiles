@@ -9,11 +9,6 @@ export DOTFILES=${1:-"$BASEPATH/.."}
 
 ln -s $DOTFILES/shell/inputrc ~/.inputrc
 
-echo "export DOTFILES=$DOTFILES" >>~/.bashrc
-echo "source $DOTFILES/shell/bashconfig" >>~/.bashrc
-echo "source $DOTFILES/shell/aliases" >>~/.bashrc
-echo "source $DOTFILES/shell/ssh_aliases" >>~/.bashrc
-
 echo "export DOTFILES=$DOTFILES" >>~/.zshrc
 echo "source $DOTFILES/shell/shellconfig" >>~/.zshrc
 echo "source $DOTFILES/shell/zshconfig" >>~/.zshrc

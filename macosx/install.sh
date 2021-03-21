@@ -57,13 +57,6 @@ export DOTFILES=${1:-"$BASEPATH/.."}
 
 ln -s $DOTFILES/git/gitconfig ~/.gitconfig
 
-echo "alias dircolors='gdircolors'" >>~/.bashrc
-echo "source $DOTFILES/aws/aws_aliases" >>~/.bashrc
-echo "source $DOTFILES/containers/docker_aliases" >>~/.bashrc
-echo "source $DOTFILES/containers/minikube_aliases" >>~/.bashrc
-echo "source $DOTFILES/git/git_aliases" >>~/.bashrc
-echo "source $DOTFILES/vagrant/vagrant_aliases" >>~/.bashrc
-
 echo "alias dircolors='gdircolors'" >>~/.zshrc
 echo "source $DOTFILES/aws/aws_aliases" >>~/.zshrc
 echo "source $DOTFILES/containers/docker_aliases" >>~/.zshrc

@@ -6,6 +6,7 @@
 
 # Core commands
 # Requires 'coreutils': brew install coreutils
+alias dircolors='gdircolors'
 alias tar='gtar'
 alias ls='gls -hFX --color=auto --group-directories-first'
 alias chown='gchown --preserve-root'
