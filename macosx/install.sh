@@ -45,6 +45,7 @@ brew install \
   neofetch \
   plantuml \
   alt-tab \
+  rectangle \
   wget
 
 brew link --overwrite docker-compose
