@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Aliases
 alias diff='colordiff'              # requires colordiff package

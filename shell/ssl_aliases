@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 p12pem() {
   openssl pkcs12 -in ${1}.p12 -out ${1}.crt -clcerts -nokeys

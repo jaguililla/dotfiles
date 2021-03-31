@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 BASEDIR=$(dirname $0)
 BASEPATH=$(readlink -f $BASEDIR 2>/dev/null || greadlink -f $BASEDIR)
