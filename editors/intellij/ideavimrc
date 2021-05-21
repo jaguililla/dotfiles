@@ -10,6 +10,9 @@ set nowrap
 set ed
 set so=10
 
+" Requires the 'IdeaVim-Sneak' plugin
+"set sneak
+
 map <CR> i<CR><ESC>
 map <Space> i <ESC>l
 
