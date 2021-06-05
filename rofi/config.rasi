@@ -17,7 +17,7 @@ configuration {
 	drun-show-actions: false;
 
 	window-thumbnail: false;
-	window-format: "[<span><b>{c}</b></span>] {w} {t}";
+	window-format: "[#] {c} ({w}) - {t}";
 
 	kb-mode-next: "Alt+l,Shift+Right,Control+Tab";
 	kb-mode-previous: "Alt+h,Shift+Left,Control+ISO_Left_Tab";
