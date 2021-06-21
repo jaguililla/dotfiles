@@ -9,7 +9,7 @@ configuration {
 
 	theme: "oxide";
 	show-icons: true;
-	font: "mono 22";
+	font: "mono 16";
 	columns: 1;
 	sidebar-mode: true;
 	hide-scrollbar: true;
@@ -17,7 +17,7 @@ configuration {
 	drun-show-actions: false;
 
 	window-thumbnail: false;
-	window-format: "[#] {c} ({w}) - {t}";
+	window-format: "[ {w} ] {c} - {t}";
 
 	kb-mode-next: "Alt+l,Shift+Right,Control+Tab";
 	kb-mode-previous: "Alt+h,Shift+Left,Control+ISO_Left_Tab";
