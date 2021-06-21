@@ -30,7 +30,9 @@ map <S-F8> @d
 " https://github.com/JetBrains/ideavim/wiki/Emulated-plugins
 "
 let g:NERDTreeMapActivateNode="l"
+let g:NERDTreeMapPreview="L"
 let g:NERDTreeMapCloseDir="h"
+let g:NERDTreeMapJumpRoot="gg"
 set NERDTree
 
 " Requires the 'IdeaVim-EasyMotion' plugin
