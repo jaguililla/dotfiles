@@ -24,7 +24,7 @@ export JAVAHOME=$JAVA_HOME
 
 export KOTLIN_HOME=/usr/share/kotlin
 
-export PATH=$PATH:$(ruby -e "puts Gem.user_dir")/bin
+#export PATH=$PATH:$(ruby -e "puts Gem.user_dir")/bin
 
 #export ANDROID_HOME=/opt/android-sdk
 #export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
