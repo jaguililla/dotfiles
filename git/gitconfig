@@ -25,6 +25,8 @@
     changed = green
     untracked = cyan
 
+[fetch]
+    recurseSubmodules = true
 [push]
     default = current
 [status]
