@@ -1,3 +1,7 @@
+"
+" To reload this file type:
+" :source ~/.ideavimrc
+"
 
 "set norelativenumber
 
@@ -36,5 +40,7 @@ let g:NERDTreeMapJumpRoot="gg"
 set NERDTree
 
 " Requires the 'IdeaVim-EasyMotion' plugin
-let mapleader=","
+" For details, check: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
+let mapleader="f"
 set easymotion
+map <Leader> <Plug>(easymotion-jumptoanywhere)
