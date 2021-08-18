@@ -1,6 +1,6 @@
 
-set guifont=Input\ Mono\ Narrow\ 10
+set guifont=Jetbrains\ Mono\ 10
 set guioptions=rgmteh
 set clipboard=unnamed
-set columns=110
-set lines=40
+set columns=120
+set lines=50

@@ -25,7 +25,6 @@ set cursorline
 set cursorcolumn
 set fcs=vert:\ ,fold:-
 set so=999
-set ed
 set mouse=a
 
 map <CR> i<CR><ESC>
@@ -39,11 +38,11 @@ map <F8> @d
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
-"colorscheme desert
+colorscheme desert
 syn on
 
 set encoding=utf8
 set t_Co=256
 
-hi CursorLine cterm=NONE ctermbg=Black guibg=darkgray
-hi CursorColumn cterm=NONE ctermbg=Black guibg=darkgray
+hi CursorLine cterm=NONE ctermbg=Black guibg=Black
+hi CursorColumn cterm=NONE ctermbg=Black guibg=Black

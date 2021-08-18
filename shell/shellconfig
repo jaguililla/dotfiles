@@ -19,8 +19,8 @@ eval $(dircolors -b)
 eval $(go env)
 export PATH=$PATH:$GOPATH/bin
 
-export JAVA_HOME=/usr/lib/jvm/default
-export JAVAHOME=$JAVA_HOME
+#export JAVA_HOME=/usr/lib/jvm/default
+#export JAVAHOME=$JAVA_HOME
 
 export KOTLIN_HOME=/usr/share/kotlin
 
