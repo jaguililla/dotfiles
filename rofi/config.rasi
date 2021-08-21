@@ -1,7 +1,10 @@
 
+/*
+ * Requires https://github.com/Mange/rofi-emoji
+ */
 configuration {
-	modi: "window,drun,combi";
-	combi-modi: "window,drun";
+	modi: "window,drun,emoji,combi";
+	combi-modi: "window,drun,emoji";
 	combi-hide-mode-prefix: true;
 	case-sensitive: false;
 	terminal: "gnome-terminal";
