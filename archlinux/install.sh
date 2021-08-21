@@ -8,6 +8,7 @@ sudo pacman -S \
   vim \
   gvim \
   neovim \
+  neovim-qt \
   vagrant \
   docker \
   docker-compose \
@@ -22,6 +23,8 @@ sudo pacman -S \
   httpie \
   jq \
   nnn \
+  maven \
+  gradle \
   zsh \
   wmctrl \
   the_silver_searcher \
