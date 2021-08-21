@@ -9,3 +9,5 @@
   Vrapper - JDT Extensions (Optional)	0.22.0	net.sourceforge.vrapper.eclipse.jdt.feature.feature.group	Vrapper Team
   Xtend M2E extensions	2.3.0.v201206120633	org.eclipse.xtend.m2e.feature.group	Eclipse Xtend
   Xtend SDK	2.3.0.v201206120633	org.eclipse.xtend.sdk.feature.group	Eclipse Xtend 
+  AspectJ Development Tools	2.2.4.202103162301	org.eclipse.ajdt.feature.group	Eclipse AspectJ Development Tools
+  Kotlin	0.8.21.v20200816-2059	org.jetbrains.kotlin.feature.feature.group	JetBrains
