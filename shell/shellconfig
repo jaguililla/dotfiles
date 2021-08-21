@@ -19,14 +19,12 @@ eval $(dircolors -b)
 eval $(go env)
 export PATH=$PATH:$GOPATH/bin
 
-#export JAVA_HOME=/usr/lib/jvm/default
-#export JAVAHOME=$JAVA_HOME
-
 export KOTLIN_HOME=/usr/share/kotlin
 
-#export PATH=$PATH:$(ruby -e "puts Gem.user_dir")/bin
-
+#export JAVA_HOME=/usr/lib/jvm/default
 #export ANDROID_HOME=/opt/android-sdk
+
+#export PATH=$PATH:$(ruby -e "puts Gem.user_dir")/bin
 #export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
