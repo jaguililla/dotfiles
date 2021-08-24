@@ -9,7 +9,7 @@ alias mkinfo='mk config view && mk addons list && mk status && mk ip ; mk servic
 mkstart() {
 
   # Setup
-  mk config set driver virtualbox
+  mk config set driver docker
   mk config set cpus 2
   mk config set memory 4096
   mk config set insecure-registry "10.0.0.0/8"
@@ -20,6 +20,7 @@ mkstart() {
   mk addons enable registry
   mk addons enable ingress
   mk addons enable ingress-dns
+  mk addons enable metrics-server
 
   docker run --rm -it --detach --name registry_socat --network=host alpine \
     ash -c "apk add socat && socat TCP-LISTEN:5000,reuseaddr,fork TCP:$(mk ip):5000"
