@@ -107,33 +107,8 @@
     <profile>
       <id>optimize</id>
       <properties>
-        <maven.compiler.optimize>true</maven.compiler.optimize>
         <maven.compiler.debug>false</maven.compiler.debug>
       </properties>
-    </profile>
-    <profile>
-      <id>bundle</id>
-      <properties>
-        <maven.compiler.optimize>true</maven.compiler.optimize>
-        <maven.compiler.debug>false</maven.compiler.debug>
-      </properties>
-      <build>
-        <plugins>
-          <plugin>
-            <artifactId>maven-site-plugin</artifactId>
-            <version>3.3</version>
-            <executions>
-              <execution>
-                <id>site</id>
-                <phase>prepare-package</phase>
-                <goals>
-                  <goal>site</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
     </profile>
     <profile>
       <id>sign</id>
@@ -324,11 +299,6 @@
           <dependencies>
             <dependency>
               <groupId>org.apache.maven.doxia</groupId>
-              <artifactId>doxia-module-confluence</artifactId>
-              <version>1.5</version>
-            </dependency>
-            <dependency>
-              <groupId>org.apache.maven.doxia</groupId>
               <artifactId>doxia-module-markdown</artifactId>
               <version>1.5</version>
             </dependency>
@@ -434,25 +404,6 @@
         </executions>
       </plugin>
     </plugins>
-
-    <!-- Extensions to deploy the site to Github pages -->
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.scm</groupId>
-        <artifactId>maven-scm-provider-gitexe</artifactId>
-        <version>1.9</version>
-      </extension>
-      <extension>
-        <groupId>org.apache.maven.scm</groupId>
-        <artifactId>maven-scm-manager-plexus</artifactId>
-        <version>1.9</version>
-      </extension>
-      <extension>
-        <groupId>org.kohsuke</groupId>
-        <artifactId>wagon-gitsite</artifactId>
-        <version>0.3.5</version>
-      </extension>
-    </extensions>
   </build>
 
   <!-- R E P O R T S ====================================================================== -->
@@ -498,13 +449,6 @@
       <plugin>
         <artifactId>maven-surefire-report-plugin</artifactId>
         <version>2.17</version>
-      </plugin>
-      <plugin>
-        <artifactId>maven-jxr-plugin</artifactId>
-        <version>2.4</version>
-        <configuration>
-          <stylesheet>${basedir}/src/xref/stylesheet.css</stylesheet>
-        </configuration>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
