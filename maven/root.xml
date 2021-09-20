@@ -1,12 +1,4 @@
 <!--
- | POPAPP Copyright © 2011 Juan José Aguililla. All rights reserved.
- |
- | This program comes WITHOUT ANY WARRANTY; It is free software, you can redistribute it and/or
- | modify it under the terms of the GNU General Public License, Version 3.0.
- | You may obtain a copy of the License at: http://www.gnu.org/licenses/gpl.html
--->
-
-<!--
  | Javadoc uses a custom doclet that creates class diagrams. It requires
  | the 'graphviz' program installed with the executable in the path.
  |
@@ -15,26 +7,18 @@
  | * 3 digit versions aligned with SCM (release plugin)
  |
  | TODO Profiles (http://maven.apache.org/guides/introduction/introduction-to-profiles.html)
- | TODO Archetypes (http://maven.apache.org/guides/mini/guide-creating-archetypes.html)
  | TODO SCM (http://maven.apache.org/scm/maven-scm-plugin/index.html)
- | TODO Jetty testing (http://docs.codehaus.org/display/JETTY/Maven+Jetty+Plugin)
- | TODO ciManagement
- | TODO Releases (maven.apache.org/plugins/maven-release-plugin/examples/prepare-release.html)
- |      (docs.codehaus.org/display/MAVENUSER/Create+a+release+using+CVSNT)
  | TODO Sign JARs
  | TODO DOAP report
  | TODO Tasklist (TODOs) report
  | TODO Change cobertura report stylesheet
  | TODO Use Eclipse plugin to configure code formatting and save actions
- | TODO Support for markdown wiki syntax (when mylyn supports it). See doxia-module-markdown
- | TODO Use lesscss (http://lesscss.org) in site and Javadoc and Xref stylesheets. See Wro4j
+ | TODO Support for markdown wiki syntax. See doxia-module-markdown
 -->
 <project
   xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="
-    http://maven.apache.org/POM/4.0.0
-    http://maven.apache.org/maven-v4_0_0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <!-- C O R E   P R O P E R T I E S ====================================================== -->
   <modelVersion>4.0.0</modelVersion>
@@ -47,11 +31,16 @@
   <name>Root POM</name>
   <description>Root POM. Base POM for all the projects.</description>
   <inceptionYear>2010</inceptionYear>
-  <url>https://github.com/jamming/popapp</url>
+  <url>https://github.com/jaguililla/dotfiles</url>
 
   <prerequisites>
-    <maven>3.2</maven>
+    <maven>3.8</maven>
   </prerequisites>
+
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://github.com/jaguililla/dotfiles/actions</url>
+  </ciManagement>
 
   <!-- P R O J E C T   P R O P E R T I E S ================================================ -->
   <properties>
@@ -98,7 +87,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <dependency.locations.enabled>false</dependency.locations.enabled>
     <targetJdk>${java.specification.version}</targetJdk>
-    <jacoco.version>0.7.1.201405082137</jacoco.version>
+    <jacoco.version>0.8.7</jacoco.version>
   </properties>
 
   <!-- D E P E N D E N C I E S ============================================================ -->
@@ -143,24 +132,6 @@
               </execution>
             </executions>
           </plugin>
-          <!--<plugin>-->
-            <!--<artifactId>maven-pdf-plugin</artifactId>-->
-            <!--<version>1.2</version>-->
-            <!--<executions>-->
-              <!--<execution>-->
-                <!--<id>pdf</id>-->
-                <!--<phase>site</phase>-->
-                <!--<goals>-->
-                  <!--<goal>pdf</goal>-->
-                <!--</goals>-->
-                <!--<configuration>-->
-                  <!--<includeReports>false</includeReports>-->
-                  <!--<aggregate>false</aggregate>-->
-                  <!--<locales>en</locales>-->
-                <!--</configuration>-->
-              <!--</execution>-->
-            <!--</executions>-->
-          <!--</plugin>-->
         </plugins>
       </build>
     </profile>
@@ -202,15 +173,15 @@
 
   <!-- O R G A N I Z A T I O N ============================================================ -->
   <organization>
-    <name>POPAPP</name>
-    <url>http://www.popapp.co</url>
+    <name>Example</name>
+    <url>http://www.example.org</url>
   </organization>
 
   <developers>
     <developer>
-      <id>jamming</id>
-      <name>Juan José Aguililla</name>
-      <organization>http://www.popapp.co</organization>
+      <id>jaguililla</id>
+      <name>Juanjo Aguililla</name>
+      <organization>https://github.com/jaguililla</organization>
       <roles>
         <role>Developer</role>
       </roles>
@@ -328,8 +299,7 @@
           <version>3.1</version>
         </plugin>
         <!--
-         | TODO To support integration tests (UI tests) in Bamboo, a virtual framebuffer
-         | for Linux is required
+         | TODO To support integration UI tests in CI, a virtual framebuffer for Linux is required
          !-->
         <plugin>
           <groupId>org.jacoco</groupId>
@@ -368,20 +338,6 @@
           </configuration>
         </plugin>
 
-        <plugin>
-          <groupId>org.eclipse.jetty</groupId>
-          <artifactId>jetty-maven-plugin</artifactId>
-          <version>9.2.0.v20140526</version>
-          <configuration>
-            <scanIntervalSeconds>10</scanIntervalSeconds>
-            <stopPort>9966</stopPort>
-            <stopKey>halt</stopKey>
-            <webAppConfig>
-              <contextPath>/</contextPath>
-            </webAppConfig>
-          </configuration>
-        </plugin>
-
         <!--
          | This plugin's configuration is used to store Eclipse m2e settings only. It
          | has no influence on the Maven build itself.
@@ -410,65 +366,6 @@
             </lifecycleMappingMetadata>
           </configuration>
         </plugin>
-        <!--
-         | Joins all libraries in a JAR, cleaner to deploy (when you don't have a
-         | lot of dependencies)
-         |
-         | NOTE To include missing files after "minimization". The only way is to create an
-         | array with references to the desired classes (see 'Application.classes' array)
-         !-->
-        <plugin>
-          <artifactId>maven-shade-plugin</artifactId>
-          <version>2.2</version>
-          <configuration>
-            <minimizeJar>true</minimizeJar>
-            <createDependencyReducedPom>false</createDependencyReducedPom>
-          </configuration>
-          <executions>
-            <execution>
-              <phase>package</phase>
-              <goals>
-                <goal>shade</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-        <!--       <plugin> -->
-        <!--         <groupId>com.pyx4me</groupId> -->
-        <!--         <artifactId>proguard-maven-plugin</artifactId> -->
-        <!--         <version>2.0.7</version> -->
-        <!--         <configuration> -->
-        <!--           <proguardVersion>4.10</proguardVersion> -->
-        <!--           <obfuscate>true</obfuscate> -->
-        <!--           <options> -->
-        <!--             <option>-allowaccessmodification</option> -->
-        <!--           </options> -->
-        <!--           <injar>${project.build.finalName}.jar</injar> -->
-        <!--           <outjar>${project.build.finalName}-small.jar</outjar> -->
-        <!--           <outputDirectory>${project.build.directory}</outputDirectory> -->
-        <!--            <libs> -->
-        <!--              <lib>${java.home}/lib/rt.jar</lib> -->
-        <!--              <lib>${java.home}/lib/jsse.jar</lib> -->
-        <!--            </libs> -->
-        <!--           <addMavenDescriptor>false</addMavenDescriptor> -->
-        <!--         </configuration> -->
-        <!--         <dependencies> -->
-        <!--           <dependency> -->
-        <!--             <groupId>net.sf.proguard</groupId> -->
-        <!--             <artifactId>proguard-base</artifactId> -->
-        <!--             <version>4.10</version> -->
-        <!--             <scope>runtime</scope> -->
-        <!--           </dependency> -->
-        <!--         </dependencies> -->
-        <!--         <executions> -->
-        <!--           <execution> -->
-        <!--             <phase>package</phase> -->
-        <!--             <goals> -->
-        <!--               <goal>proguard</goal> -->
-        <!--             </goals> -->
-        <!--           </execution> -->
-        <!--         </executions> -->
-        <!--       </plugin> -->
       </plugins>
     </pluginManagement>
 
@@ -608,26 +505,6 @@
         <configuration>
           <stylesheet>${basedir}/src/xref/stylesheet.css</stylesheet>
         </configuration>
-      </plugin>
-      <!-- TODO Update when this plugins support Java 8 -->
-      <!--<plugin>-->
-      <!--<artifactId>maven-pmd-plugin</artifactId>-->
-      <!--<version>3.1</version>-->
-      <!--</plugin>-->
-      <!--<plugin>-->
-        <!--<groupId>org.codehaus.mojo</groupId>-->
-        <!--<artifactId>findbugs-maven-plugin</artifactId>-->
-        <!--<version>2.5.4</version>-->
-      <!--</plugin>-->
-      <!--<plugin>-->
-        <!--<groupId>org.codehaus.mojo</groupId>-->
-        <!--<artifactId>javancss-maven-plugin</artifactId>-->
-        <!--<version>2.0</version>-->
-      <!--</plugin>-->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>jdepend-maven-plugin</artifactId>
-        <version>2.0</version>
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
