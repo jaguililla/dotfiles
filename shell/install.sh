@@ -9,6 +9,8 @@ export DOTFILES=${1:-"$BASEPATH/.."}
 
 ln -s $DOTFILES/shell/inputrc ~/.inputrc
 
+curl -s "https://get.sdkman.io" | bash
+
 echo "export DOTFILES=$DOTFILES" >>~/.zshrc
 echo "source $DOTFILES/shell/shellconfig" >>~/.zshrc
 echo "source $DOTFILES/shell/zshconfig" >>~/.zshrc
