@@ -37,7 +37,6 @@ brew install \
   mongodb-community \
   node \
   ruby \
-  jenv \
   nnn \
   taskwarrior-tui \
   taskwarrior-pomodoro \
