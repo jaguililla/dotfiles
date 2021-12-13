@@ -10,7 +10,6 @@ configuration {
 	terminal: "gnome-terminal";
 	disable-history: false;
 
-	theme: "oxide";
 	show-icons: true;
 	font: "mono 16";
 	columns: 1;
@@ -165,3 +164,4 @@ configuration {
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
 
+@theme "oxide"
