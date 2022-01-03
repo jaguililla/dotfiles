@@ -41,6 +41,6 @@ set NERDTree
 
 " Requires the 'IdeaVim-EasyMotion' plugin
 " For details, check: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
-let mapleader="f"
+let mapleader=","
 set easymotion
-map <Leader> <Plug>(easymotion-jumptoanywhere)
+"map <Leader> <Plug>(easymotion-jumptoanywhere)
