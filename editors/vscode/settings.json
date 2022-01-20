@@ -54,6 +54,13 @@
     "rest-client.enableCustomVariableReferencesCodeLens": false,
     "material-icon-theme.folders.theme": "classic",
     "material-icon-theme.hidesExplorerArrows": true,
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.tree.indent": 22
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.tree.indent": 22,
+    "redhat.telemetry.enabled": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }
