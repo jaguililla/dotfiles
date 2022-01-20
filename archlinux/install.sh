@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 sudo pacman -S \
+  colordiff \
   yay \
   base-devel \
   keychain \
