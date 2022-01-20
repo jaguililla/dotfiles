@@ -11,4 +11,3 @@
 # 5. Tags are case-insensitive
 # 6. Tags can be placed anywhere (even title start)
 # 7. Summary with '!!!' means breaking changes
-
