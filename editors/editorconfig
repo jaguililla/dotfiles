@@ -45,10 +45,10 @@ ij_json_wrap_long_lines = true
 # IntelliJ HTML formatting
 [*.{html,htm}]
 ij_html_do_not_indent_children_of_tags = html
-max_line_length = 200
+max_line_length = 120
 
 [*.css]
-max_line_length = 200
+max_line_length = 120
 
 # 4 space indentation
 [*.{java,js,ts,kt,kts,gradle,groovy,py}]
