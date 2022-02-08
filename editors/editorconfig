@@ -45,6 +45,10 @@ ij_json_wrap_long_lines = true
 # IntelliJ HTML formatting
 [*.{html,htm}]
 ij_html_do_not_indent_children_of_tags = html
+max_line_length = 200
+
+[*.css]
+max_line_length = 200
 
 # 4 space indentation
 [*.{java,js,ts,kt,kts,gradle,groovy,py}]
@@ -62,8 +66,4 @@ ij_kotlin_import_nested_classes = true
 
 # Log files exception
 [*.log]
-max_line_length = 200
-
-# Web files (html and css) exception
-[*.{html,htm,css}]
 max_line_length = 200
