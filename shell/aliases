@@ -43,6 +43,7 @@ fi
 # cd
 alias back='cd "$OLDPWD"'
 alias ..='cd ..'
+alias ...='cd ../..'
 
 # ls
 alias ls='ls -hFX --color=auto --group-directories-first'
