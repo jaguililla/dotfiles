@@ -46,3 +46,4 @@ set t_Co=256
 
 hi CursorLine cterm=NONE ctermbg=Black guibg=Black
 hi CursorColumn cterm=NONE ctermbg=Black guibg=Black
+
