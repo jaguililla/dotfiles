@@ -5,6 +5,7 @@
 [core]
     autocrlf = input
     editor = vim
+#    filemode = false
 
 [commit]
     template = $DOTFILES/git/git-message.txt

@@ -10,8 +10,9 @@ export DOTFILES=${1:-"$BASEPATH/.."}
 
 ln -s $DOTFILES/editors/vim/gvimrc ~/.gvimrc
 ln -s $DOTFILES/editors/vim/vimrc ~/.vimrc
+# TODO if Windows, use `~/AppData/Local/nvim`
 ln -s $DOTFILES/editors/vim/init.vim ~/.config/nvim/init.vim
 ln -s $DOTFILES/editors/vim/ginit.vim ~/.config/nvim/ginit.vim
 
 ln -s $DOTFILES/editors/intellij/ideavimrc ~/.ideavimrc
-ln -s $DOTFILES/editors/intellij/idea.properties $IDEA_HOME/idea.properties
+ln -s $DOTFILES/editors/intellij/idea.properties "$IDEA_HOME/idea.properties"

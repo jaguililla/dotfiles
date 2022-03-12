@@ -10,3 +10,12 @@ Some deprecated programs' settings were deleted, but they can be found inside re
 ## TODO
 * Create `install.sh` scripts to install independent modules.
 * Run set up scripts based on the OS (i.e.: different commands for Linux and macOS)
+* Add Scoop section for Windows
+
+```bash
+scoop bucket add extras
+scoop bucket add nerd-fonts
+scoop install neovim
+scoop install unxutils
+scoop install jetbrainsmono-nf-mono jetbrainsmono-nf
+```

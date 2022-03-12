@@ -16,8 +16,8 @@ export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
 eval $(dircolors -b)
 #eval $(keychain -q --eval $SSH_KEYS)
 
-eval $(go env)
-export PATH=$PATH:$GOPATH/bin
+#eval $(go env)
+#export PATH=$PATH:$GOPATH/bin
 
 export KOTLIN_HOME=/usr/share/kotlin
 

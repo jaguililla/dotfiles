@@ -1,0 +1,15 @@
+
+# Always use Unix EOL
+*.sh text eol=lf
+*.md text eol=lf
+*.js text eol=lf
+*.java text eol=lf
+*.kt text eol=lf
+*.kts text eol=lf
+*.htm text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.csv text eol=lf
