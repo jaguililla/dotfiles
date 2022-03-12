@@ -38,6 +38,8 @@ sudo pacman -S \
 
 yay -S dbvis keystore-explorer-bin
 
+sudo pacman -Rns xed subversion || true
+
 systemctl enable docker
 systemctl start docker
 sudo usermod -aG docker $user

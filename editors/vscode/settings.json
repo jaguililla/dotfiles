@@ -62,5 +62,6 @@
         "**/.project": true,
         "**/.settings": true,
         "**/.factorypath": true
-    }
+    },
+    "vsicons.dontShowNewVersionMessage": true
 }
