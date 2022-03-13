@@ -20,10 +20,10 @@ set so=10
 map <CR> i<CR><ESC>
 map <Space> i <ESC>l
 
-map <S-F5> @a
-map <S-F6> @b
-map <S-F7> @c
-map <S-F8> @d
+map <C-1> @a
+map <C-2> @b
+map <C-3> @c
+map <C-4> @d
 
 " Type :actionlist to get a list of all available actions
 " You can map keys to actions. I.e.:
