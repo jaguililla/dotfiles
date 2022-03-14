@@ -10,12 +10,9 @@ sudo pacman -S \
   gvim \
   neovim \
   neovim-qt \
-  vagrant \
   docker \
-  docker-compose \
   minikube \
   kubectl \
-  virtualbox \
   aws-cli \
   xclip \
   xsel \
@@ -24,24 +21,25 @@ sudo pacman -S \
   httpie \
   jq \
   nnn \
-  maven \
-  gradle \
   zsh \
   wmctrl \
   the_silver_searcher \
   xdotool \
   unrar \
   snapd \
-  tldr \
-  kotlin \
-  go
+  starship \
+  tldr
+
+#sudo pacman -S gnome-boxes guake
 
 yay -S dbvis keystore-explorer-bin
 
-sudo pacman -Rns xed subversion || true
+systemctl enable ntpd
+systemctl start ntpd
 
 systemctl enable docker
 systemctl start docker
+user="$(whoami)"
 sudo usermod -aG docker $user
 
 systemctl enable snapd
@@ -54,7 +52,8 @@ export DOTFILES=${1:-"$BASEPATH/.."}
 [[ ! -d $DOTFILES ]] && echo 'DOTFILES must exists' && exit 1
 [[ ! -d $DOTFILES/archlinux ]] && echo 'Arch Linux settings must exists' && exit 2
 
-ln -s $DOTFILES/shell/shellconfig ~/.profile
+ln -f -s $DOTFILES/shell/shellconfig ~/.profile
 
 echo "source $DOTFILES/archlinux/pacman_aliases" >>~/.bashrc
 echo "source $DOTFILES/archlinux/pacman_aliases" >>~/.zshrc
+

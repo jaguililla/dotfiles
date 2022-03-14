@@ -5,7 +5,8 @@
 
 # Setup
 
-`ln -s $HOME/Projects/dotfiles/git/gitconfig .gitconfig`
+`ln -s $DOTFILES/git/gitconfig $HOME/.config/git/config`
+`ln -s $DOTFILES/git/gitignore $HOME/.config/git/ignore`
 
 As the user is not stored in the user `.gitconfig` file, you have to create the `/etc/gitconfig`
 file with the following code:

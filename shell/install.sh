@@ -11,6 +11,9 @@ ln -s $DOTFILES/shell/inputrc ~/.inputrc
 ln -s $DOTFILES/shell/starship.toml ~/.config/starship.toml
 
 curl -s "https://get.sdkman.io" | bash
+# sdk i kotlin
+# sdk i maven
+# sdk i gradle
 
 echo "export DOTFILES=$DOTFILES" >>~/.zshrc
 echo "source $DOTFILES/shell/shellconfig" >>~/.zshrc

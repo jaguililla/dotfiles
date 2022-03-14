@@ -8,7 +8,11 @@ export DOTFILES=${1:-"$BASEPATH/.."}
 [[ ! -d $DOTFILES/editors ]] && echo 'Editors settings must exists' && exit 2
 [[ -z $IDEA_HOME ]] && echo 'IntelliJ IDEA home must be defined' && exit 3
 
+ln -s $DOTFILES/editors/fonts ~/.local/share/fonts
+fc-cache -f -v
+
 mkdir ~/.vim
+mkdir ~/.config/nvim
 ln -s $DOTFILES/editors/vim/gvimrc ~/.vim
 ln -s $DOTFILES/editors/vim/vimrc ~/.vim
 # TODO if Windows, use `~/AppData/Local/nvim`
