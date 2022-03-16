@@ -6,7 +6,7 @@ export VISUAL="$EDITOR"
 export BROWSER=/usr/bin/firefox
 export GREP_COLOR="1;33"
 export HISTCONTROL=ignoredups
-export LESSHISTFILE="$HOME/.oh-my-zsh/cache/lesshst"
+export LESSHISTFILE="$HOME/.cache/lesshst"
 
 export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
 #export SSH_KEYS=~/.ssh/id_rsa
@@ -30,11 +30,15 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 export NNN_OPTS="e"
 
-export ZSH_COMPDUMP="$HOME/.oh-my-zsh/cache/.zcompdump"
-export ZSHZ_DATA="$HOME/.oh-my-zsh/cache/.z"
+export ZSH_COMPDUMP="$HOME/.cache/zcompdump"
+export _Z_DATA="$HOME/.cache/z"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 stty -ctlecho
+
+Z_HOME="$HOME/.local/share/z.sh"
+[ ! -f $Z_HOME ] && curl -o $Z_HOME https://raw.githubusercontent.com/rupa/z/v1.11/z.sh
+source "$Z_HOME"
 

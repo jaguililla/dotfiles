@@ -28,3 +28,4 @@ alias kb='kubectl'
 alias kbg='kb get'
 alias kba='kb apply'
 alias kbcu='kb config use'
+

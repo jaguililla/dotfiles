@@ -28,9 +28,11 @@ sudo pacman -S \
   unrar \
   snapd \
   starship \
+  rofi \
+  graphviz \
   tldr
 
-#sudo pacman -S gnome-boxes guake
+#sudo pacman -S gnome-boxes guake brave-browser
 
 yay -S dbvis keystore-explorer-bin
 
@@ -54,6 +56,9 @@ export DOTFILES=${1:-"$BASEPATH/.."}
 
 ln -f -s $DOTFILES/shell/shellconfig ~/.profile
 
-echo "source $DOTFILES/archlinux/pacman_aliases" >>~/.bashrc
-echo "source $DOTFILES/archlinux/pacman_aliases" >>~/.zshrc
+echo "export DOTFILES=$DOTFILES" >>~/.bashrc
+echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.bashrc
+
+echo "export DOTFILES=$DOTFILES" >>~/.zshrc
+echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.zshrc
 

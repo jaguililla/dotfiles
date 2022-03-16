@@ -19,3 +19,4 @@ scoop install neovim
 scoop install unxutils
 scoop install jetbrainsmono-nf-mono jetbrainsmono-nf
 ```
+

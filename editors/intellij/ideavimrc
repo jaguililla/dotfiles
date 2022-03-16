@@ -44,3 +44,4 @@ set NERDTree
 let mapleader=","
 set easymotion
 "map <Leader> <Plug>(easymotion-jumptoanywhere)
+

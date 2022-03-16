@@ -1,2 +1,3 @@
 
-source ~/.gvimrc
+source ~/.vim/gvimrc
+

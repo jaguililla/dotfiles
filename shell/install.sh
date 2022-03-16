@@ -15,13 +15,12 @@ curl -s "https://get.sdkman.io" | bash
 # sdk i maven
 # sdk i gradle
 
-echo "export DOTFILES=$DOTFILES" >>~/.zshrc
-echo "source $DOTFILES/shell/shellconfig" >>~/.zshrc
-echo "source $DOTFILES/shell/zshconfig" >>~/.zshrc
-echo "source $DOTFILES/shell/aliases" >>~/.zshrc
-echo "source $DOTFILES/shell/ssh_aliases" >>~/.zshrc
+echo "source \$DOTFILES/shell/zshconfig" >>~/.zshrc
+echo "source \$DOTFILES/shell/aliases" >>~/.zshrc
+echo "source \$DOTFILES/shell/ssh_aliases" >>~/.zshrc
+echo "eval \"\$(starship init bash)\"" >>~/.zshrc
 
-echo "export DOTFILES=$DOTFILES" >>~/.bashrc
-echo "source $DOTFILES/shell/shellconfig" >>~/.bashrc
-echo "source $DOTFILES/shell/aliases" >>~/.bashrc
-echo "source $DOTFILES/shell/ssh_aliases" >>~/.bashrc
+echo "source \$DOTFILES/shell/aliases" >>~/.bashrc
+echo "source \$DOTFILES/shell/ssh_aliases" >>~/.bashrc
+echo "eval \"\$(starship init zsh)\"" >>~/.zshrc
+

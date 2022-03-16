@@ -19,3 +19,4 @@ clone() {
 
     git clone "$GIT_BASE/${PROJECT_REPOSITORY}.git" "${PROJECT_REPOSITORY}"
 }
+
