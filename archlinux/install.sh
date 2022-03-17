@@ -29,7 +29,11 @@ sudo pacman -S \
   snapd \
   starship \
   rofi \
+  rofi-emoji \
   graphviz \
+  noto-fonts \
+  noto-fonts-extra \
+  noto-fonts-emoji \
   tldr
 
 #sudo pacman -S gnome-boxes guake brave-browser

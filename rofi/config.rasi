@@ -11,7 +11,7 @@ configuration {
 	disable-history: false;
 
 	show-icons: true;
-	font: "mono 16";
+	font: "sans 14";
 	columns: 1;
 	sidebar-mode: true;
 	hide-scrollbar: true;
@@ -165,3 +165,4 @@ configuration {
 }
 
 @theme "oxide"
+
