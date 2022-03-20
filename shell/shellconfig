@@ -39,7 +39,7 @@ export LC_ALL=en_US.UTF-8
 stty -ctlecho
 
 Z_HOME="$HOME/.local/share/z.sh"
-mkdir ~/.local/share
+mkdir -p ~/.local/share
 [ ! -f $Z_HOME ] && curl -o $Z_HOME https://raw.githubusercontent.com/rupa/z/v1.11/z.sh
 source "$Z_HOME"
 

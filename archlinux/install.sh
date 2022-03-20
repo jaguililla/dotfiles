@@ -22,6 +22,9 @@ sudo pacman -S \
   jq \
   nnn \
   zsh \
+  zsh-completions \
+  zsh-syntax-highlighting \
+  zsh-autosuggestions \
   wmctrl \
   the_silver_searcher \
   xdotool \

@@ -53,5 +53,5 @@ The script is in the repository tag `archlinux`.
 `cinnamon-session-quit --power-off` to display power-off dialog
 
 For Guake to work properly with `META+CR` the `META` shortcut in the Cinnamon menu must be deleted.
-
+Or map `META+CR` to the command `guake -t`.
 

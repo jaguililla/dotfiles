@@ -5,9 +5,16 @@
 #  - This file must be sourced *BEFORE* Oh My ZSH
 #  - To use VIM line editing, bindkey -v must be called *BEFORE* Oh My ZSH
 
-export HISTFILE="${HOME}/.cache/zsh_history"
 export KEYTIMEOUT=1
 export DEFAULT_USER="$(whoami)"
+
+export HISTFILE="$HOME/.cache/zsh_history"
+export HISTSIZE=9999
+export SAVEHIST=$HISTSIZE
+
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -15,7 +22,7 @@ bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
 autoload -Uz compinit
-compinit
+compinit -d ~/.cache/zcompdump
 
 zstyle ':completion:*' menu select
 
