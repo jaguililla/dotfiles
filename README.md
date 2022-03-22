@@ -15,8 +15,12 @@ Some deprecated programs' settings were deleted, but they can be found inside re
 ```bash
 scoop bucket add extras
 scoop bucket add nerd-fonts
-scoop install neovim
-scoop install unxutils
+
+scoop install ag graphviz greenshot nvm neovim unxutils python starship
 scoop install jetbrainsmono-nf-mono jetbrainsmono-nf
 ```
+
+# Windows
+* For links to work: Settings > Update & Security > For developers > Developer Mode [On]. And add:
+  `export MSYS="winsymlinks:nativestrict"` to your shell configuration
 
