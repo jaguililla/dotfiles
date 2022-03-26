@@ -7,6 +7,7 @@
 
 export KEYTIMEOUT=1
 export DEFAULT_USER="$(whoami)"
+export ZSH_COMPDUMP="$HOME/.cache/zcompdump"
 
 export HISTFILE="$HOME/.cache/zsh_history"
 export HISTSIZE=9999
@@ -21,8 +22,9 @@ bindkey '^R' history-incremental-search-backward
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
+# SDKMAN does not honor ZSH_COMPDUMP variable
 autoload -Uz compinit
-compinit -d ~/.cache/zcompdump
+compinit -u -C -d "$ZSH_COMPDUMP"
 
 zstyle ':completion:*' menu select
 

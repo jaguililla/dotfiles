@@ -1,8 +1,4 @@
 
-# Goodies
-
-* https://github.com/tj/git-extras
-
 # Setup
 
 `ln -s $DOTFILES/git/gitconfig $HOME/.config/git/config`
@@ -32,3 +28,4 @@ With these commands the branches are deleted from the remote repository origin, 
 local repositories, to delete them from the local repositories must be executed:
 
 `git fetch --prune`
+

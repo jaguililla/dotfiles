@@ -37,6 +37,9 @@ sudo pacman -S \
   noto-fonts \
   noto-fonts-extra \
   noto-fonts-emoji \
+  python-pip \
+  nvm \
+  neofetch \
   tldr
 
 #sudo pacman -S gnome-boxes guake brave-browser
@@ -56,16 +59,17 @@ systemctl start snapd
 
 BASEDIR=$(dirname $0)
 BASEPATH=$(readlink -f $BASEDIR)
+BASEPATH=$(dirname $BASEPATH)
 
-export DOTFILES=${1:-"$BASEPATH/.."}
+export DOTFILES=${1:-"$BASEPATH"}
 [[ ! -d $DOTFILES ]] && echo 'DOTFILES must exists' && exit 1
 [[ ! -d $DOTFILES/archlinux ]] && echo 'Arch Linux settings must exists' && exit 2
 
-ln -f -s $DOTFILES/shell/shellconfig ~/.profile
-
 echo "export DOTFILES=$DOTFILES" >>~/.bashrc
 echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.bashrc
+echo "source \$DOTFILES/shell/shellconfig" >>~/.bashrc
 
 echo "export DOTFILES=$DOTFILES" >>~/.zshrc
 echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.zshrc
+echo "source \$DOTFILES/shell/shellconfig" >>~/.zshrc
 

@@ -7,17 +7,17 @@ export BROWSER=/usr/bin/firefox
 export GREP_COLOR="1;33"
 export HISTCONTROL=ignoredups
 export LESSHISTFILE="$HOME/.cache/lesshst"
-
 export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
-#export SSH_KEYS=~/.ssh/id_rsa
 
 eval $(dircolors -b)
+
+#export SSH_KEYS=~/.ssh/id_rsa
 #eval $(keychain -q --eval $SSH_KEYS)
 
 #eval $(go env)
 #export PATH=$PATH:$GOPATH/bin
 
-export KOTLIN_HOME=/usr/share/kotlin
+#export KOTLIN_HOME=/usr/share/kotlin
 
 #export JAVA_HOME=/usr/lib/jvm/default
 #export ANDROID_HOME=/opt/android-sdk
@@ -30,7 +30,6 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 export NNN_OPTS="e"
 
-export ZSH_COMPDUMP="$HOME/.cache/zcompdump"
 export _Z_DATA="$HOME/.cache/z"
 
 export LANG=en_US.UTF-8
@@ -42,4 +41,10 @@ Z_HOME="$HOME/.local/share/z.sh"
 mkdir -p ~/.local/share
 [ ! -f $Z_HOME ] && curl -o $Z_HOME https://raw.githubusercontent.com/rupa/z/v1.11/z.sh
 source "$Z_HOME"
+
+export NVM_DIR=$HOME/.local/share/nvm
+source /usr/share/nvm/init-nvm.sh
+
+echo
+neofetch
 
