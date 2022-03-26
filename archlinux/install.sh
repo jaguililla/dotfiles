@@ -11,6 +11,7 @@ sudo pacman -S \
   neovim \
   neovim-qt \
   docker \
+  docker-compose \
   minikube \
   kubectl \
   aws-cli \
