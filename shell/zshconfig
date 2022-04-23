@@ -16,6 +16,10 @@ export SAVEHIST=$HISTSIZE
 setopt appendhistory
 setopt sharehistory
 setopt incappendhistory
+setopt histignoredups
+setopt histignorespace
+setopt cdablevars
+setopt autocd
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward

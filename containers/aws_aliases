@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+alias awsl='aws --endpoint-url=http://localhost:4566'
 alias ssm='aws ssm'
 alias ssmrm='ssm delete-parameter --name'
 

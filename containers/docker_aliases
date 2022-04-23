@@ -29,7 +29,7 @@ dmswarm () {
 }
 
 # DOCKER COMPOSE
-alias dc='docker-compose'
+alias dc='docker compose'
 alias dcup='dc up -d'
 alias dcstop='dc stop'
 alias dcstart='dc start'
