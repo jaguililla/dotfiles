@@ -41,6 +41,7 @@ sudo pacman -S \
   python-pip \
   nvm \
   neofetch \
+  upx \
   tldr
 
 #sudo pacman -S gnome-boxes guake brave-browser
