@@ -43,7 +43,7 @@ mkdir -p ~/.local/share
 source "$Z_HOME"
 
 export NVM_DIR=$HOME/.local/share/nvm
-source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh 2>>/dev/null
 
 echo
 neofetch
