@@ -54,7 +54,7 @@
     "rest-client.enableCustomVariableReferencesCodeLens": false,
     "material-icon-theme.folders.theme": "classic",
     "material-icon-theme.hidesExplorerArrows": true,
-    "workbench.iconTheme": "vscode-icons",
+    "workbench.iconTheme": "simple-icons",
     "workbench.tree.indent": 22,
     "redhat.telemetry.enabled": false,
     "files.exclude": {
@@ -63,5 +63,7 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "vsicons.dontShowNewVersionMessage": true
+    "vsicons.dontShowNewVersionMessage": true,
+    "livePreview.notifyOnOpenLooseFile": false,
+    "godot_tools.editor_path": "/usr/bin/godot"
 }

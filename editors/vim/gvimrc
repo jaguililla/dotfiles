@@ -1,5 +1,5 @@
 
-set guifont=Jetbrains\ Mono\ 10
+set guifont=JetBrains\ Mono\ Regular\ 10
 set guioptions=rgmteh
 set clipboard=unnamed
 set columns=120

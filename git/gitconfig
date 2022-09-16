@@ -8,7 +8,7 @@
 #    filemode = false
 
 [commit]
-    template = $DOTFILES/git/git-message.txt
+    template = $DOTFILES/git/commit_template.txt
 
 [color]
     ui = auto
@@ -90,3 +90,9 @@
 [init]
     defaultBranch = master
 
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

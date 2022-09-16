@@ -21,9 +21,9 @@ configuration {
 	window-thumbnail: false;
 	window-format: "[ {w} ] {c} - {t}";
 
-	kb-mode-next: "Alt+l,Shift+Right,Control+Tab";
-	kb-mode-previous: "Alt+h,Shift+Left,Control+ISO_Left_Tab";
-	kb-row-up: "Alt+k,Up,Control+p,ISO_Left_Tab";
+	kb-mode-next: "Alt+l,Shift+Right";
+	kb-mode-previous: "Alt+h,Shift+Left";
+	kb-row-up: "Alt+k,Up,Control+p";
 	kb-row-down: "Alt+j,Down,Control+n";
 
 /*	width: 50;*/
@@ -165,4 +165,3 @@ configuration {
 }
 
 @theme "oxide"
-
