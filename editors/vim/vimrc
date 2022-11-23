@@ -44,7 +44,6 @@ colorscheme desert
 syntax on
 
 set encoding=utf8
-set t_Co=256
 
 " https://medium.com/geekculture/neovim-configuration-for-beginners-b2116dbbde84
 set showmatch                " show matching 
