@@ -10,6 +10,7 @@ sudo pacman -S \
   gvim \
   neovim \
   neovim-qt \
+  ripgrep \
   docker \
   docker-compose \
   minikube \
@@ -26,6 +27,7 @@ sudo pacman -S \
   zsh-completions \
   zsh-syntax-highlighting \
   zsh-autosuggestions \
+  nerd-fonts-noto-sans-mono \
   wmctrl \
   the_silver_searcher \
   xdotool \
