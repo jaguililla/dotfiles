@@ -46,9 +46,9 @@ set easymotion
 "map <Leader> <Plug>(easymotion-jumptoanywhere)
 
 " https://medium.com/geekculture/neovim-configuration-for-beginners-b2116dbbde84
+"set hlsearch                 " highlight search
 set showmatch                " show matching
 set mouse=v                  " middle-click paste with
-set hlsearch                 " highlight search
 set incsearch                " incremental search
 set tabstop=4                " number of columns occupied by a tab
 set softtabstop=4            " see multiple spaces as tabstops so <BS> does the right thing
