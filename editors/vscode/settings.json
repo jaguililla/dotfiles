@@ -54,7 +54,6 @@
     "rest-client.enableCustomVariableReferencesCodeLens": false,
     "material-icon-theme.folders.theme": "classic",
     "material-icon-theme.hidesExplorerArrows": true,
-    "workbench.iconTheme": "simple-icons",
     "workbench.tree.indent": 22,
     "redhat.telemetry.enabled": false,
     "files.exclude": {
@@ -65,5 +64,7 @@
     },
     "vsicons.dontShowNewVersionMessage": true,
     "livePreview.notifyOnOpenLooseFile": false,
-    "godot_tools.editor_path": "/usr/bin/godot"
+    "godot_tools.editor_path": "/usr/bin/godot",
+    "editor.cursorSmoothCaretAnimation": true,
+    "workbench.iconTheme": "file-icons"
 }
