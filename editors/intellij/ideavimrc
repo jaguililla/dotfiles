@@ -59,7 +59,7 @@ set wildmode=longest,list    " get bash-like tab completions
 set textwidth=100
 set colorcolumn=+1
 
-nnoremap <expr> p '"0p'
-nnoremap <expr> P '"0P'
-xnoremap <expr> p '"0p'
-xnoremap <expr> P '"0P'
+"nnoremap <expr> p '"0p'
+"nnoremap <expr> P '"0P'
+"xnoremap <expr> p '"0p'
+"xnoremap <expr> P '"0P'

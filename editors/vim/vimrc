@@ -68,7 +68,8 @@ highlight ColorColumn ctermbg=8 guibg=SlateGray4
 highlight CursorLine cterm=NONE ctermbg=Black guibg=Black
 highlight CursorColumn cterm=NONE ctermbg=Black guibg=Black
 
-nnoremap <expr> p '"0p'
-nnoremap <expr> P '"0P'
-xnoremap <expr> p '"0p'
-xnoremap <expr> P '"0P'
+"nnoremap <expr> p '"0p'
+"nnoremap <expr> P '"0P'
+"xnoremap <expr> p '"0p'
+"xnoremap <expr> P '"0P'
+
