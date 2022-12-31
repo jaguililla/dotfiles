@@ -43,7 +43,6 @@
     "editor.cursorWidth": 2,
     "editor.find.autoFindInSelection": "always",
     "files.trimFinalNewlines": true,
-    "workbench.fontAliasing": "antialiased",
     "workbench.settings.useSplitJSON": true,
     "window.titleBarStyle": "native",
     "zenMode.centerLayout": false,
@@ -62,9 +61,30 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "vsicons.dontShowNewVersionMessage": true,
-    "livePreview.notifyOnOpenLooseFile": false,
     "godot_tools.editor_path": "/usr/bin/godot",
     "editor.cursorSmoothCaretAnimation": true,
-    "workbench.iconTheme": "file-icons"
+    "workbench.iconTheme": "material-icon-theme",
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/hexagonkt/codecv/master/cv.schema.json": [
+            "cv.json",
+            "cv.yaml",
+            "cv.yml",
+            "*.cv.json",
+            "*.cv.yaml",
+            "*.cv.yml"
+        ]
+    },
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "cv.json",
+                "cv.yaml",
+                "cv.yml",
+                "*.cv.json",
+                "*.cv.yaml",
+                "*.cv.yml"
+            ],
+            "url": "https://raw.githubusercontent.com/hexagonkt/codecv/master/cv.schema.json"
+        }
+    ]
 }
