@@ -9,7 +9,8 @@ sudo pacman -S \
   vim \
   gvim \
   neovim \
-  neovim-qt \
+  helix \
+  go \
   ripgrep \
   docker \
   docker-compose \
@@ -76,4 +77,3 @@ echo "source \$DOTFILES/shell/shellconfig" >>~/.bashrc
 echo "export DOTFILES=$DOTFILES" >>~/.zshrc
 echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.zshrc
 echo "source \$DOTFILES/shell/shellconfig" >>~/.zshrc
-

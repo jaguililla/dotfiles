@@ -14,12 +14,9 @@ eval $(dircolors -b)
 #export SSH_KEYS=~/.ssh/id_rsa
 #eval $(keychain -q --eval $SSH_KEYS)
 
-#eval $(go env)
-#export PATH=$PATH:$GOPATH/bin
+eval $(go env)
+export PATH=$PATH:$GOPATH/bin
 
-#export KOTLIN_HOME=/usr/share/kotlin
-
-#export JAVA_HOME=/usr/lib/jvm/default
 #export ANDROID_HOME=/opt/android-sdk
 
 #export PATH=$PATH:$(ruby -e "puts Gem.user_dir")/bin

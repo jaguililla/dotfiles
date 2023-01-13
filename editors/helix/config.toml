@@ -1,0 +1,21 @@
+
+theme = "onedark"
+
+[editor]
+line-number = "relative"
+mouse = true
+cursorline = true
+#cursorcolumn = true
+rulers = [ 100 ]
+bufferline = "multiple"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
