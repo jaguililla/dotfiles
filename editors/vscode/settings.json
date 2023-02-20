@@ -62,7 +62,7 @@
         "**/.factorypath": true
     },
     "godot_tools.editor_path": "/usr/bin/godot",
-    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSmoothCaretAnimation": "on",
     "workbench.iconTheme": "material-icon-theme",
     "yaml.format.enable": false,
     "yaml.format.printWidth": 100,

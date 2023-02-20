@@ -1,0 +1,28 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+#
+# WARN: Install Vagrant from HashiCorp's packages, Linux distributions' ones can be broken
+#
+# Disable default shared folder.
+#
+# Uses the vagrant-vbguest plugin (https://github.com/dotless-de/vagrant-vbguest) to install type:
+#
+# vagrant plugin install vagrant-vbguest
+#
+# To deploy to Atlas, execute:
+#
+# `vagrant box update && vagrant up && vagrant package and upload package.box`
+#
+# For a complete reference, please see the online documentation at: https://docs.vagrantup.com
+#
+Vagrant.configure(2) do |config|
+  config.vm.box = 'centos/7'
+
+  config.vm.synced_folder '.', '/vagrant', disabled: true
+
+  config.vm.provision :file, source: 'inputrc', destination: '~/.inputrc'
+  config.vm.provision :file, source: 'bashconfig', destination: '~/.bashconfig'
+  config.vm.provision :shell, path: 'setup.sh'
+  config.vm.provision :docker
+end

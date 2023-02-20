@@ -41,10 +41,10 @@ hs_err_pid*
 kotlin-js-store/
 node_modules/
 package-lock.json
+.vagrant
 .env
 .sdkmanrc
 
 # System Files
 .DS_Store
 Thumbs.db
-

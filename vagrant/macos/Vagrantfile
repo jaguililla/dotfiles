@@ -1,0 +1,21 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+#
+# VBox Guess Additions are not available.
+#
+# TODO Setup video memory to the maximum available
+# TODO http://superuser.com/questions/945910/how-to-select-paravirtualization-interface-in-virtual-box
+#
+Vagrant.configure("2") do |config|
+  config.vm.box = "VMR/MacOS_Catalina-R"
+
+  config.vm.synced_folder '.', '/vagrant', type: "rsync"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "osx"
+    vb.cpus = 4
+    vb.memory = 4096
+    vb.gui = true
+  end
+end
