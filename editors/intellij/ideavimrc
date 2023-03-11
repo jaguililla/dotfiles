@@ -17,8 +17,9 @@ set so=10
 " Requires the 'IdeaVim-Sneak' plugin
 "set sneak
 
-map <CR> i<CR><ESC>
-map <Space> i <ESC>l
+map <S-CR> i<CR><ESC>
+map <S-Space> i <ESC>l
+map <CR> :action GotoAction<CR>
 
 map <C-1> @a
 map <C-2> @b

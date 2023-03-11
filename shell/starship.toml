@@ -29,7 +29,6 @@ $vagrant\
 $aws\
 $gcloud\
 $env_var\
-$custom\
 $memory_usage\
 $cmd_duration\
 $line_break\
