@@ -4,7 +4,7 @@
 export EDITOR=vim
 export VISUAL="$EDITOR"
 export BROWSER=/usr/bin/firefox
-export GREP_COLOR="1;33"
+export GREP_COLOR="mt=1;33"
 export HISTCONTROL=ignoredups
 export LESSHISTFILE="$HOME/.cache/lesshst"
 export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
