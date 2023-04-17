@@ -45,6 +45,7 @@ sudo pacman -S \
   nvm \
   neofetch \
   upx \
+  cloc \
   tldr
 
 #sudo pacman -S gnome-boxes guake brave-browser
