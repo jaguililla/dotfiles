@@ -46,6 +46,8 @@ sudo pacman -S \
   neofetch \
   upx \
   cloc \
+  podman \
+  podman-compose \
   tldr
 
 #sudo pacman -S gnome-boxes guake brave-browser
