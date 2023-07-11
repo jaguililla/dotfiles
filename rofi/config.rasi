@@ -8,7 +8,7 @@ configuration {
 	combi-modi: "drun,emoji";
 	combi-hide-mode-prefix: true;
 	case-sensitive: false;
-	terminal: "gnome-terminal";
+	terminal: "kitty";
 	disable-history: false;
 
 	show-icons: true;

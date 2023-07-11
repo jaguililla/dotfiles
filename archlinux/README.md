@@ -49,6 +49,8 @@ It is preferable to use Google public DNS: 8.8.8.8 and 8.8.4.4
 # Arch Linux install script
 The script is in the repository tag `archlinux`.
 
+You can also use `archinstall` text installer on Arch install ISO.
+
 # Cinnamon desktop
 `cinnamon-session-quit --power-off` to display power-off dialog
 

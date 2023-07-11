@@ -47,7 +47,7 @@
     br = branch
     b = branch -avv --sort=-committerdate
     brm = branch --merged
-    rotten = branch -r --merged origin/master
+    rotten = branch -r --merged origin/main
     brnm = branch --no-merged
     hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
     type = cat-file -t
@@ -88,11 +88,10 @@
     rebase = false
 
 [init]
-    defaultBranch = master
+    defaultBranch = main
 
 [credential "https://github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential
+
 [credential "https://gist.github.com"]
-	helper = 
 	helper = !/usr/bin/gh auth git-credential

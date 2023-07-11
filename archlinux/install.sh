@@ -48,6 +48,7 @@ sudo pacman -S \
   cloc \
   podman \
   podman-compose \
+  kitty \
   tldr
 
 #sudo pacman -S gnome-boxes guake brave-browser

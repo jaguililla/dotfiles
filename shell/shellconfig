@@ -25,7 +25,7 @@ export PATH=$PATH:$GOPATH/bin
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
-export NNN_OPTS="e"
+export NNN_OPTS="deiA"
 
 export _Z_DATA="$HOME/.cache/z"
 
