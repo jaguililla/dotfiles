@@ -3,6 +3,9 @@
 private_*
 local_*
 
+# Binaries
+*.out
+
 # Maven
 target/
 pom.xml.*
