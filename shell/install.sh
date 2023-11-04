@@ -20,10 +20,10 @@ echo "source \$DOTFILES/shell/shellconfig" >>~/.zshrc
 echo "source \$DOTFILES/shell/zshconfig" >>~/.zshrc
 echo "source \$DOTFILES/shell/aliases" >>~/.zshrc
 echo "source \$DOTFILES/shell/ssh_aliases" >>~/.zshrc
-echo "eval \"\$(starship init bash)\"" >>~/.zshrc
-
-echo "source \$DOTFILES/shell/shellconfig" >>~/.bashrc
-echo "source \$DOTFILES/shell/aliases" >>~/.bashrc
-echo "source \$DOTFILES/shell/ssh_aliases" >>~/.bashrc
 echo "eval \"\$(starship init zsh)\"" >>~/.zshrc
 
+echo "source \$DOTFILES/shell/shellconfig" >>~/.bashrc
+echo "source \$DOTFILES/shell/bashconfig" >>~/.bashrc
+echo "source \$DOTFILES/shell/aliases" >>~/.bashrc
+echo "source \$DOTFILES/shell/ssh_aliases" >>~/.bashrc
+echo "eval \"\$(starship init bash)\"" >>~/.bashrc
