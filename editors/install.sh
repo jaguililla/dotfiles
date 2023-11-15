@@ -22,4 +22,3 @@ ln -s $DOTFILES/editors/vim/ginit.vim ~/.config/nvim/ginit.vim
 ln -s $DOTFILES/editors/intellij/ideavimrc ~/.ideavimrc
 ln -s $DOTFILES/editors/intellij/idea.properties "$IDEA_HOME/idea.properties"
 ln -s $DOTFILES/editors/intellij/idea.properties "$IDEA_HOME/bin/idea.properties"
-
