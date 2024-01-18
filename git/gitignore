@@ -44,9 +44,7 @@ hs_err_pid*
 kotlin-js-store/
 node_modules/
 .vagrant/
-package-lock.json
 .env
-.sdkmanrc
 
 # System Files
 .DS_Store
