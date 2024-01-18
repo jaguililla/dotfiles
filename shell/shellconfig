@@ -3,7 +3,7 @@
 
 export EDITOR=vim
 export VISUAL="$EDITOR"
-export BROWSER=/usr/bin/firefox
+export BROWSER=/usr/bin/google-chrome
 export GREP_COLOR="mt=1;33"
 export HISTCONTROL=ignoredups
 export LESSHISTFILE="$HOME/.cache/lesshst"
@@ -39,8 +39,10 @@ mkdir -p ~/.local/share
 [ ! -f $Z_HOME ] && curl -o $Z_HOME https://raw.githubusercontent.com/rupa/z/v1.11/z.sh
 source "$Z_HOME"
 
-export NVM_DIR=$HOME/.local/share/nvm
-source /usr/share/nvm/init-nvm.sh 2>>/dev/null
+#export NVM_DIR=$HOME/.local/share/nvm
+#source /usr/share/nvm/init-nvm.sh 2>>/dev/null
+
+export PATH=$PATH:$HOME/.local/bin
 
 echo
 neofetch
