@@ -20,6 +20,7 @@ mknew() {
   mk addons enable ingress
   mk addons enable ingress-dns
   mk addons enable dashboard
+  mk addons enable registry
 
   mkinfo
 }
