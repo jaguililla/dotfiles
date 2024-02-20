@@ -89,3 +89,6 @@
 
 [init]
     defaultBranch = main
+[user]
+	email = juanjoaguililla@gmail.com
+	name = jaguililla
