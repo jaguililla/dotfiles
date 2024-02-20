@@ -44,6 +44,7 @@ source "$Z_HOME"
 
 export PATH=$PATH:$HOME/.local/bin
 
+alias vim=nvim
+
 echo
 neofetch
-

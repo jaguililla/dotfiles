@@ -1,12 +1,11 @@
-set nocompatible
-
-source $VIMRUNTIME/mswin.vim
-
-behave mswin
 
 if !has('nvim')
+  set nocompatible
+  source $VIMRUNTIME/mswin.vim
+  behave mswin
   set viminfo+=n~/.vim/viminfo
 endif
+
 set nobackup
 set nowritebackup
 set noswapfile
@@ -30,7 +29,7 @@ set so=999
 set mouse=a
 
 map <CR> i<CR><ESC>
-map <Space> i <ESC>l
+"map <Space> i <ESC>l
 
 map <F5> @a
 map <F6> @b
@@ -40,8 +39,8 @@ map <F8> @d
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
-colorscheme desert
-syntax on
+"colorscheme desert
+"syntax on
 
 set encoding=utf8
 
@@ -64,7 +63,7 @@ set ttyfast                  " Speed up scrolling in Vim
 "set spell                  " enable spell check (may need to download language package)
 "set backupdir=~/.cache/vim " Directory to store backup files.
 
-highlight ColorColumn ctermbg=8 guibg=SlateGray4
+"highlight ColorColumn ctermbg=8 guibg=DarkCyan
 highlight CursorLine cterm=NONE ctermbg=Black guibg=Black
 highlight CursorColumn cterm=NONE ctermbg=Black guibg=Black
 
