@@ -2,69 +2,52 @@
 
 sudo pacman -S \
   colordiff \
-  yay \
-  base-devel \
-  keychain \
   git \
-  vim \
-  gvim \
   neovim \
-  helix \
   go \
   ripgrep \
   docker \
   docker-compose \
   minikube \
   kubectl \
-  aws-cli \
   xclip \
   xsel \
-  lxqt-openssh-askpass \
-  curl \
   httpie \
   jq \
   nnn \
-  zsh \
-  zsh-completions \
-  zsh-syntax-highlighting \
-  zsh-autosuggestions \
-  nerd-fonts-noto-sans-mono \
   wmctrl \
   the_silver_searcher \
   xdotool \
   unrar \
-  snapd \
-  starship \
-  rofi \
-  rofi-emoji \
   graphviz \
   noto-fonts \
   noto-fonts-extra \
   noto-fonts-emoji \
+  ttf-noto-nerd \
   python-pip \
   nvm \
   neofetch \
   upx \
   cloc \
-  podman \
-  podman-compose \
-  kitty \
   tldr
 
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+sdk i java 21.0.2-graalce
+yes n|sdk i java 21.0.2-tem
+
+#sudo pacman -S yay base-devel helix aws-cli rofi rofi-emoji podman podman-compose
 #sudo pacman -S gnome-boxes guake brave-browser
 
-yay -S dbvis keystore-explorer-bin
+#yay -S dbvis keystore-explorer-bin
 
-systemctl enable ntpd
-systemctl start ntpd
+#systemctl enable ntpd
+#systemctl start ntpd
 
 systemctl enable docker
 systemctl start docker
 user="$(whoami)"
 sudo usermod -aG docker $user
-
-systemctl enable snapd
-systemctl start snapd
 
 BASEDIR=$(dirname $0)
 BASEPATH=$(readlink -f $BASEDIR)
