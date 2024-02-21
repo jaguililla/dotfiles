@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 alias mk='minikube'
-alias mkenv='eval $(mk docker-env)'
-alias mkrm='mk stop ; mk delete --all'
+alias mkrm='mk delete --all --purge'
 alias mkinfo='mk config view && mk addons list && mk status && mk ip ; mk service list || true'
 
 mknew() {
