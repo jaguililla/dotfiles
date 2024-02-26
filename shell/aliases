@@ -72,7 +72,8 @@ alias fn='find . -name'
 alias fbak='sudo find / -name "*.bak" -or -name "*~"'
 
 # Editors
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 alias hx='helix'
 
 # Build systems
