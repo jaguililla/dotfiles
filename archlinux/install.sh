@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 sudo pacman -S \
+  pacman-contrib \
   colordiff \
   git \
   neovim \

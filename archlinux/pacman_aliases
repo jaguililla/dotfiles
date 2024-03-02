@@ -2,12 +2,13 @@
 
 # Define the Pacman wrapper (pacman, yay, etc.) to be used
 alias pac='pacman'
+alias spac='sudo pac'
 
-alias pacupg='pac -Syu && paccache -rk 2' # Synchronize with repositories and clean cache
+alias pacupg='spac -Syu && paccache -rk 2' # Synchronize with repositories and clean cache
 alias pacprune='pacrm $(pac -Qtdq)'     # Delete not required (orphan) packages
-alias pacin='pac -S'     # Install specific package(s) from the repositories
+alias pacin='spac -S'     # Install specific package(s) from the repositories
 alias pacinf='pac -Up'   # Install specific package not from the repositories but from a file
-alias pacrm='pac -Rns'   # Remove specified package(s), configuration(s) and unneeded dependencies
+alias pacrm='spac -Rns'   # Remove specified package(s), configuration(s) and unneeded dependencies
 alias pacrep='pac -Si'   # Display information about a given package in the repositories
 alias pacreps='pac -Ss'  # Search for package(s) in the repositories
 alias pacloc='pac -Qi'   # Display information about a given package in the local database
