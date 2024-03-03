@@ -41,6 +41,7 @@ sudo pacman -S \
   procs \
   sd \
   dust \
+  code \
   fzf
 
 #sudo pacman -S \
