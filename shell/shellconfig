@@ -9,8 +9,6 @@ export HISTCONTROL=ignoredups
 export LESSHISTFILE="$HOME/.cache/lesshst"
 export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
 
-eval $(dircolors -b)
-
 #export SSH_KEYS=~/.ssh/id_rsa
 #eval $(keychain -q --eval $SSH_KEYS)
 
@@ -48,3 +46,4 @@ alias vim=nvim
 
 echo
 neofetch
+

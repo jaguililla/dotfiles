@@ -11,14 +11,13 @@ export DOTFILES=${1:-"$BASEPATH/.."}
 ln -s $DOTFILES/editors/fonts ~/.local/share/fonts
 fc-cache -f -v
 
-#mkdir ~/.vim
 mkdir ~/.config/nvim
-#ln -s $DOTFILES/editors/vim/gvimrc ~/.vim
-#ln -s $DOTFILES/editors/vim/vimrc ~/.vim
-# TODO if Windows, use `~/AppData/Local/nvim`
-ln -s $DOTFILES/editors/vim/init.vim ~/.config/nvim/init.vim
-ln -s $DOTFILES/editors/vim/ginit.vim ~/.config/nvim/ginit.vim
+ln -s $DOTFILES/editors/vim/gvimrc ~/.config/nvim/
+ln -s $DOTFILES/editors/vim/vimrc ~/.config/nvim/
+#ln -s $DOTFILES/editors/vim/init.vim ~/.config/nvim/
+#ln -s $DOTFILES/editors/vim/ginit.vim ~/.config/nvim/
 
 ln -s $DOTFILES/editors/intellij/ideavimrc ~/.ideavimrc
 ln -s $DOTFILES/editors/intellij/idea.properties "$IDEA_HOME/idea.properties"
 ln -s $DOTFILES/editors/intellij/idea.properties "$IDEA_HOME/bin/idea.properties"
+

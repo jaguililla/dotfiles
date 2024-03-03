@@ -21,14 +21,6 @@ alias dprune='sudo docker system prune -af && sudo docker volume prune -f'
 
 dsh () { dit "$1" /bin/bash; }
 
-# DOCKER MACHINE
-alias dm='docker-machine'
-
-dmswarm () {
-    eval $(dm env --swarm $1);
-    dm ls;
-}
-
 # DOCKER COMPOSE
 alias dc='docker compose'
 #alias dc='podman-compose'

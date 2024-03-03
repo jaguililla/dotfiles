@@ -1,7 +1,8 @@
 
-# VIM
-```bash
-git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
+# Neovim
+```lua
+# ~/.config/nvim/init.lua
+vim.cmd('source ~/.config/nvim/vimrc')
 ```
 
 # VS Code

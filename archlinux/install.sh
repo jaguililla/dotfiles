@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 sudo pacman -S \
+  base-devel \
+  gcc \
   pacman-contrib \
   colordiff \
   git \
@@ -30,17 +32,33 @@ sudo pacman -S \
   neofetch \
   upx \
   cloc \
-  tldr
+  bottom \
+  tealdeer \
+  zoxide \
+  bat \
+  lsd \
+  fd \
+  procs \
+  sd \
+  dust \
+  fzf
+
+#sudo pacman -S \
+#  yay \
+#  helix \
+#  aws-cli \
+#  rofi \
+#  rofi-emoji \
+#  podman \
+#  podman-compose \
+#  brave-browser
+
+#brew install dbvis keystore-explorer-bin
 
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk i java 21.0.2-graalce
 yes n|sdk i java 21.0.2-tem
-
-#sudo pacman -S yay base-devel helix aws-cli rofi rofi-emoji podman podman-compose
-#sudo pacman -S gnome-boxes guake brave-browser
-
-#yay -S dbvis keystore-explorer-bin
 
 #systemctl enable ntpd
 #systemctl start ntpd
@@ -58,10 +76,7 @@ export DOTFILES=${1:-"$BASEPATH"}
 [[ ! -d $DOTFILES ]] && echo 'DOTFILES must exists' && exit 1
 [[ ! -d $DOTFILES/archlinux ]] && echo 'Arch Linux settings must exists' && exit 2
 
-echo "export DOTFILES=$DOTFILES" >>~/.bashrc
-echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.bashrc
-echo "source \$DOTFILES/shell/shellconfig" >>~/.bashrc
+echo "export DOTFILES=$DOTFILES" >>~/.{bash,zsh}rc
+echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.{bash,zsh}rc
+echo "source \$DOTFILES/shell/shellconfig" >>~/.{bash,zsh}rc
 
-echo "export DOTFILES=$DOTFILES" >>~/.zshrc
-echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.zshrc
-echo "source \$DOTFILES/shell/shellconfig" >>~/.zshrc
