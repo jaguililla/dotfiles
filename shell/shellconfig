@@ -1,13 +1,12 @@
 
 # Shell config (~/.profile)
 
-export EDITOR=vim
+export EDITOR="nvim"
 export VISUAL="$EDITOR"
-export BROWSER=/usr/bin/google-chrome
-export GREP_COLOR="mt=1;33"
-export HISTCONTROL=ignoredups
+export BROWSER="/usr/bin/brave"
+export HISTCONTROL="ignoredups"
 export LESSHISTFILE="$HOME/.cache/lesshst"
-export SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
+export PATH=$PATH:$HOME/.local/bin
 
 #export SSH_KEYS=~/.ssh/id_rsa
 #eval $(keychain -q --eval $SSH_KEYS)
@@ -37,4 +36,3 @@ export PATH=$PATH:$HOME/.local/bin
 
 echo
 neofetch
-
