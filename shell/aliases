@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# Improved commands
+alias top='htop'
+alias cat='bat --paging=never'
+alias less='bat'
+alias more='bat'
+#alias ps='procs'
+#alias du='dust'
+
 # Aliases
 alias diff='colordiff'              # requires colordiff package
 alias grep='grep --color=auto'
@@ -9,7 +17,6 @@ alias open='xdg-open'
 alias isodate='date +"%Y-%m-%dT%H:%M:%S"'
 
 # modified commands
-alias more='less'
 alias df='df -h'
 alias du='du -c -h'
 alias mkdir='mkdir -p -v'
@@ -48,7 +55,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 
 # ls
-alias ls='ls -hFX --color=auto --group-directories-first'
+alias ls='lsd -hFX --color=auto --group-directories-first'
 alias lr='ls -R'                    # recursive ls
 alias ll='ls -l'
 alias la='ll -A'

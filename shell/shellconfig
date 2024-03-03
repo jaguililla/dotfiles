@@ -20,29 +20,20 @@ export PATH=$PATH:$GOPATH/bin
 #export PATH=$PATH:$(ruby -e "puts Gem.user_dir")/bin
 #export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+#export QT_QPA_PLATFORMTHEME="qt5ct"
+#export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 export NNN_OPTS="deiA"
 
-export _Z_DATA="$HOME/.cache/z"
-
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+#export LANG=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
 
 stty -ctlecho
-
-Z_HOME="$HOME/.local/share/z.sh"
-mkdir -p ~/.local/share
-[ ! -f $Z_HOME ] && curl -o $Z_HOME https://raw.githubusercontent.com/rupa/z/v1.11/z.sh
-source "$Z_HOME"
 
 #export NVM_DIR=$HOME/.local/share/nvm
 #source /usr/share/nvm/init-nvm.sh 2>>/dev/null
 
 export PATH=$PATH:$HOME/.local/bin
-
-alias vim=nvim
 
 echo
 neofetch
