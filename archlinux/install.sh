@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 sudo pacman -S \
+  xorg-xkill \
   base-devel \
   gcc \
   pacman-contrib \
