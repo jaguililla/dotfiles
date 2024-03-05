@@ -1,0 +1,20 @@
+
+# Shell config (~/.profile)
+
+#export SSH_KEYS=~/.ssh/id_rsa
+#eval $(keychain -q --eval $SSH_KEYS)
+
+#export ANDROID_HOME=/opt/android-sdk
+
+#export PATH=$PATH:$(ruby -e "puts Gem.user_dir")/bin
+#export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+
+#export QT_QPA_PLATFORMTHEME="qt5ct"
+#export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+#export LANG=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
+
+#export NVM_DIR=$HOME/.local/share/nvm
+#source /usr/share/nvm/init-nvm.sh 2>>/dev/null
+
