@@ -1,8 +1,8 @@
 
 # Shell config (~/.profile)
 
-#export SSH_KEYS=~/.ssh/id_rsa
-#eval $(keychain -q --eval $SSH_KEYS)
+export SSH_KEYS=~/.ssh/id_ed25519
+eval $(keychain -q --eval $SSH_KEYS)
 
 #export ANDROID_HOME=/opt/android-sdk
 
