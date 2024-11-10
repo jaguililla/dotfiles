@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 sudo pacman -S \
   xorg-xkill \
   base-devel \
@@ -12,13 +14,12 @@ sudo pacman -S \
   ripgrep \
   docker \
   docker-compose \
-  minikube \
   kubectl \
   xclip \
   xsel \
   httpie \
   jq \
-  nnn \
+  yazi \
   wmctrl \
   the_silver_searcher \
   xdotool \
@@ -43,6 +44,7 @@ sudo pacman -S \
   sd \
   dust \
   code \
+  imagemagick \
   fzf
 
 #sudo pacman -S \
@@ -60,7 +62,6 @@ sudo pacman -S \
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk i java 21.0.2-graalce
-yes n|sdk i java 21.0.2-tem
 
 #systemctl enable ntpd
 #systemctl start ntpd
@@ -78,7 +79,12 @@ export DOTFILES=${1:-"$BASEPATH"}
 [[ ! -d $DOTFILES ]] && echo 'DOTFILES must exists' && exit 1
 [[ ! -d $DOTFILES/archlinux ]] && echo 'Arch Linux settings must exists' && exit 2
 
-echo "export DOTFILES=$DOTFILES" >>~/.{bash,zsh}rc
-echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.{bash,zsh}rc
-echo "source \$DOTFILES/shell/shellconfig" >>~/.{bash,zsh}rc
+echo "export DOTFILES=$DOTFILES" >>~/.bashrc
+echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.bashrc
+echo "source \$DOTFILES/shell/shellconfig" >>~/.bashrc
+
+echo "export DOTFILES=$DOTFILES" >>~/.zshrc
+echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.zshrc
+echo "source \$DOTFILES/shell/shellconfig" >>~/.zshrc
+
 

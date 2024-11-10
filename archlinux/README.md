@@ -4,6 +4,9 @@ Language settings can be changed by user (not system wide) in `~/.profile` file.
 parameters can be changed sourcing `locale.env` in the `~/.profile` file and editing
 them there.
 
+# Sudo
+Add `Defaults:<user> !authenticate` using `sudo visudo` to disable password.
+
 # Network
 It is preferable to use Google public DNS: 8.8.8.8 and 8.8.4.4
 

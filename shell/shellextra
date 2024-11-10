@@ -1,8 +1,10 @@
 
 # Shell config (~/.profile)
 
+export SSH_ASKPASS=/usr/lib/seahorse/ssh-askpass
+export SSH_ASKPASS_REQUIRE=prefer
 export SSH_KEYS=~/.ssh/id_ed25519
-eval $(keychain -q --eval $SSH_KEYS)
+eval $(keychain -q --noask --eval $SSH_KEYS)
 
 #export ANDROID_HOME=/opt/android-sdk
 
