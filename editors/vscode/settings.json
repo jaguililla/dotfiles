@@ -63,10 +63,11 @@
     },
     "godot_tools.editor_path": "/usr/bin/godot",
     "editor.cursorSmoothCaretAnimation": "on",
-    "workbench.iconTheme": "material-icon-theme",
     "yaml.format.enable": false,
     "yaml.format.printWidth": 100,
     "json.format.enable": false,
     "editor.fontFamily": "JetBrains Mono",
-    "workbench.editor.tabActionCloseVisibility": false
+    "workbench.editor.tabActionCloseVisibility": false,
+    "zig.zls.enabled": "on",
+    "workbench.iconTheme": "material-icon-theme"
 }
