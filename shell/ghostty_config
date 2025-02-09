@@ -1,0 +1,11 @@
+
+keybind = global:cmd+enter=toggle_quick_terminal
+
+quick-terminal-position = top
+quick-terminal-animation-duration = 0
+
+initial-window = false
+
+window-height = 50
+window-width = 200
+

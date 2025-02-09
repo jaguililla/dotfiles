@@ -16,6 +16,7 @@ alias readlink='greadlink'
 
 # Processes
 alias sys='launchctl'
+unalias open
 
 # Brew
 alias brewupg='brew update && brew upgrade && brew upgrade --cask && brew cleanup'
