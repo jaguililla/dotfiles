@@ -11,12 +11,19 @@
   "telemetry": {
     "metrics": false
   },
+  "wrap_guides": [100],
   "vim_mode": true,
   "ui_font_size": 15,
   "buffer_font_size": 13,
   "terminal": {
     "line_height": {
       "custom": 1.25
+    }
+  },
+  "project_panel": {
+    "indent_size": 25,
+    "indent_guides": {
+      "show": "never"
     }
   },
   "theme": {
