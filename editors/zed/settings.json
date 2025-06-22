@@ -26,6 +26,8 @@
       "show": "never"
     }
   },
+  "autosave": "on_focus_change",
+  "preferred_line_length": 100,
   "theme": {
     "mode": "system",
     "light": "One Light",
