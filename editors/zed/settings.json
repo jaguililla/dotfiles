@@ -8,6 +8,18 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "icon_theme": "Colored Zed Icons Theme Dark",
+  "file_scan_exclusions": [
+    "**/.zig-cache",
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/.jj",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings"
+  ],
   "telemetry": {
     "metrics": false
   },
@@ -24,7 +36,8 @@
     "indent_size": 25,
     "indent_guides": {
       "show": "never"
-    }
+    },
+    "hide_root": true
   },
   "autosave": "on_focus_change",
   "preferred_line_length": 100,
