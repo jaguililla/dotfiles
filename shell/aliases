@@ -87,7 +87,7 @@ alias hx='helix'
 alias gw='./gradlew'
 alias gwatch='gw -t'
 alias gcb='gw clean build'
-alias mw='mvnd'
+alias mw='./mvnw'
 alias mci='mw clean install'
 alias npr='npm run'
 
