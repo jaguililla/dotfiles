@@ -87,8 +87,11 @@ alias hx='helix'
 alias gw='./gradlew'
 alias gwatch='gw -t'
 alias gcb='gw clean build'
-alias mw='./mvnw'
-alias mci='mw clean install'
+
+alias mw='mvnd'
+alias mwv='mw clean verify'
+alias mwnc='mw -D=maven.build.cache.enabled=false'
+
 alias npr='npm run'
 
 # Processes
