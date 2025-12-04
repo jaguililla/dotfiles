@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent": {
+    "single_file_review": false,
+    "model_parameters": [],
+    "enable_feedback": false
+  },
   "icon_theme": "Colored Zed Icons Theme Dark",
   "file_scan_exclusions": [
     "**/.zig-cache",
@@ -45,5 +50,8 @@
     "mode": "system",
     "light": "One Light",
     "dark": "Ayu Dark"
+  },
+  "toolbar": {
+    "code_actions": true
   }
 }
