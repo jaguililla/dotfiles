@@ -7,6 +7,7 @@
 // from the command palette.
 [
   {
+    "context": "!CommitEditor",
     "bindings": {
       "ctrl-enter": "command_palette::Toggle",
       "ctrl-o": "outline::Toggle",
