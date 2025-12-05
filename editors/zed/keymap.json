@@ -9,14 +9,15 @@
   {
     "bindings": {
       "ctrl-enter": "command_palette::Toggle",
-      "ctrl-o": "outline_panel::ToggleFocus",
+      "ctrl-o": "outline::Toggle",
       "alt-m": "workspace::ToggleZoom",
       "alt-j": "pane::ActivatePreviousItem",
       "alt-k": "pane::ActivateNextItem",
       "alt-9": "project_panel::ToggleFocus",
       "alt-8": "git_panel::ToggleFocus",
       "alt-7": "outline_panel::ToggleFocus",
-      "alt-0": "terminal_panel::ToggleFocus"
+      "alt-0": "terminal_panel::ToggleFocus",
+      "ctrl-7": "editor::ToggleComments"
     }
   },
   {
