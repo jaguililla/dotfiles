@@ -16,7 +16,8 @@
       "alt-9": "project_panel::ToggleFocus",
       "alt-8": "git_panel::ToggleFocus",
       "alt-7": "outline_panel::ToggleFocus",
-      "alt-0": "terminal_panel::ToggleFocus"
+      "alt-0": "terminal_panel::ToggleFocus",
+      "ctrl-7": "editor::ToggleComments"
     }
   },
   {

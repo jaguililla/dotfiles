@@ -82,6 +82,7 @@
     }
   },
   "project_panel": {
+    "folder_icons": false,
     "hide_hidden": true,
     "entry_spacing": "standard",
     "indent_size": 15.0,
