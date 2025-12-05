@@ -43,7 +43,7 @@
     "min_line_number_digits": 1,
     "folds": false
   },
-  "relative_line_numbers": true,
+  "relative_line_numbers": "enabled",
   "agent": {
     "enabled": true,
     "single_file_review": false,
