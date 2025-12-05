@@ -7,9 +7,13 @@
 // from the command palette.
 [
   {
-    "context": "!CommitEditor",
+    "context": "!CommitEditor && !GitCommit",
     "bindings": {
-      "ctrl-enter": "command_palette::Toggle",
+      "ctrl-enter": "command_palette::Toggle"
+    }
+  },
+  {
+    "bindings": {
       "ctrl-o": "outline::Toggle",
       "alt-m": "workspace::ToggleZoom",
       "alt-j": "pane::ActivatePreviousItem",
@@ -18,19 +22,10 @@
       "alt-8": "git_panel::ToggleFocus",
       "alt-7": "outline_panel::ToggleFocus",
       "alt-0": "terminal_panel::ToggleFocus",
-      "ctrl-7": "editor::ToggleComments"
-    }
-  },
-  {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
+      "ctrl-7": "editor::ToggleComments",
+      "ctrl-.": "editor::GoToDiagnostic",
+      "ctrl-,": "editor::GoToPreviousDiagnostic",
+      "shift shift": "file_finder::Toggle"
     }
   }
 ]
