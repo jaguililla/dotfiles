@@ -32,7 +32,6 @@
     "git_status": true
   },
   "title_bar": {
-    "show_menus": true,
     "show_branch_icon": true
   },
   "show_whitespaces": "boundary",
@@ -44,7 +43,7 @@
     "min_line_number_digits": 1,
     "folds": false
   },
-  "relative_line_numbers": "enabled",
+  "relative_line_numbers": true,
   "agent": {
     "enabled": true,
     "single_file_review": false,
