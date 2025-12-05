@@ -11,7 +11,7 @@
   "disable_ai": true,
   "git": {
     "inline_blame": {
-      "min_column": 60
+      "min_column": 70
     }
   },
   "use_system_window_tabs": true,
@@ -57,21 +57,21 @@
   },
   "wrap_guides": [100],
   "vim_mode": true,
-  "ui_font_size": 15,
-  "buffer_font_size": 12.0,
+  "ui_font_size": 16,
+  "buffer_font_size": 12.75,
   "terminal": {
     "toolbar": {
       "breadcrumbs": true
     },
     "font_family": "AdwaitaMono Nerd Font",
-    "font_size": 12.0,
+    "font_size": 12.75,
     "line_height": {
       "custom": 1.25
     }
   },
   "project_panel": {
     "entry_spacing": "standard",
-    "indent_size": 20.0,
+    "indent_size": 15.0,
     "indent_guides": {
       "show": "never"
     },
