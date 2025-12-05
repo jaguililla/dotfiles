@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# DOCKER
+alias d='podman'
+#alias d='podman'
+alias drun='d run -d'
+alias dstop='d stop'
+alias dstart='d start'
+alias dres='d restart'
+alias dlog='d logs -f'
+alias dit='d exec -it'
+alias drm='d rm -v'
+alias drmi='d rmi'
+alias dpull='d pull'
+
+alias dimg='d images'
+alias dstat='d stats -a --no-stream'
+alias dps='d ps --format "table{{.Names}}\t{{.Image}}\t{{.Status}}\t{{.RunningFor}}"'
+
+alias dprune='sudo docker system prune -af && sudo docker volume prune -f'
+
+dsh () { dit "$1" /bin/bash; }
+
+# DOCKER COMPOSE
+alias dc='podman compose'
+alias dcup='dc up -d'
+alias dcstop='dc stop'
+alias dcstart='dc start'
+alias dcres='dc restart'
+alias dclog='dc logs'
+alias dcrm='dc rm'
+
+alias dcps='dc ps'
+
+dcsh () { dc exec "$1" /bin/bash; }
+
