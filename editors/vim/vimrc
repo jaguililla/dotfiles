@@ -10,9 +10,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-set guitablabel=%N\ %f
+"set guitablabel=%N\ %f
 set clipboard^=unnamed,unnamedplus
-set guioptions=rgmtehb
+"set guioptions=rgmtehb
 set number
 set ignorecase
 set bdir=/tmp,~/tmp,.

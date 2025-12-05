@@ -1,5 +1,6 @@
 
-keybind = global:cmd+enter=toggle_quick_terminal
+#keybind = global:cmd+enter=toggle_quick_terminal
+keybind = global:cmd+p=toggle_quick_terminal
 
 quick-terminal-position = top
 quick-terminal-animation-duration = 0
