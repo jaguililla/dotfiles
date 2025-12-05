@@ -7,15 +7,27 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "indent_size": 15.0
+  },
+  "preview_tabs": {
+    "enable_preview_from_file_finder": true,
+    "enable_preview_from_code_navigation": true
+  },
+  "buffer_font_features": {
+    "calt": false
+  },
   "buffer_line_height": "standard",
   "disable_ai": true,
   "git": {
     "inline_blame": {
+      "show_commit_summary": true,
       "min_column": 70
     }
   },
   "use_system_window_tabs": true,
   "tabs": {
+    "show_diagnostics": "all",
     "file_icons": true,
     "git_status": true
   },
@@ -70,6 +82,7 @@
     }
   },
   "project_panel": {
+    "hide_hidden": true,
     "entry_spacing": "standard",
     "indent_size": 15.0,
     "indent_guides": {

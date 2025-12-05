@@ -9,7 +9,7 @@
   {
     "bindings": {
       "ctrl-enter": "command_palette::Toggle",
-      "ctrl-o": "outline_panel::ToggleFocus",
+      "ctrl-o": "outline::Toggle",
       "alt-m": "workspace::ToggleZoom",
       "alt-j": "pane::ActivatePreviousItem",
       "alt-k": "pane::ActivateNextItem",
