@@ -18,7 +18,7 @@
     "calt": false
   },
   "buffer_line_height": "standard",
-  "disable_ai": true,
+  "disable_ai": false,
   "git": {
     "inline_blame": {
       "show_commit_summary": true,
@@ -32,6 +32,7 @@
     "git_status": true
   },
   "title_bar": {
+    "show_sign_in": false,
     "show_branch_icon": true
   },
   "show_whitespaces": "boundary",
