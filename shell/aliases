@@ -90,7 +90,7 @@ alias gcb='gw clean build'
 
 alias mw='./mvnw'
 alias mwv='mw clean verify'
-alias mwnc='mw -D=maven.build.cache.enabled=false'
+alias mwnc='mw -D maven.build.cache.enabled=false'
 alias mci='mw clean install'
 
 alias npr='npm run'
