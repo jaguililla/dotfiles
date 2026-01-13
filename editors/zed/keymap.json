@@ -9,12 +9,14 @@
   {
     "context": "!CommitEditor && !GitCommit",
     "bindings": {
-      "ctrl-enter": "command_palette::Toggle"
-    }
+      "ctrl-enter": "command_palette::Toggle",
+    },
   },
   {
     "bindings": {
       "ctrl-o": "outline::Toggle",
+      "alt-h": "workspace::ActivatePreviousPane",
+      "alt-l": "workspace::ActivateNextPane",
       "alt-m": "workspace::ToggleZoom",
       "alt-j": "pane::ActivatePreviousItem",
       "alt-k": "pane::ActivateNextItem",
@@ -25,7 +27,7 @@
       "ctrl-7": "editor::ToggleComments",
       "ctrl-.": "editor::GoToDiagnostic",
       "ctrl-,": "editor::GoToPreviousDiagnostic",
-      "shift shift": "file_finder::Toggle"
-    }
-  }
+      "shift shift": "file_finder::Toggle",
+    },
+  },
 ]

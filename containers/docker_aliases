@@ -2,7 +2,6 @@
 
 # DOCKER
 alias d='docker'
-#alias d='podman'
 alias drun='d run -d'
 alias dstop='d stop'
 alias dstart='d start'
@@ -23,7 +22,6 @@ dsh () { dit "$1" /bin/bash; }
 
 # DOCKER COMPOSE
 alias dc='docker compose'
-#alias dc='podman-compose'
 alias dcup='dc up -d'
 alias dcstop='dc stop'
 alias dcstart='dc start'
