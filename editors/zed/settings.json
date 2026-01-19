@@ -111,6 +111,9 @@
     "big": {
       "ui_font_size": 18,
       "buffer_font_size": 15,
+      "terminal": {
+        "font_size": 15,
+      },
     },
   },
 }
