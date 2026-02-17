@@ -8,7 +8,8 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "git_panel": {
-    "sort_by_path": true
+    "tree_view": true,
+    "sort_by_path": true,
   },
   "outline_panel": {
     "indent_size": 15.0,
@@ -50,8 +51,8 @@
   "relative_line_numbers": "enabled",
   "agent": {
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash-lite",
+      "provider": "openai",
+      "model": "gpt-3.5-turbo",
     },
     "enabled": true,
     "single_file_review": false,
