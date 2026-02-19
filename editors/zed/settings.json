@@ -120,4 +120,61 @@
       },
     },
   },
+  "languages": {
+    "Java": {
+      "language_servers": ["jdtls"],
+      "formatter": "language_server",
+      "format_on_save": "off",
+    },
+  },
+  "lsp": {
+    "jdtls": {
+      "settings": {
+        "initialization_options": {
+          "settings": {
+            "java": {
+              "configuration": {
+                "updateBuildConfiguration": "interactive",
+              },
+              "import": {
+                "gradle": {
+                  "enabled": false,
+                },
+                "maven": {
+                  "enabled": true,
+                },
+                "exclusions": [
+                  "**/node_modules/**",
+                  "**/.metadata/**",
+                  "**/archetype-resources/**",
+                  "**/META-INF/maven/**",
+                  "/**/test/**",
+                ],
+              },
+              "referencesCodeLens": {
+                "enabled": true,
+              },
+              "signatureHelp": {
+                "enabled": true,
+              },
+              "implementationCodeLens": "all",
+              "format": {
+                "enabled": true,
+              },
+              "saveActions": {
+                "organizeImports": true,
+              },
+              "autobuild": {
+                "enabled": true,
+              },
+              "completion": {
+                "favoriteStaticMembers": ["org.junit.jupiter.api.Assertions.*"],
+                "importOrder": ["java", "javax", "com", "org"],
+              },
+            },
+          },
+        },
+      },
+    },
+  },
 }
