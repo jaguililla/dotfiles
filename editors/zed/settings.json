@@ -8,6 +8,7 @@
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
   "git_panel": {
+    "tree_view": true,
     "sort_by_path": true
   },
   "outline_panel": {
