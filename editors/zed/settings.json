@@ -9,7 +9,7 @@
 {
   "git_panel": {
     "tree_view": true,
-    "sort_by_path": true
+    "sort_by_path": true,
   },
   "outline_panel": {
     "indent_size": 15.0,
@@ -51,8 +51,8 @@
   "relative_line_numbers": "enabled",
   "agent": {
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash-lite",
+      "provider": "openai",
+      "model": "gpt-3.5-turbo",
     },
     "enabled": true,
     "single_file_review": false,
@@ -117,6 +117,63 @@
       "buffer_font_size": 15,
       "terminal": {
         "font_size": 15,
+      },
+    },
+  },
+  "languages": {
+    "Java": {
+      "language_servers": ["jdtls"],
+      "formatter": "language_server",
+      "format_on_save": "off",
+    },
+  },
+  "lsp": {
+    "jdtls": {
+      "settings": {
+        "initialization_options": {
+          "settings": {
+            "java": {
+              "configuration": {
+                "updateBuildConfiguration": "interactive",
+              },
+              "import": {
+                "gradle": {
+                  "enabled": false,
+                },
+                "maven": {
+                  "enabled": true,
+                },
+                "exclusions": [
+                  "**/node_modules/**",
+                  "**/.metadata/**",
+                  "**/archetype-resources/**",
+                  "**/META-INF/maven/**",
+                  "/**/test/**",
+                ],
+              },
+              "referencesCodeLens": {
+                "enabled": true,
+              },
+              "signatureHelp": {
+                "enabled": true,
+              },
+              "implementationCodeLens": "all",
+              "format": {
+                "enabled": true,
+              },
+              "saveActions": {
+                "organizeImports": true,
+              },
+              "autobuild": {
+                "enabled": true,
+              },
+              "completion": {
+                "favoriteStaticMembers": ["org.junit.jupiter.api.Assertions.*"],
+                "importOrder": ["java", "javax", "com", "org"],
+              },
+            },
+          },
+        },
       },
     },
   },
