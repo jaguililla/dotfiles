@@ -95,6 +95,8 @@ alias mci='mw clean install'
 
 alias npr='npm run'
 
+alias t='task'
+
 # Processes
 alias sys='sudo systemctl'
 alias sy='sys status'
