@@ -42,7 +42,7 @@
   "show_whitespaces": "boundary",
   "minimap": {
     "max_width_columns": 100,
-    "show": "auto",
+    "show": "never",
   },
   "gutter": {
     "min_line_number_digits": 1,
@@ -51,8 +51,8 @@
   "relative_line_numbers": "enabled",
   "agent": {
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-3.5-turbo",
+      "provider": "deepseek",
+      "model": "deepseek-reasoner",
     },
     "enabled": true,
     "single_file_review": false,
