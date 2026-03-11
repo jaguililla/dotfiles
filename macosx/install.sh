@@ -45,7 +45,7 @@ brew install \
   jq \
   node \
   ruby \
-  neofetch \
+  macchina \
   plantuml \
   lsd \
   bat \

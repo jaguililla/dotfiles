@@ -15,4 +15,4 @@ export NNN_OPTS="deiA"
 stty -ctlecho
 
 echo
-neofetch
+macchina -t Lithium

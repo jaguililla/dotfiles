@@ -31,7 +31,7 @@ sudo pacman -S \
   ttf-noto-nerd \
   python-pip \
   nvm \
-  neofetch \
+  macchina \
   upx \
   cloc \
   bottom \

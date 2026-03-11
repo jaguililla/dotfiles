@@ -7,6 +7,28 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "language_models": {
+    "openai_compatible": {
+      "MiniMax": {
+        "api_url": "https://api.minimax.io/v1",
+        "available_models": [
+          {
+            "name": "MiniMax-M2.5",
+            "max_tokens": 200000,
+            "max_output_tokens": 32000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": false,
+              "prompt_cache_key": false,
+              "chat_completions": true
+            }
+          }
+        ]
+      }
+    }
+  },
   "git_panel": {
     "tree_view": true,
     "sort_by_path": true,
@@ -51,8 +73,8 @@
   "relative_line_numbers": "enabled",
   "agent": {
     "default_model": {
-      "provider": "deepseek",
-      "model": "deepseek-reasoner",
+      "provider": "MiniMax",
+      "model": "MiniMax-M2.5",
     },
     "enabled": true,
     "single_file_review": false,
