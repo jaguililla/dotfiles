@@ -3,7 +3,6 @@
 set -e
 
 sudo pacman -S \
-  xorg-xkill \
   base-devel \
   gcc \
   pacman-contrib \
@@ -12,8 +11,8 @@ sudo pacman -S \
   neovim \
   go \
   ripgrep \
-  docker \
-  docker-compose \
+  podman \
+  podman-compose \
   kubectl \
   xclip \
   xsel \
@@ -51,10 +50,6 @@ sudo pacman -S \
 #  yay \
 #  helix \
 #  aws-cli \
-#  rofi \
-#  rofi-emoji \
-#  podman \
-#  podman-compose \
 #  brave-browser
 
 #brew install dbvis keystore-explorer-bin
@@ -66,10 +61,9 @@ sdk i java 21.0.2-graalce
 #systemctl enable ntpd
 #systemctl start ntpd
 
-systemctl enable docker
-systemctl start docker
+systemctl enable podman
+systemctl start podman
 user="$(whoami)"
-sudo usermod -aG docker $user
 
 BASEDIR=$(dirname $0)
 BASEPATH=$(readlink -f $BASEDIR)
@@ -86,5 +80,3 @@ echo "source \$DOTFILES/shell/shellconfig" >>~/.bashrc
 echo "export DOTFILES=$DOTFILES" >>~/.zshrc
 echo "source \$DOTFILES/archlinux/pacman_aliases" >>~/.zshrc
 echo "source \$DOTFILES/shell/shellconfig" >>~/.zshrc
-
-

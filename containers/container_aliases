@@ -2,7 +2,6 @@
 
 # DOCKER
 alias d='podman'
-#alias d='podman'
 alias drun='d run -d'
 alias dstop='d stop'
 alias dstart='d start'
@@ -33,4 +32,3 @@ alias dcrm='dc rm'
 alias dcps='dc ps'
 
 dcsh () { dc exec "$1" /bin/bash; }
-

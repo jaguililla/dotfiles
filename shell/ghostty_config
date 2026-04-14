@@ -1,14 +1,14 @@
-window-decoration = server
-font-size = 11
+font-size = 10
 
-keybind = global:cmd+enter=toggle_quick_terminal
-keybind = global:cmd+p=toggle_quick_terminal
+#keybind = global:cmd+enter=toggle_quick_terminal
+#keybind = global:cmd+p=toggle_quick_terminal
+keybind = global:cmd+-=toggle_quick_terminal
 
 quick-terminal-position = top
 quick-terminal-animation-duration = 0
+quick-terminal-size = 50%,50%
 
-#initial-window = false
+initial-window = false
 
-#window-height = 50
-#window-width = 200
-
+window-height = 50
+window-width = 200

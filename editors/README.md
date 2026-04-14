@@ -15,4 +15,3 @@ To use this folder settings you have to symlink this folder's JSON files to the 
 
 ## Plugins
 Rainglow, Material Icon Theme, REST Client
-

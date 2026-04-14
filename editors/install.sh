@@ -19,4 +19,3 @@ export DOTFILES=${1:-"$BASEPATH/.."}
 
 ln -s $DOTFILES/editors/intellij/ideavimrc ~/.ideavimrc
 ln -s $DOTFILES/editors/intellij/idea.properties "$IDEA_HOME/idea.properties"
-

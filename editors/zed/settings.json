@@ -22,12 +22,12 @@
               "images": false,
               "parallel_tool_calls": false,
               "prompt_cache_key": false,
-              "chat_completions": true
-            }
-          }
-        ]
-      }
-    }
+              "chat_completions": true,
+            },
+          },
+        ],
+      },
+    },
   },
   "git_panel": {
     "tree_view": true,
@@ -72,6 +72,28 @@
   },
   "relative_line_numbers": "enabled",
   "agent": {
+    "tool_permissions": {
+      "tools": {
+        "move_path": {
+          "default": "allow",
+        },
+        "fetch": {
+          "always_allow": [
+            {
+              "pattern": "^https?://pkg\\.go\\.dev",
+            },
+          ],
+        },
+        "terminal": {
+          "default": "allow",
+          "always_allow": [
+            {
+              "pattern": "^printf\\b",
+            },
+          ],
+        },
+      },
+    },
     "default_model": {
       "provider": "MiniMax",
       "model": "MiniMax-M2.5",
@@ -143,6 +165,13 @@
     },
   },
   "languages": {
+    "HTML": {
+      "formatter": "language_server",
+      "format_on_save": "off",
+    },
+    "XML": {
+      "format_on_save": "off",
+    },
     "Java": {
       "language_servers": ["jdtls"],
       "formatter": "language_server",
@@ -150,11 +179,22 @@
     },
   },
   "lsp": {
+    "vscode-html-language-server": {
+      "settings": {
+        "html": {
+          "format": {
+            "indentInnerHtml": false,
+            "contentUnformatted": "svg,script",
+          },
+        },
+      },
+    },
     "jdtls": {
       "settings": {
         "initialization_options": {
           "settings": {
             "java": {
+              "java_home": "$JAVA_HOME",
               "configuration": {
                 "updateBuildConfiguration": "interactive",
               },

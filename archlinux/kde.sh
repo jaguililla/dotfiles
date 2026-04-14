@@ -10,4 +10,3 @@ sudo pacman -S \
   sddm
 
 sudo systemctl -f enable sddm
-

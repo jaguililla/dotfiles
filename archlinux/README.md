@@ -7,9 +7,6 @@ them there.
 # Sudo
 Add `Defaults:<user> !authenticate` using `sudo visudo` to disable password.
 
-# Network
-It is preferable to use Google public DNS: 8.8.8.8 and 8.8.4.4
-
 # Minimum home settings files
 ```
 .cache/
@@ -59,4 +56,3 @@ You can also use `archinstall` text installer on Arch install ISO.
 
 For Guake to work properly with `META+CR` the `META` shortcut in the Cinnamon menu must be deleted.
 Or map `META+CR` to the command `guake -t`.
-

@@ -13,4 +13,3 @@ role_arn = <role_arn>
 # open https://console.aws.amazon.com/iam/home#/users/$USER?section=security_credentials
 # Pick ARN at: Assigned MFA device
 mfa_serial = arn:aws:iam::$IAM_ID:mfa/$USER
-

@@ -46,7 +46,7 @@ set NERDTree
 " For details, check: https://github.com/AlexPl292/IdeaVim-EasyMotion#supported-commands
 let mapleader=","
 set easymotion
-"map <Leader> <Plug>(easymotion-jumptoanywhere)
+map <Leader><Leader> <Plug>(easymotion-jumptoanywhere)
 
 " https://medium.com/geekculture/neovim-configuration-for-beginners-b2116dbbde84
 "set hlsearch                 " highlight search
