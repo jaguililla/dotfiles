@@ -31,6 +31,7 @@
     },
   },
   "git_panel": {
+    "dock": "left",
     "tree_view": true,
     "sort_by_path": true,
   },
@@ -73,6 +74,8 @@
   },
   "relative_line_numbers": "enabled",
   "agent": {
+    "dock": "right",
+    "sidebar_side": "right",
     "tool_permissions": {
       "tools": {
         "move_path": {
@@ -135,6 +138,7 @@
     },
   },
   "project_panel": {
+    "dock": "left",
     "folder_icons": true,
     "hide_hidden": true,
     "entry_spacing": "standard",
