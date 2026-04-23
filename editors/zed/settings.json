@@ -7,6 +7,7 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cli_default_open_behavior": "new_window",
   "language_models": {
     "openai_compatible": {
       "MiniMax": {
@@ -58,8 +59,8 @@
     "git_status": true,
   },
   "title_bar": {
+    "show_branch_status_icon": true,
     "show_sign_in": false,
-    "show_branch_icon": true,
   },
   "show_whitespaces": "boundary",
   "minimap": {
@@ -121,8 +122,8 @@
   },
   "wrap_guides": [100],
   "vim_mode": true,
-  "ui_font_size": 16,
-  "buffer_font_size": 12.75,
+  "ui_font_size": 15,
+  "buffer_font_size": 12,
   "terminal": {
     "toolbar": {
       "breadcrumbs": true,
@@ -157,11 +158,13 @@
   },
   "profiles": {
     "big": {
-      "ui_font_size": 18,
-      "buffer_font_size": 15,
-      "terminal": {
-        "font_size": 15,
-      },
+      "settings": {
+        "ui_font_size": 18,
+        "buffer_font_size": 15,
+        "terminal": {
+          "font_size": 15
+        }
+      }
     },
   },
   "languages": {
