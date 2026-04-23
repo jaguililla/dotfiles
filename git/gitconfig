@@ -8,7 +8,8 @@
 #    filemode = false
 
 [commit]
-    template = $DOTFILES/git/commit_template.txt
+    template = ~/.config/git/commit_template.txt
+    cleanup = strip
 
 [color]
     ui = auto
@@ -89,6 +90,7 @@
 
 [init]
     defaultBranch = main
+
 [user]
-	email = juanjoaguililla@gmail.com
-	name = jaguililla
+    email = juanjoaguililla@gmail.com
+    name = jaguililla

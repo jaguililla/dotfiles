@@ -3,6 +3,7 @@
 
 `ln -s $DOTFILES/git/gitconfig $HOME/.config/git/config`
 `ln -s $DOTFILES/git/gitignore $HOME/.config/git/ignore`
+`ln -s $DOTFILES/git/commit_template.txt $HOME/.config/git/commit_template.txt`
 
 As the user is not stored in the user `.gitconfig` file, you have to create the `/etc/gitconfig`
 file with the following code:
@@ -28,4 +29,3 @@ With these commands the branches are deleted from the remote repository origin, 
 local repositories, to delete them from the local repositories must be executed:
 
 `git fetch --prune`
-
