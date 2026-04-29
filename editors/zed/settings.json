@@ -7,6 +7,20 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
+  "zoomed_padding": false,
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": false,
+  },
+  "scroll_beyond_last_line": "vertical_scroll_margin",
+  "status_bar": {
+    "show_active_file": true,
+  },
   "cli_default_open_behavior": "new_window",
   "language_models": {
     "openai_compatible": {
@@ -134,19 +148,21 @@
     "font_family": "JetBrainsMono Nerd Font",
     "font_size": 12.75,
     "line_height": {
-      "custom": 1.25,
+      "custom": 1.35,
     },
   },
   "project_panel": {
+    "entry_spacing": "standard",
+    "bold_folder_labels": true,
+    "diagnostic_badges": true,
+    "git_status_indicator": true,
     "dock": "left",
     "folder_icons": true,
     "hide_hidden": true,
-    "entry_spacing": "standard",
     "indent_size": 15.0,
     "indent_guides": {
       "show": "never",
     },
-    "hide_root": true,
   },
   "autosave": "on_focus_change",
   "preferred_line_length": 100,
@@ -166,13 +182,14 @@
         "ui_font_size": 18,
         "buffer_font_size": 15,
         "terminal": {
-          "font_size": 15
-        }
-      }
+          "font_size": 15,
+        },
+      },
     },
   },
   "languages": {
     "HTML": {
+      "tab_size": 2,
       "formatter": "language_server",
       "format_on_save": "off",
     },

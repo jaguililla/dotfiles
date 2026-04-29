@@ -1,14 +1,18 @@
 font-size = 10
+theme = Adwaita Dark
+window-decoration = server
 
 #keybind = global:cmd+enter=toggle_quick_terminal
 #keybind = global:cmd+p=toggle_quick_terminal
-keybind = global:cmd+-=toggle_quick_terminal
+#keybind = global:cmd+-=toggle_quick_terminal
+#keybind = global:cmd+p=toggle_visibility
 
-quick-terminal-position = top
-quick-terminal-animation-duration = 0
-quick-terminal-size = 50%,50%
+#quick-terminal-layer = overlay
+#quick-terminal-position = top
+#quick-terminal-animation-duration = 0
+#quick-terminal-size = 50%,50%
 
-initial-window = false
+#initial-window = false
 
-window-height = 50
+window-height = 100
 window-width = 200

@@ -8,7 +8,6 @@
 #    filemode = false
 
 [commit]
-    template = ~/.config/git/commit_template.txt
     cleanup = strip
 
 [color]
